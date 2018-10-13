@@ -10,9 +10,15 @@ public class ScannerWrapper {
 	// Scanner for user input
     public static Scanner scan = new Scanner(System.in);
 	
+    // Ask for input no prompt
+    public static String getInput() {
+    	return getInput("");
+    }
+    
     // Ask for input
     public static String getInput(String prompt) {
-    	System.out.println(prompt);	
+    	if (!prompt.isEmpty())
+    		System.out.println(prompt);	
     	String userResponse = scan.next();
 		return userResponse.trim();
     }

@@ -1,4 +1,11 @@
+import java.util.ArrayList;
 
+/*
+ * Services class
+ * Stores information for a service offered by the system in the ArrayList
+ * Spice Tests
+ * 13/10/2018
+ */
 public class Services {
 	ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
 	

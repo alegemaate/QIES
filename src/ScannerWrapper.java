@@ -10,12 +10,18 @@ public class ScannerWrapper {
 	// Scanner for user input
     public static Scanner scan = new Scanner(System.in);
 	
-    // Ask for input no prompt
+    /*
+     * Ask the user for input with no prompt
+     * Return the user's input
+     */
     public static String getInput() {
     		return getInput("");
     }
     
-    // Ask for input
+    /*
+     * Ask the user for input with a prompt
+     * Return the user's input
+     */
     public static String getInput(String prompt) {
     	if (!prompt.isEmpty())
     		System.out.println(prompt);	

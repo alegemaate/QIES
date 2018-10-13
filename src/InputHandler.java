@@ -21,8 +21,29 @@ public class InputHandler {
 			
 			// Direct commands
 			switch (input) {
-				case "command":
-					
+				case "login":
+					CredentialCommands.login();
+					break;
+				case "logout":
+					CredentialCommands.logout();
+					break;
+				case "createservice":
+					ServiceCommands.createService();
+					break;
+				case "deleteservice":
+					ServiceCommands.deleteService();
+					break;
+				case "sellticket":
+					TicketCommands.sellTicket();
+					break;
+				case "cancelticket":
+					TicketCommands.cancelTicket();
+					break;
+				case "changeticket":
+					TicketCommands.changeTicket();
+					break;
+				case "exit":
+					System.out.println("Force exiting...");
 					break;
 				default:
 					System.out.println(input + " is not a valid command.");

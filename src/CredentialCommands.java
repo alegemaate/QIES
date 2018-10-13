@@ -10,7 +10,7 @@ public class CredentialCommands {
 	
 	// Validate login 
 	// Return true on success
-	public boolean login() {
+	public static boolean login() {
 		
 		loggedIn = true;
 		return true;
@@ -18,7 +18,7 @@ public class CredentialCommands {
 	
 	// Validate logout
 	// Return true on success
-	public boolean logout() {
+	public static boolean logout() {
 		
 		loggedIn = false;
 		return true;

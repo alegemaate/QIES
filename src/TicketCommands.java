@@ -11,13 +11,13 @@ import java.util.*;
 
 public class TicketCommands {
 	
-	Arraylist<TicketReceipt> ticketReciepts = new ArrayList<>();
+	public static ArrayList<TicketReceipt> ticketReciepts = new ArrayList<>();
 	
 	/*
 	 * asks the user for a service number and number of tickets
 	 * checks if both are valid
 	 */
-	public void sellTicket() {
+	public static void sellTicket() {
 		//TODO
 	} // end sellTicket method
 	
@@ -27,7 +27,7 @@ public class TicketCommands {
 	 * 
 	 * Note: constraints in agent mode, no constraints in planner mode
 	 */
-	public void cancelTicket() {
+	public static void cancelTicket() {
 		//TODO
 	} // end cancelTicket method
 	
@@ -38,7 +38,7 @@ public class TicketCommands {
 	 * 
 	 * Note: constraints in agent mode, no constraints in planner mode
 	 */
-	public void changeTicket() {
+	public static void changeTicket() {
 		//TODO
 	} // end changeTicket method
 

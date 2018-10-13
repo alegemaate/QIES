@@ -6,7 +6,7 @@
  */
 public class QIESBase {
 	public static void main(String [] args) {
-		System.out.println("Hello Natasha");
+		System.out.println("Hello World");
 		
 	}
 }

@@ -1,7 +1,6 @@
 
 public class ServiceNumber {
 	
-	// attributes
 	int number;
 	
 	/*

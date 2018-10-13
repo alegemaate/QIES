@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * 13/10/2018
  */
 public class Services {
-	ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
+	public ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
 	
 	/*
 	 * Reads the input file and populates the list with valid services

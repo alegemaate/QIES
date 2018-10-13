@@ -12,6 +12,22 @@ public class Date {
 	int day;
 	
 	/*
+	 * Date constructor:
+	 * calls setYear, setMonth, and setDay methods
+	 * if all successful, the date is set
+	 * 
+	 * Parameters:
+	 * 		int year: the year for the date
+	 * 		int month: the numeral month for the date
+	 * 		int day: the numeral day for the date
+	 */
+	public Date(int year, int month, int day) {
+		setYear(year);
+		setMonth(month);
+		setDay(day);
+	} // end setDate method
+	
+	/*
 	 * returns int year
 	 */
 	public int getYear() {
@@ -70,21 +86,6 @@ public class Date {
 			System.out.println("Error: invalid day in date");
 		}
 	} // end setDay method
-	
-	/*
-	 * calls setYear, setMonth, and setDay methods
-	 * if all successful, the date is set
-	 * 
-	 * Parameters:
-	 * 		int year: the year for the date
-	 * 		int month: the numeral month for the date
-	 * 		int day: the numeral day for the date
-	 */
-	public void setDate(int year, int month, int day) {
-		setYear(year);
-		setMonth(month);
-		setDay(day);
-	} // end setDate method
 	
 	/*
 	 * returns the date as a string formatted as YYYYMMDD

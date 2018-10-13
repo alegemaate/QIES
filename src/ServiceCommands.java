@@ -17,30 +17,24 @@ public class ServiceCommands {
 	 * Calls Services.add with the unique service number
 	 * Adds new service to Log
 	 */
-	public static int createService() {
+	public int createService() {
 		
 		// Creating a service is only a planner operation
 		if (CredentialCommands.userType.equals("agent")) {
 			System.out.println("Cannot create a service during agent session.");
-			return 0;
+			return -1;
 		} // end if
 		
 		// Prompt user for new service number
 		String serviceNumString = ScannerWrapper.getInput("Enter a new service number: ");
-		
 		// Ensures valid service number
-		while (serviceNumString.length() != 5) {
-			System.out.println("Invalid input: service number must be exactly 5 characters.");
-			serviceNumString = ScannerWrapper.getInput("Enter a new service number: ");
-		} // end if
-		while (serviceNumString.charAt(0) == '0') {
-			System.out.println("Invalid input: service number cannot begin with 0.");
-			serviceNumString = ScannerWrapper.getInput("Enter a new service number: ");
-		} // end if
+		int serviceNumber = validateServiceNum(serviceNumString);
+		Services.add(serviceNumber); // TODO: For some reason this doesn't work :(
 		
-		// Once valid, make serviceNumber into an int
-		int serviceNumber = Integer.parseInt(serviceNumString);
-		// TODO
+		// Prompt user for new service name
+		String serviceName = ScannerWrapper.getInput("Enter a new service name: ");
+		serviceName = validateServiceName(serviceName);
+		return 0;
 	} // end createService method
 	
 	/*
@@ -51,5 +45,30 @@ public class ServiceCommands {
 	public static void deleteService() {
 		// TODO
 	} // end deleteService method
+	
+	private static int validateServiceNum(String serviceNum) {
+		// Ensures valid service number
+		// Service number must be exactly 5 characters
+		while (serviceNum.length() != 5) {
+			System.out.println("Invalid input: service number must be exactly 5 characters.");
+			serviceNum = ScannerWrapper.getInput("Enter a new service number: ");
+		} // end if
+		// Service number cannot start with 0
+		while (serviceNum.charAt(0) == '0') {
+			System.out.println("Invalid input: service number cannot begin with 0.");
+			serviceNum = ScannerWrapper.getInput("Enter a new service number: ");
+		} // end if
+		
+		// TODO: Verify that service number doesn't already exist in ArrayList
+		
+		int serviceNumber = Integer.parseInt(serviceNum);
+		return serviceNumber;
+	} // send validateServiceNum method
+	
+	private static String validateServiceName(String serviceName) {
+		//Ensures valid service name
+		// Service name 
+		// TODO
+	}
 	
 } // end ServiceCommands class

@@ -4,15 +4,30 @@
  * Spice Tests
  * 13/10/2018
  */
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class CredentialCommands {
 	// Static flag for logged in state
 	public static boolean loggedIn = false;
+	public static String userType = "";
+	
+	private static ArrayList<String> validUsers = new ArrayList<>(Arrays.asList("planner", "agent"));
 	
 	// Validate login 
 	// Return true on success
 	public static boolean login() {
+		// Ensure login allowed
 		if (loggedIn) {
 			System.out.println("Error: You are already logged in.");
+			return false;
+		}
+		
+		// Get user type
+		userType = ScannerWrapper.getInput("Enter user type");
+		if (!validUsers.contains(userType)) {
+			System.out.println("Error: User type " + userType + " does not exist.");
 			return false;
 		}
 		
@@ -24,11 +39,12 @@ public class CredentialCommands {
 	// Return true on success
 	public static boolean logout() {
 		if (!loggedIn) {
-			System.out.println("Error: You not logged in.");
+			System.out.println("Error: You are not logged in.");
 			return false;
 		}
 		
 		loggedIn = false;
+		userType = "";
 		return true;
 	}
 }

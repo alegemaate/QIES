@@ -48,5 +48,27 @@ public class Date {
 	public void setDay(int day) {
 		//TODO
 	} // end setDay method
+	
+	/*
+	 * calls setYear, setMonth, and setDay methods
+	 * if all successful, the date is set
+	 * 
+	 * Parameters:
+	 * 		int year: the year for the date
+	 * 		int month: the numeral month for the date
+	 * 		int day: the numeral day for the date
+	 */
+	public void setDate(int year, int month, int day) {
+		//TODO
+	} // end setDate method
+	
+	/*
+	 * returns the date as a string formatted as YYYYMMDD
+	 */
+	@Override
+	public String toString() {
+		//TODO
+		return null;
+	} // end toString method
 
 } // end Date class

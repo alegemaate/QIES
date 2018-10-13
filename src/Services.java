@@ -1,6 +1,6 @@
 
 public class Services {
-	ArrayList<Services> serviceList = new ArrayList<Services>();
+	ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
 	
 	/*
 	 * Reads the input file and populates the list with valid services

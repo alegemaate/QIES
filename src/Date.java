@@ -1,5 +1,12 @@
+/*
+ * Date
+ * object to hold the date information for the system
+ * Spice Tests
+ * 13/10/2018
+ */
 
 public class Date {
+	
 	int year;
 	int month;
 	int day;
@@ -27,26 +34,41 @@ public class Date {
 	
 	/*
 	 * validates that the year is within range
-	 * if the year is valid, sets year attribute
+	 * if the year is valid (between 1980 and 2999 inclusive), sets year attribute
 	 */
 	public void setYear(int year) {
-		//TODO
+		if (year >= 1980 && year <= 2999) {
+			this.year = year;
+		} 
+		else {
+			System.out.println("Error: invalid year in date");
+		}
 	} // end setYear method
 	
 	/*
 	 * validates that the month is within range
-	 * if the month is valid, sets month attribute
+	 * if the month is valid (between 1 and 12 inclusive), sets month attribute
 	 */
 	public void setMonth(int month) {
-		//TODO
+		if (month >= 1 && month <= 12) {
+			this.month = month;
+		} 
+		else {
+			System.out.println("Error: invalid month in date");
+		}
 	} // end setMonth method
 	
 	/*
 	 * validates that the day is within range
-	 * if the day is valid, sets day attribute
+	 * if the day is valid (between 1 and 31 inclusive), sets day attribute
 	 */
 	public void setDay(int day) {
-		//TODO
+		if (day >= 1 && day <= 31) {
+			this.day = day;
+		} 
+		else {
+			System.out.println("Error: invalid day in date");
+		}
 	} // end setDay method
 	
 	/*
@@ -59,7 +81,9 @@ public class Date {
 	 * 		int day: the numeral day for the date
 	 */
 	public void setDate(int year, int month, int day) {
-		//TODO
+		setYear(year);
+		setMonth(month);
+		setDay(day);
 	} // end setDate method
 	
 	/*
@@ -67,8 +91,7 @@ public class Date {
 	 */
 	@Override
 	public String toString() {
-		//TODO
-		return null;
+		return Integer.toString(year) + Integer.toString(month) + Integer.toString(day);
 	} // end toString method
 
 } // end Date class

@@ -20,14 +20,15 @@ public class Services {
 	 * Adds service to the list of Services
 	 */
 	public void add(int serviceNumber) {
-		// TODO
+		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);
+		serviceList.add(serviceNum);
 	} // end add method
 	
 	/*
 	 * Removes a service from the list of services
 	 */
 	public void remove(int serviceNumber) {
-		// TODO
+		serviceList.remove(serviceNumber);
 	} // end remove method
 
 } // end Services class

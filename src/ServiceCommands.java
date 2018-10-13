@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /*
  * ServiceCommands
- * 
+ * Validation for Services list
  * Spice Tests
  * 13/10/2018
  */
@@ -17,10 +17,10 @@ public class ServiceCommands {
 	 * Calls Services.add with the unique service number
 	 */
 	public static void createService() {
+		String userInput = ScannerWrapper.getInput("Enter a new service number: ");
+		int serviceNumber = Integer.parseInt(userInput);
 		
-		System.out.println("Enter Command");
-		String userResponse = scan.next();
-		userResponse = userResponse.trim();
+		
 		// TODO
 	} // end createService method
 	

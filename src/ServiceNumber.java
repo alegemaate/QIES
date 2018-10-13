@@ -9,18 +9,15 @@ public class ServiceNumber {
 	
 	int number;
 	
+	public ServiceNumber(int number) {
+		this.number = number;
+	} // end ServiceNumber constructor
+	
 	/*
 	 * Returns int number
 	 */
 	public int getNumber() {
 		return number;
 	} // end getNumber method
-	
-	/*
-	 * Sets the int number attribute
-	 */
-	public void setNumber(int number) {
-		this.number = number;
-	} // end setNumber method
 
 } // end ServiceNumber class

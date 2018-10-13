@@ -5,12 +5,8 @@
  * Spice Tests
  * 13/10/2018
  */
-import java.util.Scanner;
 
 public class InputHandler {
-	// Scanner for user input
-    public static Scanner scan = new Scanner(System.in);
-	
     // Prompts user input and directs commands
 	public void runQIES() {
 		String input = "";
@@ -52,19 +48,12 @@ public class InputHandler {
 		}
 		
 		// CLose scanner
-		scan.close();
+		ScannerWrapper.close();
 	}
 	
 	// Ask for input
 	public String promptUser() {
-		// Ask for input
-		System.out.println("Enter Command");
-		String userResponse = scan.next();
-		
-		// Filter out invalid inputs
-		userResponse = userResponse.trim();
-		
 		// Return filtered response
-		return userResponse;
+		return ScannerWrapper.getInput("Enter Command");
 	}
 }

@@ -11,6 +11,10 @@ public class CredentialCommands {
 	// Validate login 
 	// Return true on success
 	public static boolean login() {
+		if (loggedIn) {
+			System.out.println("Error: You are already logged in.");
+			return false;
+		}
 		
 		loggedIn = true;
 		return true;
@@ -19,6 +23,10 @@ public class CredentialCommands {
 	// Validate logout
 	// Return true on success
 	public static boolean logout() {
+		if (!loggedIn) {
+			System.out.println("Error: You not logged in.");
+			return false;
+		}
 		
 		loggedIn = false;
 		return true;

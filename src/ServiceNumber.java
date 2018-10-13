@@ -1,3 +1,9 @@
+/*
+ * ServiceNumber
+ * object to hold the service number information for the system
+ * Spice Tests
+ * 13/10/2018
+ */
 
 public class ServiceNumber {
 	

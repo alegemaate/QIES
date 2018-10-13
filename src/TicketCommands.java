@@ -1,3 +1,11 @@
+/*
+ * TicketCommands
+ * Completes ticket transactions including sellTicket, cancelTicket, and
+ * 		changeTicket. Also holds the list of ticketReciepts as a record of
+ * 		completed ticketTransactions.
+ * Spice Tests
+ * 13/10/2018
+ */
 
 import java.util.*;
 

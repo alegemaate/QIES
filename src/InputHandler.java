@@ -8,35 +8,40 @@
 import java.util.Scanner;
 
 public class InputHandler {
+	// Scanner for user input
+    public static Scanner scan = new Scanner(System.in);
+	
     // Prompts user input and directs commands
 	public void runQIES() {
-		while (true) {
+		String input = "";
+		
+		while (input != "exit") {
 			// Get input
-			String input = promptUser();
+			input = promptUser();
 			
 			// Direct commands
 			switch (input) {
 				case "command":
-					System.out.println("Hey");
+					
+					break;
 				default:
 					System.out.println(input + " is not a valid command.");
+					break;
 			}
 		}
+		
+		// CLose scanner
+		scan.close();
 	}
 	
 	// Ask for input
 	public String promptUser() {
-		// Scanner for user input
-	    Scanner scan = new Scanner(System.in);
-		
 		// Ask for input
 		System.out.println("Enter Command");
-		String userResponse = scan.nextLine();
+		String userResponse = scan.next();
 		
-		// CLose scanner
-		scan.close();
-		
-		// TODO: Filter out invalid inputs
+		// Filter out invalid inputs
+		userResponse = userResponse.trim();
 		
 		// Return filtered response
 		return userResponse;

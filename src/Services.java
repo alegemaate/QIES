@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * 13/10/2018
  */
 public class Services {
-	public ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
+	public static ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
 	
 	/*
 	 * Reads the input file and populates the list with valid services
@@ -19,7 +19,7 @@ public class Services {
 	/*
 	 * Adds service to the list of Services
 	 */
-	public void add(int serviceNumber) {
+	public static void add(int serviceNumber) {
 		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);
 		serviceList.add(serviceNum);
 	} // end add method

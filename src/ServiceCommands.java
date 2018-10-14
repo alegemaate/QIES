@@ -17,7 +17,7 @@ public class ServiceCommands {
 	 * Calls Services.add with the unique service number
 	 * Adds new service to Log
 	 */
-	public int createService() {
+	public static int createService() {
 		
 		// Creating a service is only a planner operation
 		if (CredentialCommands.userType.equals("agent")) {
@@ -29,7 +29,7 @@ public class ServiceCommands {
 		String serviceNumString = ScannerWrapper.getInput("Enter a new service number: ");
 		// Ensures valid service number
 		int serviceNumber = validateServiceNum(serviceNumString);
-		Services.add(serviceNumber); // TODO: For some reason this doesn't work :(
+		Services.add(serviceNumber);
 		
 		// Prompt user for new service name
 		String serviceName = ScannerWrapper.getInput("Enter a new service name: ");
@@ -69,6 +69,7 @@ public class ServiceCommands {
 		//Ensures valid service name
 		// Service name 
 		// TODO
+		return null;
 	}
 	
 } // end ServiceCommands class

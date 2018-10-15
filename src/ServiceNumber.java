@@ -9,6 +9,8 @@ public class ServiceNumber {
 	
 	int number;
 	
+	//---------------------------------------------------------------------------------------------
+	
 	/*
 	 * ServiceNumber constructor.
 	 */
@@ -16,8 +18,10 @@ public class ServiceNumber {
 		this.number = number;
 	} // end ServiceNumber constructor
 	
+	//---------------------------------------------------------------------------------------------
+	
 	/*
-	 * Returns int number
+	 * Returns service number as int
 	 * 
 	 * Input: none
 	 * Output: service number

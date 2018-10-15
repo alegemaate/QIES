@@ -18,10 +18,14 @@ public class Log {
 	
 	
 	//Add line to lines array
-	public void addLine(String line) {
+	public static void addLine(String line) {
 		lines.add(line);
-		
-	}
+	} // end addLine
+	
+	// Delete line from lines array
+	public static void deleteLine(String line) {
+		lines.remove(line);
+	} // end deleteLine
 	
 	//convert all lines to one string for display
 	@Override

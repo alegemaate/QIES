@@ -12,7 +12,7 @@ public class Services {
 	/*
 	 * Reads the input file and populates the list with valid services
 	 */
-	public void readServices() {
+	public static void readServices() {
 		// TODO
 	} // end readServices method
 	
@@ -27,7 +27,8 @@ public class Services {
 	/*
 	 * Removes a service from the list of services
 	 */
-	public void remove(int serviceNumber) {
+	public static void remove(int serviceNumber) {
+		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);
 		serviceList.remove(serviceNumber);
 	} // end remove method
 

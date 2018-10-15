@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /*
  * Services class
@@ -10,10 +13,26 @@ public class Services {
 	public static ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
 	
 	/*
-	 * Reads the input file and populates the list with valid services
+	 * Reads the input file and populates the list with valid services.
 	 */
-	public static void readServices() {
-		// TODO
+	public static void readServices(String filePath) {
+		Scanner readLine;
+		try {
+			// Add services from file to list
+			readLine = new Scanner(new File(filePath));
+			while (readLine.hasNext()){
+				String line = readLine.next();
+				int nextServiceNum = Integer.parseInt(line);
+			    add(nextServiceNum);
+			} // end while
+			readLine.close();
+			
+		// File not found
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} // end try/catch
+		
 	} // end readServices method
 	
 	/*

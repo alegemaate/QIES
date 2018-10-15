@@ -1,7 +1,3 @@
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-
 /*
  * Log
  * Stores data for transaction summary file
@@ -9,15 +5,15 @@ import java.util.ArrayList;
  * 13/10/2018
  */
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
 public class Log {
-	
+	// Holds each TXN summary line
 	static ArrayList<String> lines = new ArrayList<String>();
-	//static String[] lines = new String [] {"test1","test2","test3","test4","test5"};
 
-
-	
-	
-	//Add line to lines array
+	// Add line to lines array
 	public static void addLine(String line) {
 		lines.add(line);
 	} // end addLine
@@ -27,7 +23,7 @@ public class Log {
 		lines.remove(line);
 	} // end deleteLine
 	
-	//convert all lines to one string for display
+	// Convert all lines to one string for display
 	@Override
 	public String toString() {
 		String s;
@@ -35,34 +31,28 @@ public class Log {
 		
 	}
 	
-	//writes lines to transaction summary file
-	public static void writeFile(String fileName) {
+	// Writes lines to transaction summary file
+	public static void writeFile(String directory) {
 		PrintWriter transactionSummaryFile = null;
+		String fileName = directory + "/txnsum.txt";
+		boolean success = true;
 		
 		try {
 			transactionSummaryFile = new PrintWriter(fileName);
 		}
-		
 		catch(FileNotFoundException e) {
-			System.out.println("Error opening the file" + fileName);
-			System.exit(0);
-
+			System.out.println("Error opening the file '" + fileName + "'.");
+			success = false;
 		}
 		
-		for (int i = 0; i < lines.size(); i++) {
-			if (lines.get(i) != null) {
-				transactionSummaryFile.println(lines.get(i));
+		if (success) {
+			for (int i = 0; i < lines.size(); i++) {
+				if (lines.get(i) != null) {
+					transactionSummaryFile.println(lines.get(i));
+				}
 			}
+			
+			transactionSummaryFile.close();
 		}
-		
-		transactionSummaryFile.close();
-
 	}
-	
-	public static void main(String args[]) {
-		
-				
-		
-	}
-
 }

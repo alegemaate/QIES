@@ -7,6 +7,7 @@
  */
 
 public class InputHandler {
+	
     // Prompts user input and directs commands
 	public void runQIES() {
 		String input = "";

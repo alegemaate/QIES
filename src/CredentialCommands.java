@@ -11,8 +11,11 @@ import java.util.Arrays;
 public class CredentialCommands {
 	// Static flag for logged in state
 	public static boolean loggedIn = false;
+	
+	// User type, empty when logged out
 	public static String userType = "";
 	
+	// List of valid 'userType' logins
 	private static ArrayList<String> validUsers = new ArrayList<>(Arrays.asList("planner", "agent"));
 	
 	// Validate login 
@@ -46,10 +49,14 @@ public class CredentialCommands {
 			return false;
 		}
 		
-		// Success
+		// Success! Logout
 		loggedIn = false;
 		System.out.println("Successfully logged out.");
 		userType = "";
+		
+		// Write txn summary file
+		Log.writeFile(Configuration.tsfPath);
+		
 		return true;
 	}
 }

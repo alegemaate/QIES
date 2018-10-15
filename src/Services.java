@@ -12,6 +12,8 @@ import java.util.Scanner;
 public class Services {
 	public static ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
 	
+	//---------------------------------------------------------------------------------------------
+	
 	/*
 	 * Reads the input file and populates the list with valid services.
 	 */
@@ -35,6 +37,8 @@ public class Services {
 		
 	} // end readServices method
 	
+	//---------------------------------------------------------------------------------------------
+	
 	/*
 	 * Adds service to the list of Services
 	 */
@@ -42,6 +46,8 @@ public class Services {
 		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);
 		serviceList.add(serviceNum);
 	} // end add method
+	
+	//---------------------------------------------------------------------------------------------
 	
 	/*
 	 * Removes a service from the list of services

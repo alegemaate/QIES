@@ -40,7 +40,7 @@ public class TicketCommands {
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
 		if (!(numTickets >= 0)) {
-			System.out.println("Error: invalid ticket number");
+			System.out.println("Error: Invalid ticket number");
 		}
 		
 		// generating the ticket reciept for the transaction
@@ -61,6 +61,8 @@ public class TicketCommands {
 	 * Checks if they are valid
 	 * 
 	 * Note: constraints in agent mode, no constraints in planner mode
+	 * 
+	 * returns -1 if errors occur, return 0 if the transaction was successful
 	 */
 	public static int cancelTicket() {
 		
@@ -71,7 +73,7 @@ public class TicketCommands {
 		// Ensure that service number exists
 		ServiceNumber serviceNumObj = new ServiceNumber(serviceNumber);
 		if (Services.serviceList.contains(serviceNumObj) == false) { 
-			System.out.println("Service number does not exist; cannot cancel ticket(s).");
+			System.out.println("Error: Service number does not exist");
 			return -1;
 		} // end if
 
@@ -83,7 +85,7 @@ public class TicketCommands {
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
 		if (!(numTickets >= 0)) {
-			System.out.println("Error: invalid ticket number");
+			System.out.println("Error: Invalid ticket number");
 			return -1;
 		}
 
@@ -105,6 +107,8 @@ public class TicketCommands {
 	 * Checks if they are valid
 	 * 
 	 * Note: constraints in agent mode, no constraints in planner mode
+	 * 
+	 * returns -1 if errors occur, return 0 if the transaction was successful
 	 */
 	public static int changeTicket() {
 
@@ -139,7 +143,7 @@ public class TicketCommands {
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
 		if (!(numTickets >= 0)) {
-			System.out.println("Error: invalid ticket number");
+			System.out.println("Error: Invalid ticket number");
 			return -1;
 		}
 

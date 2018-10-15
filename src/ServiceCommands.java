@@ -46,9 +46,22 @@ public class ServiceCommands {
 		int day = Integer.parseInt(ScannerWrapper.getInput("Enter day: "));
 		Date date = new Date(year, month, day);
 		
-		// Add service to Log
-		String service = Integer.toString(serviceNumber) + serviceName + date.toString();
-		Log.addLine(service);
+		/*
+		 * Add transaction to Log: CCC AAAA MMMM BBBB NNNNNN YYYYMMDD where:
+		 * 		a) CCC = "CRE" for create service
+		 * 		b) AAAA = serviceNumber
+		 * 		c) MMMM = 0 (ticket numbers is unused field)
+		 * 		d) BBBB = 00000 (destination service number is unused field)
+		 * 		e) NNNNNN = serviceName
+		 * 		f) YYYYMMDD = date
+		 */
+		String logEntry = "CRE" + " " // Create service
+						+ Integer.toString(serviceNumber) + " " // Service number
+						+ "0" + " " // Number of tickets (unused field)
+						+ "00000" + " " // Destination service number (unused field)
+						+ serviceName + " "// Service name
+						+ date.toString() + " "; // Service date
+		Log.addLine(logEntry);
 		return 0;
 	} // end createService method
 	
@@ -87,11 +100,22 @@ public class ServiceCommands {
 		// Ask for service name
 		String serviceName = ScannerWrapper.getInput("Enter service name: ");
 		
-		// Delete service from log
-		// TODO: How do we find a service in the Log without knowing the date here?
-		// Help
-		String service = Integer.toString(serviceNumber) + serviceName;
-		Log.deleteLine(service);
+		/*
+		 * Add transaction to Log: CCC AAAA MMMM BBBB NNNNNN YYYYMMDD where:
+		 * 		a) CCC = "DEL" for create service
+		 * 		b) AAAA = serviceNumber
+		 * 		c) MMMM = 0 (ticket numbers is unused field)
+		 * 		d) BBBB = 00000 (destination service number is unused field)
+		 * 		e) NNNNNN = serviceName
+		 * 		f) YYYYMMDD = 0 (date is unused field)
+		 */
+		String logEntry = "DEL" + " "
+		                + Integer.toString(serviceNumber) + " "
+		                + "0" + " "
+		                + "00000" + " "
+				        + serviceName + " "
+				        + "0";
+		Log.addLine(logEntry);
 		
 		// Return successfully
 		return 0;

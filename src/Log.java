@@ -12,26 +12,44 @@ import java.util.ArrayList;
 public class Log {
 	
 	static ArrayList<String> lines = new ArrayList<String>();
-	//static String[] lines = new String [] {"test1","test2","test3","test4","test5"};
-
 
 	
 	
-	//Add line to lines array
-	public void addLine(String line) {
-		lines.add(line);
-		
-	}
+	/* Add line to lines array
+	 * 
+	 * input: String line (transaction summary)
+	 * output:
+	 */
+	public static void addLine(String line) {
+		lines.add(line);	
+	} //end addLine(line)
 	
-	//convert all lines to one string for display
+	
+	
+	
+	/* convert all lines to one string for display
+	 * 
+	 * input: 
+	 * output: 
+	 */
 	@Override
 	public String toString() {
-		String s;
-		return null;
-		
-	}
+		String s = null;
+		for (int i = 0; i < lines.size(); i++) {
+			if (lines.get(i) != null) {
+				s += lines.get(i);
+			}
+		}
+		System.out.println("ok");
+		return s;	
+	} //End toString()
 	
-	//writes lines to transaction summary file
+	/* writes lines to transaction summary file
+	 * 
+	 * input: name of transaction summary file
+	 * output: 
+	 */
+	
 	public static void writeFile(String fileName) {
 		PrintWriter transactionSummaryFile = null;
 		
@@ -53,12 +71,8 @@ public class Log {
 		
 		transactionSummaryFile.close();
 
-	}
+	} //end writeFile(fileName)
 	
-	public static void main(String args[]) {
-		
-				
-		
-	}
+	
 
 }

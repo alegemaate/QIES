@@ -26,8 +26,7 @@ public class TicketCommands {
 		int serviceNumber = Integer.parseInt(serviceNumString);
 		
 		// Ensure that service number exists
-		ServiceNumber serviceNumObj = new ServiceNumber(serviceNumber);
-		if (Services.serviceList.contains(serviceNumObj) == false) { 
+		if (Services.find(serviceNumber) == false) { 
 			System.out.println("Error: Service number does not exist");
 			return -1;
 		} // end if
@@ -71,8 +70,7 @@ public class TicketCommands {
 		int serviceNumber = Integer.parseInt(serviceNumString);
 		
 		// Ensure that service number exists
-		ServiceNumber serviceNumObj = new ServiceNumber(serviceNumber);
-		if (Services.serviceList.contains(serviceNumObj) == false) { 
+		if (Services.find(serviceNumber) == false) { 
 			System.out.println("Error: Service number does not exist");
 			return -1;
 		} // end if
@@ -117,8 +115,7 @@ public class TicketCommands {
 		int sourceServiceNumber = Integer.parseInt(sourceServiceNumString);
 		
 		// Ensure that source service number exists
-		ServiceNumber sourceNumObj = new ServiceNumber(sourceServiceNumber);
-		if (Services.serviceList.contains(sourceNumObj) == false) { 
+		if (Services.find(sourceServiceNumber) == false) { 
 			System.out.println("Error: Service number does not exist");
 			return -1;
 		} // end if
@@ -128,8 +125,7 @@ public class TicketCommands {
 		int destServiceNumber = Integer.parseInt(destServiceNumString);
 		
 		// Ensure that destination service number exists
-		ServiceNumber destNumObj = new ServiceNumber(destServiceNumber);
-		if (Services.serviceList.contains(destNumObj) == false) { 
+		if (Services.find(destServiceNumber) == false) { 
 			System.out.println("Error: Service number does not exist");
 			return -1;
 		} // end if

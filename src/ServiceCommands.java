@@ -87,8 +87,7 @@ public class ServiceCommands {
 		int serviceNumber = Integer.parseInt(serviceNumString);
 		
 		// Ensure that service number exists and isn't already deleted
-		ServiceNumber serviceNumObj = new ServiceNumber(serviceNumber);
-		if (Services.serviceList.contains(serviceNumObj) == false) { 
+		if (Services.find(serviceNumber) == false) { 
 			System.out.println("Service number does not exist; cannot delete.");
 			return -1;
 		} // end if
@@ -148,8 +147,7 @@ public class ServiceCommands {
 		
 		// Ensure that service number doesn't already exist
 		int serviceNumber = Integer.parseInt(serviceNum);
-		ServiceNumber serviceNumObj = new ServiceNumber(serviceNumber);
-		if (Services.serviceList.contains(serviceNumObj) == true) { 
+		if (Services.find(serviceNumber) == true) { 
 			System.out.println("Service number already exists; cannot create new service.");
 			return -1;
 		} // end if

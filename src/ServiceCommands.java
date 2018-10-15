@@ -13,11 +13,10 @@ public class ServiceCommands {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Prompts user for new service number/name/date
-	 * Ensures valid service number/name/date
-	 * Ensures unique service number/name/date
-	 * Calls Services.add with the unique service number
-	 * Adds new service to Log
+	 * CREATE SERVICE: Prompts user for new service number/name/date
+	 *                 Ensures valid service number/name/date
+	 *                 Ensures unique service number/name/date
+	 *                 Calls Services.add with the unique service number
 	 * 
 	 * Input: none
 	 * Output: int representing return status (0 if successful, -1 otherwise)
@@ -68,9 +67,9 @@ public class ServiceCommands {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Prompts user for existing service number
-	 * Ensures existing service number
-     * Calls Services.remove with the unique service number
+	 * DELETESERVICE: Prompts user for existing service number
+	 *                Ensures existing service number
+     *                Calls Services.remove with the unique service number
      * 
      * Input: none
 	 * Output: int representing return status (0 if successful, -1 otherwise)
@@ -124,7 +123,7 @@ public class ServiceCommands {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Ensures that service number is valid.
+	 * VALIDATESERVICENUM: Ensures that service number is valid.
 	 * CONSTRAINTS:
 	 * 		a) Exactly 5 decimal digits
 	 * 		b) Must be unique
@@ -161,7 +160,7 @@ public class ServiceCommands {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Ensures that service name is valid.
+	 * VALIDATESERVICENAME: Ensures that service name is valid.
 	 * CONSTRAINTS: Must be between 3-39 alphanumeric characters, not beginning or ending
 	 * with a space.
 	 * 

@@ -15,7 +15,7 @@ public class Services {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Reads the input file and populates the list with valid services.
+	 * READSERVICES: Reads the input file and populates the list with valid services.
 	 * 
 	 * Input: String containing file path
 	 * Output: none
@@ -42,7 +42,7 @@ public class Services {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Adds service to the list of Services
+	 * ADD: Adds service to the list of Services
 	 * 
 	 * Input: int representing service number
 	 * Output: none
@@ -55,7 +55,7 @@ public class Services {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Removes a service from the list of services
+	 * REMOVE: Removes a service from the list of services
 	 * 
 	 * Input: int representing service number
 	 * Output: none

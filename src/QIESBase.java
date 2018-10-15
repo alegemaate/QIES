@@ -7,13 +7,6 @@
 
 import java.io.File;
 
-/*
- * QIESBase
- * Launch point for the program.
- * Receives 2 arguments:
- * 		a) Valid Services File (input file)
- * 		b) Directory for transaction summary file output
- */
 public class QIESBase {
 	// Input handler
 	public static InputHandler input = new InputHandler();

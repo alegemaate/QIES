@@ -22,6 +22,9 @@ public class CredentialCommands {
 	
 	/*
 	 * LOGIN: Validate user login.
+	 * 		a) Validates that login is either planner or agent.
+	 * 		b) Validates that user not already logged in
+	 * 		c) Sets logged in flag to true
 	 * 
 	 * Input: none
 	 * Output: boolean (true if login successful, false otherwise)
@@ -50,6 +53,8 @@ public class CredentialCommands {
 	//---------------------------------------------------------------------------------------------
 	
 	/* LOGOUT: Validate user logout.
+	 * 		a) Validates that user is already logged in
+	 * 		b) Sets logged in flag to false
 	 * 
 	 * Input: none
 	 * Output: boolean (true if logout successful, false otherwise)

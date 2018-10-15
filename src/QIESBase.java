@@ -22,9 +22,11 @@ public class QIESBase {
 		File f2 = new File(path);
 		if (!f2.exists()) {
 			return false;
-		}
+		} // end if
 		return true;
-	}
+	} // end validatePath method
+	
+	//---------------------------------------------------------------------------------------------
 	
 	/*
 	 * MAIN METHOD: starting point for program.
@@ -45,20 +47,18 @@ public class QIESBase {
 		if (!validatePath(args[0])) {
 			System.out.println("Valid service file '" + args[0] + "'  does not exist");
 			System.exit(1);
-		}
-		else {
+		} else {
 			Configuration.vsfPath = args[0];
 			Services.readServices(args[0]);
-		}
+		} // end if/else
 		
 		// Validate tsf directory
 		if (!validatePath(args[1])) {
 			System.out.println("Directory '" + args[1] + "' does not exist");
 			System.exit(1);
-		}
-		else {
+		} else {
 			Configuration.tsfPath = args[1];
-		}
+		} // end if/else
 
 		// Go to main case switch
 		input.runQIES();

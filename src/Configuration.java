@@ -11,4 +11,4 @@ public class Configuration {
 	
 	// Location of valid services file
 	public static String vsfPath = "";
-}
+} // end Configuration class

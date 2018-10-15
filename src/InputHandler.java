@@ -8,7 +8,7 @@
 
 public class InputHandler {
 	
-    /* Prompts user input and directs commands
+    /* RUNQIES: Prompts user input and directs commands
      * Continually asks the user for a transaction until they decide to logout.
      * 
      * Input: none
@@ -60,7 +60,7 @@ public class InputHandler {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Prompts the user to enter a command and returns their input 
+	 * PROMPTUSER: Prompts the user to enter a command and returns their input 
 	 * 		(Used in the runQIES() method to get user input)
 	 * 
 	 * Input: none

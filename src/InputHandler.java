@@ -50,12 +50,12 @@ public class InputHandler {
 				default:
 					System.out.println(input + " is not a valid command.");
 					break;
-			}
-		}
+			} // end switch
+		} // end while
 		
 		// Close scanner
 		ScannerWrapper.close();
-	}
+	} // end runQIES method
 	
 	//---------------------------------------------------------------------------------------------
 	

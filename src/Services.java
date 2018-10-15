@@ -16,6 +16,9 @@ public class Services {
 	
 	/*
 	 * Reads the input file and populates the list with valid services.
+	 * 
+	 * Input: String containing file path
+	 * Output: none
 	 */
 	public static void readServices(String filePath) {
 		Scanner readLine;
@@ -40,6 +43,9 @@ public class Services {
 	
 	/*
 	 * Adds service to the list of Services
+	 * 
+	 * Input: int representing service number
+	 * Output: none
 	 */
 	public static void add(int serviceNumber) {
 		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);
@@ -50,6 +56,9 @@ public class Services {
 	
 	/*
 	 * Removes a service from the list of services
+	 * 
+	 * Input: int representing service number
+	 * Output: none
 	 */
 	public static void remove(int serviceNumber) {
 		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);

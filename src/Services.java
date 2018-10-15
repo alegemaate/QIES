@@ -10,7 +10,7 @@ import java.util.Scanner;
  * 13/10/2018
  */
 public class Services {
-	public static ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
+	private static ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
 	
 	//---------------------------------------------------------------------------------------------
 	
@@ -64,5 +64,23 @@ public class Services {
 		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);
 		serviceList.remove(serviceNum);
 	} // end remove method
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * Finds a service in a list of services
+	 * 
+	 * Input: int representing service number
+	 * Output: true or false if exists
+	 */
+	public static boolean find(int serviceNumber) {
+		for (int i = 0; i < serviceList.size(); i++) {
+			if (serviceList.get(i).getNumber() == serviceNumber) {
+				return true;
+			}
+		}
+		return false;
+	} // end find method
+
 
 } // end Services class

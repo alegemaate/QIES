@@ -28,7 +28,6 @@ public class Log {
 	public String toString() {
 		String s;
 		return null;
-		
 	}
 	
 	// Writes lines to transaction summary file
@@ -51,7 +50,6 @@ public class Log {
 					transactionSummaryFile.println(lines.get(i));
 				}
 			}
-			
 			transactionSummaryFile.close();
 		}
 	}

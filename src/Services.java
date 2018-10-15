@@ -31,8 +31,7 @@ public class Services {
 			
 		// File not found
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("File not found.");
 		} // end try/catch
 		
 	} // end readServices method
@@ -54,7 +53,7 @@ public class Services {
 	 */
 	public static void remove(int serviceNumber) {
 		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);
-		serviceList.remove(serviceNumber);
+		serviceList.remove(serviceNum);
 	} // end remove method
 
 } // end Services class

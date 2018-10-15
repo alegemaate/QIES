@@ -52,39 +52,42 @@ public class Date {
 	 * validates that the year is within range
 	 * if the year is valid (between 1980 and 2999 inclusive), sets year attribute
 	 */
-	public void setYear(int year) {
+	public int setYear(int year) {
 		if (year >= 1980 && year <= 2999) {
 			this.year = year;
-		} 
-		else {
+			return 0;
+		} else {
 			System.out.println("Error: invalid year in date");
-		}
+			return -1;
+		} // end if/else
 	} // end setYear method
 	
 	/*
 	 * validates that the month is within range
 	 * if the month is valid (between 1 and 12 inclusive), sets month attribute
 	 */
-	public void setMonth(int month) {
+	public int setMonth(int month) {
 		if (month >= 1 && month <= 12) {
 			this.month = month;
-		} 
-		else {
+			return 0;
+		} else {
 			System.out.println("Error: invalid month in date");
-		}
+			return -1;
+		} // end if/else
 	} // end setMonth method
 	
 	/*
 	 * validates that the day is within range
 	 * if the day is valid (between 1 and 31 inclusive), sets day attribute
 	 */
-	public void setDay(int day) {
+	public int setDay(int day) {
 		if (day >= 1 && day <= 31) {
 			this.day = day;
-		} 
-		else {
+			return 0;
+		} else {
 			System.out.println("Error: invalid day in date");
-		}
+			return -1;
+		} // end if/else
 	} // end setDay method
 	
 	/*

@@ -6,9 +6,14 @@
  */
 
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
 
+/*
+ * QIESBase
+ * Launch point for the program.
+ * Receives 2 arguments:
+ * 		a) Valid Services File (input file)
+ * 		b) Directory for transaction summary file output
+ */
 public class QIESBase {
 	// Input handler
 	public static InputHandler input = new InputHandler();
@@ -27,14 +32,20 @@ public class QIESBase {
 		return true;
 	}
 	
-	// Entry point
+	/*
+	 * MAIN METHOD: starting point for program.
+	 * 
+	 * Input: Valid Services File (input file), Directory for Transaction Summary
+	 * 		  File output
+	 * Output: none
+	 */
 	public static void main(String [] args) {
 		// Ensure we are receiving a input file and a directory for output
 		if (args.length != 2) {
 			System.out.println("You must provide a valid service file and a directory "
 					+ "to output the transaction summary file as command line arguments.");
 			System.exit(1);
-		}
+		} // end if
 		
 		// Validate vsf
 		if (!validatePath(args[0])) {
@@ -54,8 +65,9 @@ public class QIESBase {
 		else {
 			Configuration.tsfPath = args[1];
 		}
-		
+
 		// Go to main case switch
 		input.runQIES();
-	}
-}
+	} // end main
+	
+} // end QIESBase class

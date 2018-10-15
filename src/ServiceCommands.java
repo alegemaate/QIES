@@ -18,6 +18,9 @@ public class ServiceCommands {
 	 * Ensures unique service number/name/date
 	 * Calls Services.add with the unique service number
 	 * Adds new service to Log
+	 * 
+	 * Parameters: none
+	 * Output: int representing return status (0 if successful, -1 otherwise)
 	 */
 	public static int createService() {
 		
@@ -55,6 +58,9 @@ public class ServiceCommands {
 	 * Prompts user for existing service number
 	 * Ensures existing service number
      * Calls Services.remove with the unique service number
+     * 
+     * Parameters: none
+	 * Output: int representing return status (0 if successful, -1 otherwise)
 	 */
 	public static int deleteService() {
 		
@@ -99,6 +105,9 @@ public class ServiceCommands {
 	 * 		a) Exactly 5 decimal digits
 	 * 		b) Must be unique
 	 * 		c) Cannot begin with 0
+	 * 
+	 * Parameters: none
+	 * Output: int representing -1 if service number already exists, service number otherwise
 	 */
 	private static int validateServiceNum(String serviceNum) {
 		
@@ -131,6 +140,9 @@ public class ServiceCommands {
 	 * Ensures that service name is valid.
 	 * CONSTRAINTS: Must be between 3-39 alphanumeric characters, not beginning or ending
 	 * with a space.
+	 * 
+	 * Parameters: none
+	 * Output: service name once valid
 	 */
 	private static String validateServiceName(String serviceName) {
 		

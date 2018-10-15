@@ -12,9 +12,10 @@ public class QIESBase {
 	public static InputHandler input = new InputHandler();
 	
 	/* 
-	 * Validate path
-	 * Checks if file/directory exists
-	 * Returns true on exists, false on not exists
+	 * VALIDATEPATH: Checks if file/directory exists
+	 * 
+	 * Input: String representing file path
+	 * Output: boolean (true on exists, false on not exists)
 	 */
 	public static boolean validatePath(String path) {
 		// Ensure valid services file exists

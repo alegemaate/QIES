@@ -6,9 +6,14 @@
  * 13/10/2018
  */
 
-
 public class InputHandler {
-    // Prompts user input and directs commands
+	
+    /* Prompts user input and directs commands
+     * Continually asks the user for a transaction until they decide to logout.
+     * 
+     * Input: none
+     * Output: none
+     */
 	public void runQIES() {
 		String input = "";
 		
@@ -52,6 +57,7 @@ public class InputHandler {
 		ScannerWrapper.close();
 	}
 	
+	//---------------------------------------------------------------------------------------------
 	
 	/*
 	 * Prompts the user to enter a command and returns their input 

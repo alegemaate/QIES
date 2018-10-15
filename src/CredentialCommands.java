@@ -31,7 +31,10 @@ public class CredentialCommands {
 			return false;
 		}
 		
+		// Success
 		loggedIn = true;
+		System.out.println("Successfully logged in as " + userType + ".");
+		
 		return true;
 	}
 	
@@ -43,7 +46,9 @@ public class CredentialCommands {
 			return false;
 		}
 		
+		// Success
 		loggedIn = false;
+		System.out.println("Successfully logged out.");
 		userType = "";
 		return true;
 	}

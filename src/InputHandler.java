@@ -6,6 +6,7 @@
  * 13/10/2018
  */
 
+
 public class InputHandler {
     // Prompts user input and directs commands
 	public void runQIES() {
@@ -47,13 +48,21 @@ public class InputHandler {
 			}
 		}
 		
-		// CLose scanner
+		// Close scanner
 		ScannerWrapper.close();
 	}
 	
-	// Ask for input
+	
+	/*
+	 * Prompts the user to enter a command and returns their input 
+	 * 		(Used in the runQIES() method to get user input)
+	 * 
+	 * Input: none
+	 * Output: String with user input
+	 */
 	public String promptUser() {
 		// Return filtered response
 		return ScannerWrapper.getInput("Enter Command");
-	}
-}
+	} // end promptUser method
+	
+} // end InputHandler class

@@ -6,10 +6,14 @@
  * 13/10/2018
  */
 
-
 public class InputHandler {
 	
-    // Prompts user input and directs commands
+    /* RUNQIES: Prompts user input and directs commands
+     * Continually asks the user for a transaction until they decide to logout.
+     * 
+     * Input: none
+     * Output: none
+     */
 	public void runQIES() {
 		String input = "";
 		
@@ -46,16 +50,17 @@ public class InputHandler {
 				default:
 					System.out.println(input + " is not a valid command.");
 					break;
-			}
-		}
+			} // end switch
+		} // end while
 		
 		// Close scanner
 		ScannerWrapper.close();
-	}
+	} // end runQIES method
 	
+	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Prompts the user to enter a command and returns their input 
+	 * PROMPTUSER: Prompts the user to enter a command and returns their input 
 	 * 		(Used in the runQIES() method to get user input)
 	 * 
 	 * Input: none

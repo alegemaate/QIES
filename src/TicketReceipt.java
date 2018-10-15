@@ -10,18 +10,13 @@ public class TicketReceipt {
 	int serviceNumber;
 	int numSold;
 	
-<<<<<<< HEAD
-	// constructor for the TicketReceipt object
-	public TicketReceipt(int serviceNumber, int numSold) {
-=======
 	/*
 	 * TicketReceipt constructor.
 	 * 
 	 * Parameters: int for service number, int for number of tickets sold for 
 	 * 			   that service
 	 */
-	public void TicketReceipt(int serviceNumber, int numSold) {
->>>>>>> 243b33db703cf30e0d9c1d15abbae1b9fc6745a9
+	public TicketReceipt(int serviceNumber, int numSold) {
 		setServiceNum(serviceNumber);
 		setNumSold(numSold);
 	} // end TicketReceipt constructor

@@ -32,10 +32,8 @@ public class Log {
 		String s = null;
 		
 		for (int i = 0; i < lines.size(); i++) {
-			while (lines.get(i) != "EOS 0000 0 0000 ** 0") {
-				if (lines.get(i) != null) {
-					s += lines.get(i);
-				}
+			if (!lines.get(i).equals("")) {
+				s += lines.get(i);
 			}
 		}
 		return s;	
@@ -70,9 +68,4 @@ public class Log {
 			transactionSummaryFile.close();
 		}
 	} //end writeFile(fileName)
-	
-	public static void main(String args[]) {
-		
-		lines.get(0).toString();
-	}
 }

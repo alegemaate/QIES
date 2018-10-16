@@ -1,6 +1,9 @@
 /*
  * QIES entry point
- * Program starts here
+ * This is the QIES ticket purchasing program for CISC 327
+ * 	It is intended to imitate a system where users can sell tickets
+ * 	and create services
+ * 	Takes two files as parameters, a valid service file and
  * Spice Tests
  * 13/10/2018
  */
@@ -37,9 +40,8 @@ public class QIESBase {
 	 */
 	public static void main(String [] args) {
 		// Ensure we are receiving a input file and a directory for output
-		if (args.length != 2) {
-			System.out.println("You must provide a valid service file and a directory "
-					+ "to output the transaction summary file as command line arguments.");
+		if (args.length != 1) {
+			System.out.println("You must provide a valid service file as a command line argument.");
 			System.exit(1);
 		} // end if
 		
@@ -53,11 +55,12 @@ public class QIESBase {
 		} // end if/else
 		
 		// Validate tsf directory
-		if (!validatePath(args[1])) {
+		String tsfDirectory = "transactions";
+		if (!validatePath(tsfDirectory)) {
 			System.out.println("Directory '" + args[1] + "' does not exist");
 			System.exit(1);
 		} else {
-			Configuration.tsfPath = args[1];
+			Configuration.tsfPath = tsfDirectory;
 		} // end if/else
 
 		// Go to main case switch

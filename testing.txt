@@ -1,4 +1,0 @@
-mmddyy
-ddmmyyyy
-yyyymmdd
-yyyyddmm

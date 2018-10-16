@@ -3,8 +3,8 @@
  * This is the QIES ticket purchasing program for CISC 327
  * 	It is intended to imitate a system where users can sell tickets
  * 	and create services
- * 	Takes two files as parameters, a valid service file and
- * Spice Tests
+ * 	Takes one parameter in the command line. A valid service file.
+ * Spice Tests TEAM 13
  * 13/10/2018
  */
 

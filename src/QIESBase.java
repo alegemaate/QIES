@@ -2,8 +2,15 @@
  * QIES entry point
  * This is the QIES ticket purchasing program for CISC 327
  * 	It is intended to imitate a system where users can sell tickets
- * 	and create services
- * 	Takes one parameter in the command line. A valid service file.
+ * 		and create services
+ * 	Takes one parameter in the command line. A path to a 
+ *		valid service file.
+ *	Outputs transaction summary file to a subdirectory in the running
+ *		directory called 'transactions'
+ *	To run open the command line and navigate to the /bin/ directory
+ *		Run as follows
+ *			java -cp ../bin "QIESBase" "vsf.txt"
+ *		From the build directory
  * Spice Tests TEAM 13
  * 13/10/2018
  */
@@ -40,11 +47,17 @@ public class QIESBase {
 	 */
 	public static void main(String [] args) {
 		// Ensure we are receiving a input file and a directory for output
-		if (args.length != 1) {
+		if (args.length < 1) {
 			System.out.println("You must provide a valid service file as a command line argument.");
 			System.exit(1);
 		} // end if
 		
+		// Too many parameters
+		if (args.length > 1) {
+			System.out.println("Too many arguments. You must only provide the path to a valid services file.");
+			System.exit(1);
+		} // end if
+
 		// Validate vsf
 		if (!validatePath(args[0])) {
 			System.out.println("Valid service file '" + args[0] + "'  does not exist");
@@ -57,11 +70,16 @@ public class QIESBase {
 		// Validate tsf directory
 		String tsfDirectory = "transactions";
 		if (!validatePath(tsfDirectory)) {
-			System.out.println("Directory '" + args[1] + "' does not exist");
-			System.exit(1);
-		} else {
-			Configuration.tsfPath = tsfDirectory;
-		} // end if/else
+			System.out.println("Directory '" + tsfDirectory + "' does not exist.\nCreating....");
+			if (new File(tsfDirectory).mkdirs()) {
+				System.out.println("Directory '" + tsfDirectory + "' created");
+			}
+			else {
+				System.out.println("Error: Could not create directory '" + tsfDirectory + "'. Exiting.");
+				System.exit(1);
+			}
+		}
+		Configuration.tsfPath = tsfDirectory;
 
 		// Go to main case switch
 		input.runQIES();

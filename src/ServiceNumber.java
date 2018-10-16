@@ -21,7 +21,7 @@ public class ServiceNumber {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Returns service number as int
+	 * GETNUMBER: Returns service number as int
 	 * 
 	 * Input: none
 	 * Output: service number

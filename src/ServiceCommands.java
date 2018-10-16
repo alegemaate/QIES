@@ -13,11 +13,10 @@ public class ServiceCommands {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Prompts user for new service number/name/date
-	 * Ensures valid service number/name/date
-	 * Ensures unique service number/name/date
-	 * Calls Services.add with the unique service number
-	 * Adds new service to Log
+	 * CREATE SERVICE: Prompts user for new service number/name/date
+	 *                 Ensures valid service number/name/date
+	 *                 Ensures unique service number/name/date
+	 *                 Calls Services.add with the unique service number
 	 * 
 	 * Input: none
 	 * Output: int representing return status (0 if successful, -1 otherwise)
@@ -46,18 +45,31 @@ public class ServiceCommands {
 		int day = Integer.parseInt(ScannerWrapper.getInput("Enter day: "));
 		Date date = new Date(year, month, day);
 		
-		// Add service to Log
-		String service = Integer.toString(serviceNumber) + serviceName + date.toString();
-		Log.addLine(service);
+		/*
+		 * Add transaction to Log: CCC AAAA MMMM BBBB NNNNNN YYYYMMDD where:
+		 * 		a) CCC = "CRE" for create service
+		 * 		b) AAAA = serviceNumber
+		 * 		c) MMMM = 0 (ticket numbers is unused field)
+		 * 		d) BBBB = 00000 (destination service number is unused field)
+		 * 		e) NNNNNN = serviceName
+		 * 		f) YYYYMMDD = date
+		 */
+		String logEntry = "CRE" + " " // Create service
+						+ Integer.toString(serviceNumber) + " " // Service number
+						+ "0" + " " // Number of tickets (unused field)
+						+ "00000" + " " // Destination service number (unused field)
+						+ serviceName + " "// Service name
+						+ date.toString() + " "; // Service date
+		Log.addLine(logEntry);
 		return 0;
 	} // end createService method
 	
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Prompts user for existing service number
-	 * Ensures existing service number
-     * Calls Services.remove with the unique service number
+	 * DELETESERVICE: Prompts user for existing service number
+	 *                Ensures existing service number
+     *                Calls Services.remove with the unique service number
      * 
      * Input: none
 	 * Output: int representing return status (0 if successful, -1 otherwise)
@@ -75,8 +87,7 @@ public class ServiceCommands {
 		int serviceNumber = Integer.parseInt(serviceNumString);
 		
 		// Ensure that service number exists and isn't already deleted
-		ServiceNumber serviceNumObj = new ServiceNumber(serviceNumber);
-		if (Services.serviceList.contains(serviceNumObj) == false) { 
+		if (Services.find(serviceNumber) == false) { 
 			System.out.println("Service number does not exist; cannot delete.");
 			return -1;
 		} // end if
@@ -87,11 +98,22 @@ public class ServiceCommands {
 		// Ask for service name
 		String serviceName = ScannerWrapper.getInput("Enter service name: ");
 		
-		// Delete service from log
-		// TODO: How do we find a service in the Log without knowing the date here?
-		// Help
-		String service = Integer.toString(serviceNumber) + serviceName;
-		Log.deleteLine(service);
+		/*
+		 * Add transaction to Log: CCC AAAA MMMM BBBB NNNNNN YYYYMMDD where:
+		 * 		a) CCC = "DEL" for create service
+		 * 		b) AAAA = serviceNumber
+		 * 		c) MMMM = 0 (ticket numbers is unused field)
+		 * 		d) BBBB = 00000 (destination service number is unused field)
+		 * 		e) NNNNNN = serviceName
+		 * 		f) YYYYMMDD = 0 (date is unused field)
+		 */
+		String logEntry = "DEL" + " "
+		                + Integer.toString(serviceNumber) + " "
+		                + "0" + " "
+		                + "00000" + " "
+				        + serviceName + " "
+				        + "0";
+		Log.addLine(logEntry);
 		
 		// Return successfully
 		return 0;
@@ -100,7 +122,7 @@ public class ServiceCommands {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Ensures that service number is valid.
+	 * VALIDATESERVICENUM: Ensures that service number is valid.
 	 * CONSTRAINTS:
 	 * 		a) Exactly 5 decimal digits
 	 * 		b) Must be unique
@@ -125,8 +147,7 @@ public class ServiceCommands {
 		
 		// Ensure that service number doesn't already exist
 		int serviceNumber = Integer.parseInt(serviceNum);
-		ServiceNumber serviceNumObj = new ServiceNumber(serviceNumber);
-		if (Services.serviceList.contains(serviceNumObj) == true) { 
+		if (Services.find(serviceNumber) == true) { 
 			System.out.println("Service number already exists; cannot create new service.");
 			return -1;
 		} // end if
@@ -137,7 +158,7 @@ public class ServiceCommands {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Ensures that service name is valid.
+	 * VALIDATESERVICENAME: Ensures that service name is valid.
 	 * CONSTRAINTS: Must be between 3-39 alphanumeric characters, not beginning or ending
 	 * with a space.
 	 * 

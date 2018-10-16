@@ -10,12 +10,12 @@ import java.util.Scanner;
  * 13/10/2018
  */
 public class Services {
-	public static ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
+	private static ArrayList<ServiceNumber> serviceList = new ArrayList<ServiceNumber>();
 	
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Reads the input file and populates the list with valid services.
+	 * READSERVICES: Reads the input file and populates the list with valid services.
 	 * 
 	 * Input: String containing file path
 	 * Output: none
@@ -42,7 +42,7 @@ public class Services {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Adds service to the list of Services
+	 * ADD: Adds service to the list of Services
 	 * 
 	 * Input: int representing service number
 	 * Output: none
@@ -55,7 +55,7 @@ public class Services {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
-	 * Removes a service from the list of services
+	 * REMOVE: Removes a service from the list of services
 	 * 
 	 * Input: int representing service number
 	 * Output: none
@@ -64,5 +64,23 @@ public class Services {
 		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);
 		serviceList.remove(serviceNum);
 	} // end remove method
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * Finds a service in a list of services
+	 * 
+	 * Input: int representing service number
+	 * Output: true or false if exists
+	 */
+	public static boolean find(int serviceNumber) {
+		for (int i = 0; i < serviceList.size(); i++) {
+			if (serviceList.get(i).getNumber() == serviceNumber) {
+				return true;
+			}
+		}
+		return false;
+	} // end find method
+
 
 } // end Services class

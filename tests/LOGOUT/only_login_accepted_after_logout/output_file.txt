@@ -1,1 +1,1 @@
-transaction summary file
+EOS 0000 0 0000 ** 0

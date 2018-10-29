@@ -1,2 +1,0 @@
-Session type:
-Invalid session type: empty string

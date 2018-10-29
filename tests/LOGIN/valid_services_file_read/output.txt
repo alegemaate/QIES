@@ -1,2 +1,0 @@
-Session type:
-Enter a transaction:

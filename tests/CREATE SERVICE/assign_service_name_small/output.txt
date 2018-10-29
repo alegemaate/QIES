@@ -1,9 +1,0 @@
-Session type:
-Enter a transaction:
-Enter a new service number:
-Enter a date:
-Enter a service name:
-Name too short. Must be at least 3 characters.
-Enter a service name:
-Service '12345' Created.
-Enter a transaction:

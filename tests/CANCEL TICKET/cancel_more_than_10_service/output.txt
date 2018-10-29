@@ -1,6 +1,0 @@
-Session type:
-Enter a transaction:
-Enter a service number:
-Enter a destination service number:
-Enter number of tickets to cancel:
-Cannot cancel more than 10 tickets per service during agent session

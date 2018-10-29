@@ -1,2 +1,0 @@
-Session type:
-Invalid session type: '8838'

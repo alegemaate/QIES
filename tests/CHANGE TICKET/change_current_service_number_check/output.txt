@@ -1,3 +1,0 @@
-Session type:
-enter a transaction: 
-current Enter a service number:

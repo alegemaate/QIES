@@ -1,3 +1,0 @@
-Session type:
-You must be logged in as planner to create a service
-Enter a transaction:

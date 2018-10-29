@@ -1,0 +1,8 @@
+login
+planner
+createservice
+12345
+30001004
+20181004
+NEWSERVICE
+logout

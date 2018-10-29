@@ -1,0 +1,5 @@
+Session type:
+Enter a transaction:
+Enter a service number:
+Enter a service name:
+Service deleted

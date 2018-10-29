@@ -1,0 +1,8 @@
+login
+planner
+createservice
+12345
+20181004
+abcdefghijklmnopqrstuvwxyz1234567890ABCD
+NEWSERVICE
+logout

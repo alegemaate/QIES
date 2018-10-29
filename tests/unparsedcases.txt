@@ -1,0 +1,1415 @@
+Test,Test Name,Purpose,Screen Input/Output,Input,Input Files,Output File,Output
+LOGIN,,,,,,,
+start front end session,start_front_end_session,check that front end session has begun,,login,,,Session type:
+login session agent,login_session_agent,check that agent login is accepted,"login
+Session type:
+agent
+Enter a transaction:","login
+agent
+",,,"Session type:
+Enter a transaction:
+"
+login session planner,login_session_planner,check that planner login is accepted,"login
+Session type:
+planner
+Enter a transaction:","login
+planner
+",,,"Session type:
+Enter a transaction:
+"
+invalid session type empty ,invalid_session_type_empty,check if input is empty,login,login,,,"Session type:
+Invalid session type: empty string"
+invalid session type numeric,invalid_session_type_numeric,ensure that only planner and agent are accepted as valid sessions,"login
+Session type:
+8838
+Invalid session type: '8838'","login
+8838
+",valid service file,,"Session type:
+Invalid session type: '8838'"
+invalid session type string,invalid_session_type_string,ensure that only planner and agent are accepted as valid sessions,"login
+Session type:
+spice
+Invalid session type: 'spice'","login
+spice",valid service file,,"Session type:
+Invalid session type: 'spice'"
+login while logged in planner,login_twice_planner,ensure that no subsequent login should be accepted after a login until after a logout,"login
+Session type:
+planner
+Enter a transaction:
+login
+You cannot login again, session in progress","login
+planner
+login
+logout",valid service file,,"Session type:
+Enter a transaction:
+You can not login again, session in progress"
+login while logged in agent,login_twice_agent,ensure that no subsequent login should be accepted after a login until after a logout,"login
+Session type:
+agent
+Enter a transaction:
+login
+You cannot login again, session in progress","login
+agent
+login
+logout",valid service file,,"Session type:
+Enter a transaction:
+You can not login again, session in progress"
+Valid Services File read after login,valid_services_file_read,ensure that the Valid Services File was read in after login,"login
+Session type:
+agent
+Enter a transaction:
+","login
+agent
+",valid service file,,"Session type:
+Enter a transaction:"
+login is first command,login_first,ensure that no other inputs are accepted before the login command,"sellticket
+You must login before entering any other transactions
+",sellticket,,,You must login before entering any other transactions
+agent cannot select deleteservice,agent_deleteservice,ensure that agent cannot select deleteservice,"login
+Session type:
+agent
+Enter a transaction:
+deleteservice
+Agent cannot select deleteservice","login
+agent
+deleteservice",valid service file,,"Session type:
+Enter a transaction:
+Agent cannot select deleteservice transaction"
+agent cannot select createservice,agent_createservice,ensure that agent cannot select createservice,"login
+Session type:
+agent
+Enter a transaction:
+createservice
+Agent cannot select createservice","login
+agent
+createservice",valid service file,,"Session type:
+Enter a transaction:
+Agent cannot select createservice transaction"
+LOGOUT,,,,,,,
+logout while not logged in,logout_not_logged_in,ensure session started before logging out,"logout
+Could not logout, session not in progress",logout,,,"Could not logout, session not in progress"
+transaction summary file,transaction_summary_file,ensure transaction summary file is written,"login
+Session type:
+Agent
+Enter a transaction:
+sellticket
+Enter a transaction:
+logout
+Transaction summary:","login
+agent
+sellticket
+logout",valid service file,transaction summary file,Transaction summary
+login accepted after logout,login_accepted_after_logout,ensure that login is accepted after logout,"login
+Session type:
+Agent
+Enter a transaction: 
+sellticket
+Enter a transaction: 
+logout
+login
+Session type:","login
+agent
+sellticket
+logout
+login",valid service file,transaction summary file,Transaction summary
+commands other than login are not accepted after logout,only_login_accepted_after_logout,ensure that commands that are not login are not accepted after logout,"login
+Session type:
+Agent
+Enter a transaction: 
+sellticket
+Enter a transaction: 
+logout
+sellticket
+Invalid transaction: session not in progress","login
+agent
+sellticket
+logout
+sellticket",valid service file,transaction summary file,Invalid transaction: session not in progress
+,,,,,,,
+CREATE SERVICE,,,,,,,
+create a valid service as planner,create_new_service_valid,ensure new service can be created,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+create service as agent,create_service_agent,ensure that the system dissallows agents from creating services,"login
+Session type:
+agent
+Enter a transaction:
+createservice
+You must be logged in as planner to create a service
+logout","login
+agent
+createservice
+logout",valid service file,empty transaction summary file,"Session type:
+You must be logged in as planner to create a service
+Enter a transaction:"
+assign service number > 5 digits,assign_service_number_small,"ensure that the system dissallows service numbers smaller than 5 digits, and then prompts for a re-entry","login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+1234
+Enter a service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+1234
+12345
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Service number too short
+Enter a service number:
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Ebter a transaction:"
+assign service number < 5 digits,assign_service_number_large,"ensure that the system dissallows service numbers larger than 5 digits, and then prompts for a re-entry","login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+123456
+Service number too long. 
+Enter a new service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+123456
+12345
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Service number too long
+Enter a new service number:
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Ebter a transaction:"
+assign service number non digit,assign_service_number_non_digit,"ensure that the system dissallows service numbers with anything other than numbers, and then prompts for a re-entry","login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+abc
+Service number must be numeric
+Enter a new service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+abc
+12345
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Service number must be numeric
+Enter a new service number:
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service number duplicate,assign_service_number_duplicate,"ensure that the system dissallows duplicate service numbers, and then prompts for a re-entry","login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+11111
+Service number '11111' already exists
+Enter a new service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+11111
+12345
+20181004
+NEWSERVICE
+logout",valid service file which contains service number 11111,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Service number '11111' already exists
+Enter a new service number:
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service number starting with 0,assign_service_number_0_start,ensure service number does not start with 0,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+01234
+Service number can not being in 0
+Enter a new service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+01234
+12345
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Service number can not begin in 0
+Enter a new service number:
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service date INCORRECT format,assign_service_date_invalid_format,ensure date follows specific YYYYMMDD format,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+2018-10-04
+Date is not in a valid format. Must be (YYYYMMDD)
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+2018-10-04
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Date is not in a valid format. Must be (YYYYMMDD)
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service number below YYYY range,assign_service_date_below_y_range,ensure year is above 1979,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+19791004
+20181004
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+19791004
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Year entered is below range.
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service number above YYYY range,assign_service_date_above_y_range,ensure year is below 3000,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+30001004
+Year entered is above range.
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+30001004
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Year entered is above range.
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service number below MM range,assign_service_date_below_m_range,ensure month is above 00,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+20180004
+Month entered is too low.
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+20180004
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Month entered is too low.
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service number above MM range,assign_service_date_above_m_range,ensure month is below 13,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+20181304
+Month entered is too high.
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout
+","login
+planner
+createservice
+12345
+20181304
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Month entered is too high.
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service number below DD range,assign_service_date_below_d_range,ensure day is above 00,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+20181000
+20181004
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+20181000
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Day entered is too low.
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service number above DD range,assign_service_date_above_d_range,ensure day is below 32,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+201810932
+Day entered is too high.
+Enter a date:
+20181004
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+201810932
+20181004
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Day entered is too high.
+Enter a date:
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service name < 3 characters,assign_service_name_small,ensure service name is at least 3 characters,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+ab
+Name too short. Must be at least 3 characters.
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+20181004
+ab
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Enter a service name:
+Name too short. Must be at least 3 characters.
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service name > 39 characters,assign_service_name_large,ensure service name is no more than 39 characters,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+abcdefghijklmnopqrstuvwxyz1234567890ABCD
+Name too long. Must be at least 3 characters.
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+20181004
+abcdefghijklmnopqrstuvwxyz1234567890ABCD
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Enter a service name:
+Name too long. Must be less than 39 characters.
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service name beginning space,assign_service_name_begin_space,ensure system disallows service names beginning in spaces,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+ abcd
+Service name can not being in a space
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+20181004
+ abcd
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Enter a service name:
+Service name can not begin in a space.
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+assign service name end space,assign_service_name_end_space,ensure system disallows service names ending in spaces,"login
+Session type:
+planner
+Enter a transaction:
+createservice
+Enter a new service number:
+12345
+Enter a date:
+20181004
+Enter a service name:
+abcd 
+Service name can not end in a space
+Enter a service name:
+NEWSERVICE
+Service '12345' Created.
+Enter a transaction:
+logout","login
+planner
+createservice
+12345
+20181004
+abcd 
+NEWSERVICE
+logout",valid service file which does not contain service numbered 12345,"CRE 00000 0000 12345 NEWSERVICE 20181004
+","Session type:
+Enter a transaction:
+Enter a new service number:
+Enter a date:
+Enter a service name:
+Service name can not end in a space.
+Enter a service name:
+Service '12345' Created.
+Enter a transaction:"
+DELETE SERVICE,,,,,,,
+ask for service number,get_service_number,check that program asks for service number,"login
+Session type:
+planner
+Enter a transaction:
+deleteservice
+Enter a service number:","login
+planner
+deleteservice ","1111",none,"Session type:
+Enter a transaction:
+Enter a service number:"
+ask for service name,get_service_name,check that program asks for service name,"login
+Session type:
+planner
+Enter a transaction:
+deleteservice
+Enter a service number:
+1111
+Enter a service name:","login
+planner
+deleteservice
+1111","1111",none,"Session type:
+Enter a transaction:
+Enter a service number:
+Enter a service name:"
+valid service number,valid_service_number,check that given service number is valid,"login
+Session type:
+planner
+Enter a transaction:
+deleteservice
+Enter a service number:
+1111
+Enter a service name:
+hello
+Service deleted
+logout","login
+planner
+deleteservice
+1111
+hello
+logout","1111","1111 hello 20181004","Session type:
+Enter a transaction:
+Enter a service number:
+Enter a service name:
+Service deleted"
+invalid service number,invalid_service_number,ensure that invalid service number cannot be deleted,"login
+Session type:
+planner
+Enter a transaction:
+deleteservice
+Enter a service number:
+1133
+Invalid service number
+logout","login
+planner
+deleteservice
+1113
+logout","1111",empty transaction summary file,"Session type:
+Enter a transaction:
+Enter a service number:
+Invalid service number"
+delete service in agent session,deleteservice_agent,ensure that service can only be deleted in planner session,"login
+Session type:
+agent
+Enter a transaction:
+deleteservice
+You do not have the authority to delete a service
+logout","login
+agent
+deleteservice
+logout","1111",empty transaction summary file,"Session type:
+Enter a transaction:
+You do not have the authority to delete a service"
+transaction on deleted service,cancelticket_deleted_service,ensure that no further transactions can be accepted on a deleted service,"login
+Session type:
+planner
+Enter a transaction:
+deleteservice
+Enter a service number:
+1111
+Service deleted. Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Cannot perform transactions on deleted service
+logout","login
+planner
+cancelticket
+1111
+logout","1111",empty transaction summary file,"Session type:
+Enter a transaction:
+Enter a service number:
+You cannot perform any transactions on a deleted service"
+SELL TICKET,,,,,,,
+ask for service number,sell_service_number_check,ensure the program asks for the service number,"login
+Session type:
+agent
+Enter a transaction:
+sell ticket
+Enter a service number:
+logout","login
+agent
+sell ticket
+logout",empty service file,empty transaction summary,"Session type:
+enter a transaction:
+Enter a service number:"
+ask for ticket number,sell_ticket_number_check,ensure the program asks for the ticket number,"login
+Session type:
+agent
+Enter a transaction:
+sell ticket
+Enter a service number:
+1111
+Enter number of tickets sold:
+logout","login
+agent
+sell ticket
+1111
+logout","1111",empty transaction summary,"Session type:
+enter a transaction:
+Enter a service number:
+Number of tickets sold:"
+sell one ticket for existing service,sell_existing_service_one,ensure the program can sell one ticket for an existing service,"login 
+Session type:
+agent 
+Enter a transaction: 
+sell ticket 
+Enter a service number:
+1111 
+Enter number of tickets sold: 
+1 
+Enter a transaction: 
+logout","login
+agent
+sell ticket
+1111
+1
+logout","1111","SEL 1111 0001 0000 R00001 20181004","Session type:
+enter a transaction:
+Enter a service number:
+Number of tickets sold:
+enter a transaction:"
+"sell more than one ticket for 
+existing service",sell_existing_service_two,ensure the program can sell more than one ticket for an existing service,"login
+Session type:
+agent
+Enter a transaction:
+sell ticket
+Enter a service number:
+1111
+Enter number of tickets sold:
+2
+Enter a transaction:
+logout","login
+agent
+sell ticket
+1111
+2
+logout","1111","SEL 1111 0002 0000 R00001 20181004","Session type:
+enter a transaction:
+Enter a service number:
+Number of tickets sold:
+enter a transaction:"
+can't enter an invalid service number,sell_invalid_service_number,ensure the program checks that the service number entered is valid,"login
+Session type:
+agent
+Enter a transaction:
+sell ticket
+Enter a service number:
+2222
+Invalid service number: 2222
+logout","login
+agent
+sell ticket
+2222
+logout","1111",empty transaction summary,"Session type:
+enter a transaction:
+Enter a service number:
+invalid service number"
+can't enter an invalid number of tickets,sell_invalid_ticket_number,ensure the program checks that the number of tickets entered is valid,"login
+Session type:
+agent
+Enter a transaction:
+sell ticket
+Enter a service number:
+1111
+Enter number of tickets sold:
+0
+Invalid ticket number: 0
+logout","login
+agent
+sell ticket
+1111
+0
+logout","1111",empty transaction summary,"Session type:
+Enter a transaction:
+Enter a service number:
+Number of tickets sold:
+invalid ticket number"
+CANCEL TICKET,,,,,,,
+valid service number,valid_service_number,check that service number is valid,"login
+Session type:
+agent
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0000
+Enter number of tickets to cancel:
+1
+Ticket(s) cancelled
+logout","login
+agent
+cancelticket
+1111
+0000
+1
+logout","1111, 0000","CAN 1111 0001 0000 R000001 20181004","Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Ticket(s) cancelled"
+invalid service number,invalid_service_number,ensure that invalid service number cannot be cancelled,"login
+Session type:
+agent
+Enter a transaction:
+cancelticket
+Enter a service number:
+2121
+Invalid service number: 2121
+logout","login
+agent
+cancelticket
+2121
+logout","1111, 0000",empty transaction summary file,"Session type:
+Enter a transaction:
+Enter a service number:
+Invalid service number"
+valid destination service number,valid_destination_number,ensure that destination service number is valid,"login
+Session type:
+agent
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0000
+Enter number of tickets to cancel:
+1
+Ticket(s) cancelled
+logout","login
+agent
+cancelticket
+1111
+0000
+1
+logout","1111, 0000","CAN 1111 0001 0000 R000001 20181004","Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Ticket(s) cancelled"
+invalid destination service number,invalid_destination_number,ensure that invalid destination service number cannot be cancelled,"login
+Session type:
+agent
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0505
+Invalid service number: 0505
+logout","login
+agent
+cancelticket
+1111
+0505
+logout","1111, 0000",empty transaction summary file,"Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Invalid service number"
+cancel <=10 tickets for service,cancel_10_tickets_service,ensure that agent can cancel <=10 tickets per service,"login
+Session type:
+agent
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0000
+Enter number of tickets to cancel:
+8
+Ticket(s) cancelled
+logout","login
+agent
+cancelticket
+1111
+0000
+8
+logout","1111, 0000","CAN 1111 0008 0000 R000001 20181004","Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Ticket(s) cancelled"
+cancel >10 tickets for service,cancel_more_than_10_service,ensure that agent cannot cancel >10 tickets per service,"login
+Session type:
+agent
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0000
+Enter number of tickets to cancel:
+11
+Cannot cancel more than 10 tickets per service during agent session
+logout","login
+agent
+cancelticket
+1111
+0000
+11
+logout","1111, 0000",empty transaction summary file,"Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Cannot cancel more than 10 tickets per service during agent session"
+cancel <=20 tickets for one session,cancel_20_tickets_session,ensure that agent can cancel <=20 tickets per session,"login
+Session type:
+agent
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0000
+Enter number of tickets to cancel:
+8
+Ticket(s) cancelled
+Enter a transaction:
+cancelticket
+Enter a service number:
+1112
+Enter a destination service number:
+0001
+Enter number of tickets to cancel:
+5
+Ticket(s) cancelled
+logout","login
+agent
+cancelticket
+1111
+0000
+8
+cancelticket
+1112
+0001
+5
+logout","1111, 1112, 0000, 0001","CAN 1111 0008 0000 R000001 20181004
+CAN 1112 0005 0001 R000001 20181004","Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Ticket(s) cancelled
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Ticket(s) cancelled"
+cancel >20 tickets for one session,cancel_more_than_20_session,ensure that agent cannot cancel >20 tickets per session,"login
+Session type:
+agent
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0000
+Enter number of tickets to cancel:
+10
+Ticket(s) cancelled
+Enter a transaction:
+cancelticket
+Enter a service number:
+1112
+Enter a destination service number:
+0001
+Enter number of tickets to cancel:
+9
+Ticket(s) cancelled
+Enter a transaction:
+cancelticket
+Enter a service number:
+1113
+Enter a destination service number:
+0002
+Enter number of tickets to cancel:
+5
+Cannot cancel more than 20 tickets per agent session
+logout","login
+agent
+cancelticket
+1111
+0000
+10
+cancelticket
+1112
+0001
+9
+cancelticket
+1113
+0002
+5
+logout","1111, 0000
+1112, 0001
+1113, 0002",empty transaction summary file,"Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Ticket(s) cancelled
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Ticket(s) cancelled
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Cannot cancel more than 20 tickets per agent session"
+cancel tickets as planner,cancel_tickets_planner,ensure that planner can cancel unlimited tickets,"login
+Session type:
+planner
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0000
+Enter number of tickets to cancel:
+35
+Ticket(s) cancelled
+logout","login
+planner
+cancelticket
+1111
+0000
+35
+logout","1111, 0000","CAN 1111 0035 0000 R000001 20181004","Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Ticket(s) cancelled"
+cancel negative tickets as agent,cancel_negative_tickets_agent,ensure that agent cannot cancel a negative number of tickets,"login
+Session type:
+agent
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0000
+Enter number of tickets to cancel:
+-3
+Cannot cancel negative tickets
+logout","login
+agent
+cancelticket
+1111
+0000
+-3
+logout","1111, 0000",empty transaction summary file,"Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Cannot cancel negative tickets"
+cancel negative tickets as planner,cancel_negative_tickets_planner,ensure that planner cannot cancel a negative number of tickets,"login
+Session type:
+planner
+Enter a transaction:
+cancelticket
+Enter a service number:
+1111
+Enter a destination service number:
+0000
+Enter number of tickets to cancel:
+-5
+Cannot cancel negative tickets
+logout","login
+planner
+cancelticket
+1111
+0000
+-5
+logout","1111, 0000",empty transaction summary file,"Session type:
+Enter a transaction:
+Enter a service number:
+Enter a destination service number:
+Enter number of tickets to cancel:
+Cannot cancel negative tickets"
+CHANGE TICKET,,,,,,,
+ask for the current service number,change_current_service_number_check,ensure the program asks for the current service number,"login 
+Session type:
+agent 
+Enter a transaction: 
+change ticket
+Enter current service number:
+logout","login 
+agent 
+change ticket
+logout",empty service file,empty transaction summary file,"Session type:
+enter a transaction: 
+current Enter a service number:"
+ask for the new service number,change_new_service_number_check,ensure the program asks for the new sercive number,"login
+Session type:
+agent
+Enter a transaction:
+change ticket
+Enter current service number:
+1111
+Enter new service number:
+logout","login
+agent
+change ticket
+1111
+logout","1111",empty transaction summary file,"Session type:
+enter a transaction:
+current Enter a service number:
+new Enter a service number:"
+"ask for the number of tickets being 
+transfered",change_ticket_number_check,ensure the program asks for the ticket number,"login
+Session type:
+agent
+Enter a transaction:
+change ticket
+Enter current service number:
+1111
+Enter new service number:
+2222
+Enter number of tickets to change:
+logout","login
+agent
+change ticket
+1111
+2222
+logout","1111
+2222",empty transaction summary file,"Session type:
+enter a transaction:
+current Enter a service number:
+new Enter a service number:
+Enter number of tickets to change:"
+"change ticket from one service to another 
+in agent mode",change_valid_to_valid_agent,ensure the program can change a ticket from one valid service to another in agent mode,"login
+Session type:
+agent
+Enter a transaction:
+change ticket
+Enter current service number:
+1111
+Enter new service number:
+2222
+Enter number of tickets to change:
+1
+Enter a transaction:
+logout","login
+agent
+change ticket
+1111
+2222
+1
+logout","1111
+2222","CHG 1111 0001 2222 R00001 20181004","Session type:
+enter a transaction:
+current Enter a service number:
+new Enter a service number:
+Enter number of tickets to change:
+enter a transaction:"
+"change ticket from one service to another 
+in planner mode",change_valid_to_valid_planner,"ensure the the program can change a ticket from one valid service to another in planner 
+mode","login
+Session type:
+planner
+Enter a transaction:
+change ticket
+Enter current service number:
+1111
+Enter new service number:
+2222
+Enter number of tickets to change:
+1
+Enter a transaction:
+logout","login
+planner
+change ticket
+1111
+2222
+1
+logout","1111
+2222","CHG 1111 0001 2222 R00001 20181004","Session type:
+enter a transaction:
+current Enter a service number:
+new Enter a service number:
+Enter number of tickets to change:
+enter a transaction:"
+invalid current service number,change_invalid_current_service_number,ensure the program doesn't accept an invalid current service number,"login
+Session type:
+agent
+Enter a transaction:
+change ticket
+Enter current service number:
+0
+Invalid service number: 0
+logout","login
+agent
+change ticket
+0
+logout","1111",empty transaction summary file,"Session type:
+enter a transaction:
+current Enter a service number:
+invalid service number"
+invalid new service number,change_invalid_new_service_number,ensure the program doesn't accept an invalid new service number,"login
+Session type:
+agent
+Enter a transaction:
+change ticket
+Enter current service number:
+1111
+Enter new service number:
+0
+Invalid service number: 0
+logout","login
+agent
+change ticket
+1111
+0
+logout","1111
+2222",empty transaction summary file,"Session type:
+enter a transaction:
+current Enter a service number:
+new Enter a service number:
+invalid service number"
+invalid ticket number (zero entered),change_invalid_ticket_number_zero,ensure the program doesn't accept a ticket number <1,"login
+Session type:
+agent
+Enter a transaction:
+change ticket
+Enter current service number:
+1111
+Enter new service number:
+2222
+Enter number of tickets to change:
+0
+Invalid ticket number: 0
+logout","login
+agent
+change ticket
+1111
+2222
+0
+logout","1111
+2222",empty transaction summary file,"Session type:
+enter a transaction:
+current Enter a service number:
+new Enter a service number:
+Enter number of tickets to change:
+invalid ticket number"
+"invalid ticket number 
+(number >20 in agent mode)",change_agent_ticket_limit,ensure no more than 20 tickets can be changed from one service to another in agent mode,"login
+Session type:
+agent
+Enter a transaction:
+change ticket
+Enter current service number:
+1111
+Enter new service number:
+2222
+Enter number of tickets to change:
+21
+Invalid ticket number (can't change >20 tickets in agent mode): 21
+logout","login
+agent
+change ticket
+1111
+2222
+21
+logout","1111
+2222",empty transaction summary file,"Session type:
+enter a transaction
+current Enter a service number:
+new Enter a service number:
+Enter number of tickets to change:
+invalid ticket number (can't change >20 tickets in agent mode)"
+change >20 tickets in planner mode,change_unlimited_planner,"ensure that more than 20 tickets can be changed from one service to another in planner 
+mode","login
+Session type:
+planner
+Enter a transaction:
+change ticket
+Enter current service number:
+1111
+Enter new service number:
+2222
+Enter number of tickets to change:
+21
+Enter a transaction:
+logout","login
+planner
+change ticket
+1111
+2222
+21
+logout","1111
+2222","CHG 1111 0021 2222 R00001 20181004","Session type:
+enter a transaction:
+current Enter a service number:
+new Enter a service number:
+Enter number of tickets to change:
+enter a transaction:"

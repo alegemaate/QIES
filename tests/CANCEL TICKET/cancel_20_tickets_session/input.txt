@@ -1,0 +1,11 @@
+login
+agent
+cancelticket
+1111
+0000
+8
+cancelticket
+1112
+0001
+5
+logout

@@ -1,0 +1,6 @@
+Session type:
+enter a transaction:
+current Enter a service number:
+new Enter a service number:
+Enter number of tickets to change:
+invalid ticket number

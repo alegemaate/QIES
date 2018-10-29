@@ -1,0 +1,3 @@
+Session type:
+Enter a transaction:
+Agent cannot select deleteservice transaction

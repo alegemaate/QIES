@@ -1,1 +1,1 @@
-empty transaction summary
+EOS 0000 0 0000 ** 0

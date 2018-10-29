@@ -1,5 +1,0 @@
-Session type:
-enter a transaction:
-current Enter a service number:
-new Enter a service number:
-invalid service number

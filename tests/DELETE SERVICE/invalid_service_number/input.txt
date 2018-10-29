@@ -1,5 +1,0 @@
-login
-planner
-deleteservice
-1113
-logout

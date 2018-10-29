@@ -1,4 +1,0 @@
-login 
-agent 
-change ticket
-logout

@@ -1,9 +1,0 @@
-Session type:
-Enter a transaction:
-Enter a new service number:
-Enter a date:
-Month entered is too high.
-Enter a date:
-Enter a service name:
-Service '12345' Created.
-Enter a transaction:

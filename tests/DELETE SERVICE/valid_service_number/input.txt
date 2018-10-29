@@ -1,6 +1,0 @@
-login
-planner
-deleteservice
-1111
-hello
-logout

@@ -1,4 +1,0 @@
-Session type:
-Enter a transaction:
-Enter a service number:
-You cannot perform any transactions on a deleted service

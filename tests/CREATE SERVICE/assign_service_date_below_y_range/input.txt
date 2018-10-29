@@ -1,8 +1,0 @@
-login
-planner
-createservice
-12345
-19791004
-20181004
-NEWSERVICE
-logout

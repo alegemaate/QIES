@@ -1,0 +1,5 @@
+Session type:
+enter a transaction:
+Enter a service number:
+Number of tickets sold:
+enter a transaction:

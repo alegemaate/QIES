@@ -1,0 +1,5 @@
+Session type:
+Enter a transaction:
+Enter a service number:
+Number of tickets sold:
+invalid ticket number

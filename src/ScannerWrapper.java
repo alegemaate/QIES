@@ -10,27 +10,42 @@ public class ScannerWrapper {
 	// Scanner for user input
     public static Scanner scan = new Scanner(System.in);
 	
+  //---------------------------------------------------------------------------------------------
+    
     /*
-     * Ask the user for input with no prompt
-     * Return the user's input
+     * GETINPUT: Ask the user for input with no prompt.
+     * 
+     * Input: none
+     * Output: user input
      */
     public static String getInput() {
     		return getInput("");
-    }
+    } // end getInput method
+    
+  //---------------------------------------------------------------------------------------------
     
     /*
-     * Ask the user for input with a prompt
-     * Return the user's input
+     * GETINPUT: Ask the user for input with a prompt
+     * 
+     * Input: prompt for user input
+     * Output: user input
      */
     public static String getInput(String prompt) {
     	if (!prompt.isEmpty())
     		System.out.println(prompt);	
     		String userResponse = scan.next();
 		return userResponse.trim();
-    }
+    } // end getInput method
     
-    // Close scanner
+  //---------------------------------------------------------------------------------------------
+    
+    /*
+     * CLOSE: Close scanner.
+     * 
+     * Input: none
+     * Output: none
+     */
     public static void close() {
     		scan.close();
-    }
-}
+    } // end close method
+} // end ScannerWrapper method

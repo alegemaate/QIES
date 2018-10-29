@@ -7,19 +7,64 @@
 
 public class TicketReceipt {
 	
-	int serviceNumber;
-	int numSold;
+	private int serviceNumber;
+	private int quantity;
+	
+	/*
+	 * TicketReceipt constructor.
+	 * 
+	 * Parameters: int for service number, int for quantity of tickets for 
+	 * 			   that transaction
+	 */
+	public TicketReceipt(int serviceNumber, int quantity) {
+		setServiceNum(serviceNumber);
+		setNumSold(quantity);
+	} // end TicketReceipt constructor
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * SETSERVICENUM: Sets the service number.
+	 * 
+	 * Input: int representing service number
+	 * Output: none
+	 */
+	public void setServiceNum(int serviceNumber) {
+		this.serviceNumber = serviceNumber;
+	} // end setServiceNum method
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * SETNUMSOLD: Sets the number of tickets sold.
+	 * 
+	 * Input: int representing number of tickets sold
+	 * Output: none
+	 */
+	public void setNumSold(int quantity) {
+		this.quantity = quantity;
+	} // end setNumSold method
+	
+	//---------------------------------------------------------------------------------------------
 
-	//retrieve service number
+	/* GETSERVICENUM: Retrieves service number.
+	 * 
+	 * Input: none
+	 * Output: service number as int
+	 */
 	public int getServiceNum() {
 		return serviceNumber;
-	}
+	} // end getServiceNum method
 	
-	//retrieve number of tickets sold
+	//---------------------------------------------------------------------------------------------
+	
+	/* GETNUMSOLD: Retrieve number of tickets sold.
+	 * 
+	 * Input: none
+	 * Output: number of tickets sold as int
+	 */
 	public int getNumSold() {
-		return numSold;
-	}
-	
-	
+		return quantity;
+	} // end getNumSold method
 
 }

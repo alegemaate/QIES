@@ -9,12 +9,22 @@ public class ServiceNumber {
 	
 	int number;
 	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * ServiceNumber constructor.
+	 */
 	public ServiceNumber(int number) {
 		this.number = number;
 	} // end ServiceNumber constructor
 	
+	//---------------------------------------------------------------------------------------------
+	
 	/*
-	 * Returns int number
+	 * GETNUMBER: Returns service number as int
+	 * 
+	 * Input: none
+	 * Output: service number
 	 */
 	public int getNumber() {
 		return number;

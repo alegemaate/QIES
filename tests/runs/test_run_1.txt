@@ -452,3 +452,734 @@ FAILED
 
 
 
+===========================
+./CREATE_SERVICE/assign_service_date_above_y_range
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_date_below_d_range
+===========================
+
+FAILED
+1c1,3
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+> 
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_date_below_m_range
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_date_below_y_range
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_date_invalid_format
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_name_begin_space
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_name_end_space
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_name_large
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_name_small
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_number_0_start
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_number_duplicate
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_number_large
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_number_non_digit
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./CREATE_SERVICE/assign_service_number_small
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./CREATE_SERVICE/create_new_service_valid
+===========================
+
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> CRE 00000 0000 12345 NEWSERVICE 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./CREATE_SERVICE/create_service_agent
+===========================
+
+FAILED
+1c1
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./DELETE_SERVICE/cancelticket_deleted_service
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> empty transaction summary file
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./DELETE_SERVICE/deleteservice_agent
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Cannot delete a service during agent session.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+FAILED
+1c1
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./DELETE_SERVICE/get_service_name
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter an existing service number: 
+Enter service name: 
+Enter Command
+FAILED
+1c1
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./DELETE_SERVICE/get_service_number
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter an existing service number: 
+FAILED
+1c1
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./DELETE_SERVICE/invalid_service_number
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter an existing service number: 
+Service number does not exist; cannot delete.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+FAILED
+1c1
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./DELETE_SERVICE/valid_service_number
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter an existing service number: 
+Enter service name: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+FAILED
+1,2c1,2
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> 1111 hello 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./LOGIN/agent_createservice
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/agent_deleteservice
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/invalid_session_type_empty
+===========================
+
+Enter Command
+Enter user type
+Error: User type exit does not exist.
+Enter Command
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/invalid_session_type_numeric
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/invalid_session_type_string
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/login_first
+===========================
+
+Enter Command
+Enter a new service number: 
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/login_session_agent
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Force exiting...
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/login_session_planner
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Force exiting...
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/login_twice_agent
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/login_twice_planner
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/start_front_end_session
+===========================
+
+Enter Command
+Enter user type
+Error: User type exit does not exist.
+Enter Command
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGIN/valid_services_file_read
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+
+
+
+===========================
+./LOGOUT/login_accepted_after_logout
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./LOGOUT/logout_not_logged_in
+===========================
+
+Enter Command
+Error: You are not logged in.
+Enter Command
+Force exiting...
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./LOGOUT/only_login_accepted_after_logout
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./LOGOUT/transaction_summary_file
+===========================
+
+FAILED
+1,2c1
+< DEL 1111 0 00000 hello 0
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./SELL_TICKET/sell_existing_service_one
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+sell is not a valid command.
+Enter Command
+ticket is not a valid command.
+Enter Command
+1111 is not a valid command.
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> SEL 1111 0001 0000 R00001 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./SELL_TICKET/sell_existing_service_two
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+sell is not a valid command.
+Enter Command
+ticket is not a valid command.
+Enter Command
+1111 is not a valid command.
+Enter Command
+2 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+FAILED
+1c1,2
+< EOS 0000 0 0000 ** 0
+---
+> SEL 1111 0002 0000 R00001 20181004
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./SELL_TICKET/sell_invalid_service_number
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+sell is not a valid command.
+Enter Command
+ticket is not a valid command.
+Enter Command
+2222 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+FAILED
+1c1
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./SELL_TICKET/sell_invalid_ticket_number
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+sell is not a valid command.
+Enter Command
+ticket is not a valid command.
+Enter Command
+1111 is not a valid command.
+Enter Command
+0 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+FAILED
+1c1
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./SELL_TICKET/sell_service_number_check
+===========================
+
+FAILED
+1c1
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+
+===========================
+./SELL_TICKET/sell_ticket_number_check
+===========================
+
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+sell is not a valid command.
+Enter Command
+ticket is not a valid command.
+Enter Command
+1111 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+FAILED
+1c1
+< EOS 0000 0 0000 ** 0
+---
+> EOS 0000 0 0000 ** 0
+\ No newline at end of file
+
+
+

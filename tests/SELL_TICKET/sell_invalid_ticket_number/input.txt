@@ -1,6 +1,0 @@
-login
-agent
-sell ticket
-1111
-0
-logout

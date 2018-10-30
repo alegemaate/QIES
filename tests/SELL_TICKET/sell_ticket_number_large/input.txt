@@ -1,5 +1,7 @@
 login
 agent
 sellticket
-2222
+1111
+10001
+40
 logout

@@ -46,6 +46,7 @@ public class InputHandler {
 					break;
 				case "exit":
 					System.out.println("Force exiting...");
+					input = "exit";
 					break;
 				default:
 					System.out.println(input + " is not a valid command.");

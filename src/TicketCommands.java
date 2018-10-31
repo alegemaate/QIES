@@ -38,7 +38,7 @@ public class TicketCommands {
 		// Ensure that the number of tickets is valid
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
-		while (numTickets < 0) {
+		while (numTickets < 1) {
 			System.out.println("Error: Invalid ticket number");
 			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
 		} // end while
@@ -83,7 +83,7 @@ public class TicketCommands {
 		// Ensure that the number of tickets is valid
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
-		while (numTickets < 0) {
+		while (numTickets < 1) {
 			System.out.println("Error: Invalid ticket number");
 			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
 		} // end while
@@ -139,7 +139,7 @@ public class TicketCommands {
 		// Ensure that the number of tickets is valid
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
-		while (numTickets < 0) {
+		while (numTickets < 1) {
 			System.out.println("Error: Invalid ticket number");
 			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
 		} // end while

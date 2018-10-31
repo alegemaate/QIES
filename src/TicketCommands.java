@@ -1,7 +1,7 @@
 /*
  * TicketCommands
  * Completes ticket transactions including sellTicket, cancelTicket, and
- * 		changeTicket. Also holds the list of ticketReciepts as a record of
+ * 		changeTicket. Also holds the list of ticketreceipts as a record of
  * 		completed ticketTransactions.
  * Spice Tests
  * 13/10/2018
@@ -11,7 +11,7 @@ import java.util.*;
 
 public class TicketCommands {
 	
-	public static ArrayList<TicketReceipt> ticketReciepts = new ArrayList<>();
+	public static ArrayList<TicketReceipt> ticketreceipts = new ArrayList<>();
 	
 	/*
 	 * asks the user for a service number and number of tickets
@@ -26,10 +26,10 @@ public class TicketCommands {
 		int serviceNumber = Integer.parseInt(serviceNumString);
 		
 		// Ensure that service number exists
-		if (Services.find(serviceNumber) == false) { 
+		while (Services.find(serviceNumber) == false) { 
 			System.out.println("Error: Service number does not exist");
-			return -1;
-		} // end if
+			serviceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter service number: "));
+		} // end while
 		
 		// prompt the user for a number of tickets
 		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
@@ -38,15 +38,16 @@ public class TicketCommands {
 		// Ensure that the number of tickets is valid
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
-		if (!(numTickets >= 0)) {
+		while (!(numTickets >= 0)) {
 			System.out.println("Error: Invalid ticket number");
-		}
+			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+		} // end while
 		
-		// generating the ticket reciept for the transaction
-		TicketReceipt reciept = new TicketReceipt(serviceNumber, numTickets);
+		// generating the ticket receipt for the transaction
+		TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets);
 		
-		// adding the generated ticket reciept to the ticketReciepts array
-		ticketReciepts.add(reciept);
+		// adding the generated ticket receipt to the ticketreceipts array
+		ticketreceipts.add(receipt);
 		
 		// adding the ticket transaction to the log
 		Log.addLine("SEL " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
@@ -70,10 +71,10 @@ public class TicketCommands {
 		int serviceNumber = Integer.parseInt(serviceNumString);
 		
 		// Ensure that service number exists
-		if (Services.find(serviceNumber) == false) { 
+		while (Services.find(serviceNumber) == false) { 
 			System.out.println("Error: Service number does not exist");
-			return -1;
-		} // end if
+			serviceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter service number:"));
+		} // end while
 
 		// prompt the user for a number of tickets
 		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
@@ -82,16 +83,16 @@ public class TicketCommands {
 		// Ensure that the number of tickets is valid
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
-		if (!(numTickets >= 0)) {
+		while (!(numTickets >= 0)) {
 			System.out.println("Error: Invalid ticket number");
-			return -1;
-		}
+			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+		} // end while
 
-		// generating the ticket reciept for the transaction
-		TicketReceipt reciept = new TicketReceipt(serviceNumber, numTickets);
+		// generating the ticket receipt for the transaction
+		TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets);
 		
-		// adding the generated ticket reciept to the ticketReciepts array
-		ticketReciepts.add(reciept);
+		// adding the generated ticket receipt to the ticketreceipts array
+		ticketreceipts.add(receipt);
 		
 		// adding the ticket transaction to the log
 		Log.addLine("CAN " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
@@ -115,39 +116,39 @@ public class TicketCommands {
 		int sourceServiceNumber = Integer.parseInt(sourceServiceNumString);
 		
 		// Ensure that source service number exists
-		if (Services.find(sourceServiceNumber) == false) { 
+		while (Services.find(sourceServiceNumber) == false) { 
 			System.out.println("Error: Service number does not exist");
-			return -1;
-		} // end if
+			sourceServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a source service number: "));
+		} // end while
 
 		// prompt the user for a destination service number
 		String destServiceNumString = ScannerWrapper.getInput("Enter a destination service number: ");
 		int destServiceNumber = Integer.parseInt(destServiceNumString);
 		
 		// Ensure that destination service number exists
-		if (Services.find(destServiceNumber) == false) { 
+		while (Services.find(destServiceNumber) == false) { 
 			System.out.println("Error: Service number does not exist");
-			return -1;
-		} // end if
+			destServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a destination service number: "));
+		} // end while
 		
 
 		// prompt the user for a number of tickets
-		String numTicketsString = ScannerWrapper.getInput("Enter a new service number: ");
+		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
 		int numTickets = Integer.parseInt(numTicketsString);
 		
 		// Ensure that the number of tickets is valid
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
-		if (!(numTickets >= 0)) {
+		while (!(numTickets >= 0)) {
 			System.out.println("Error: Invalid ticket number");
-			return -1;
-		}
+			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+		} // end while
 
-		// generating the ticket reciept for the transaction
-		TicketReceipt reciept = new TicketReceipt(sourceServiceNumber, numTickets);
+		// generating the ticket receipt for the transaction
+		TicketReceipt receipt = new TicketReceipt(sourceServiceNumber, numTickets);
 		
-		// adding the generated ticket reciept to the ticketReciepts array
-		ticketReciepts.add(reciept);
+		// adding the generated ticket receipt to the ticketReceipts array
+		ticketreceipts.add(receipt);
 		
 		// adding the ticket transaction to the log
 		Log.addLine("CHG " + sourceServiceNumString + " " + numTicketsString + " " + destServiceNumString + " **** 0");

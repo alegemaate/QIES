@@ -33,8 +33,32 @@ public class ScannerWrapper {
     public static String getInput(String prompt) {
     	if (!prompt.isEmpty())
     		System.out.println(prompt);	
-    		String userResponse = scan.next();
+    	
+		String userResponse = scan.next();
 		return userResponse.trim();
+    } // end getInput method
+    
+//---------------------------------------------------------------------------------------------
+    
+    /*
+     * GETINTINPUT: Ask the user for input with a prompt
+     * 
+     * Input: prompt for user input
+     * Output: user input
+     */
+    public static int getInputInt(String prompt) {
+    	int num = 0;
+		while (true) {
+			try {
+				num = Integer.parseInt(getInput(prompt));
+				break;
+			}
+			catch(NumberFormatException e) {
+				System.out.println("Error: Not a valid number");
+			}
+		} // end while
+    		
+		return num;
     } // end getInput method
     
   //---------------------------------------------------------------------------------------------

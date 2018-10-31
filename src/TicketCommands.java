@@ -22,6 +22,11 @@ public class TicketCommands {
 	 * returns -1 if errors occur, return 0 if the transaction was successful
 	 */
 	public static int sellTicket() {
+		// Ensure logged in
+		if (!CredentialCommands.loggedIn) {
+			System.out.println("Error: You are not logged in.");
+			return 0;
+		} // end if
 		
 		// prompt the user for a service number
 		int serviceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter service number: "));
@@ -33,15 +38,17 @@ public class TicketCommands {
 		} // end while
 		
 		// prompt the user for a number of tickets
-		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
-		int numTickets = Integer.parseInt(numTicketsString);
-		
 		// Ensure that the number of tickets is valid
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
-		while (numTickets < 1) {
-			System.out.println("Error: Invalid ticket number");
-			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+		int numTickets = 0;
+		while (true) {
+			numTickets = ScannerWrapper.getInputInt("Enter number of tickets: ");
+			if (numTickets < 1) {
+				System.out.println("Invalid");
+				continue;
+			}
+			break;
 		} // end while
 		
 		// generating the ticket receipt for the transaction
@@ -51,8 +58,7 @@ public class TicketCommands {
 		ticketreceipts.add(receipt);
 		
 		// adding the ticket transaction to the log
-		numTicketsString = Integer.toString(numTickets);
-		Log.addLine("SEL " + serviceNumber + " " + numTicketsString + " 00000 **** 0");
+		Log.addLine("SEL " + serviceNumber + " " + numTickets + " 00000 **** 0");
 		
 		return 0;
 		
@@ -67,6 +73,12 @@ public class TicketCommands {
 	 * returns -1 if errors occur, return 0 if the transaction was successful
 	 */
 	public static int cancelTicket() {
+		// Ensure logged in
+		if (!CredentialCommands.loggedIn) {
+			System.out.println("Error: You are not logged in.");
+			return 0;
+		} // end if
+		
 		
 		// prompt the user for a service number
 		String serviceNumString = ScannerWrapper.getInput("Enter service number: ");
@@ -79,12 +91,14 @@ public class TicketCommands {
 		} // end while
 
 		// prompt the user for a number of tickets
-		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
-		int numTickets = Integer.parseInt(numTicketsString);
-		
-		while (numTickets < 1 || (numTickets > 10 && CredentialCommands.userType.equals("agent"))) {
-			System.out.println("Error: Invalid ticket number.");
-			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+		int numTickets = 0;
+		while (true) {
+			numTickets = ScannerWrapper.getInputInt("Enter number of tickets: ");
+			if (numTickets < 1 || (numTickets > 10 && CredentialCommands.userType.equals("agent"))) {
+				System.out.println("Invalid");
+				continue;
+			}
+			break;
 		} // end while
 		
 		// Ensure that the number of tickets is valid
@@ -97,8 +111,7 @@ public class TicketCommands {
 			ticketreceipts.add(receipt);
 			
 			// adding the ticket transaction to the log
-			numTicketsString = Integer.toString(numTickets);
-			Log.addLine("CAN " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
+			Log.addLine("CAN " + serviceNumString + " " + numTickets + " 00000 **** 0");
 		} else {
 			System.out.println("Cannot cancel more than 20 tickets per session as Agent.");
 			return -1;
@@ -117,7 +130,13 @@ public class TicketCommands {
 	 * returns -1 if errors occur, return 0 if the transaction was successful
 	 */
 	public static int changeTicket() {
-
+		// Ensure logged in
+		if (!CredentialCommands.loggedIn) {
+			System.out.println("Error: You are not logged in.");
+			return 0;
+		} // end if
+		
+		
 		// prompt the user for a source service number
 		int sourceServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a source service number: "));
 		
@@ -137,14 +156,18 @@ public class TicketCommands {
 		} // end while
 		
 		// prompt the user for a number of tickets
-		int numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+		int numTickets = 0;
 		
 		// Ensure that the number of tickets is valid
 		// NOTE: ticket constraints may need to be added
 		// TODO: add ticket constraints if any apply here
-		while (numTickets < 1) {
-			System.out.println("Error: Invalid ticket number");
-			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+		while (true) {
+			numTickets = ScannerWrapper.getInputInt("Enter number of tickets: ");
+			if (numTickets < 1 || ticketsChanged >= 20 && CredentialCommands.userType.equals("agent")) {
+				System.out.println("Invalid");
+				continue;
+			}
+			break;
 		} // end while
 
 		// generating the ticket receipt for the transaction

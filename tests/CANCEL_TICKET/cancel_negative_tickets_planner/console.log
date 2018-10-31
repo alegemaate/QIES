@@ -4,7 +4,11 @@ Successfully logged in as planner.
 Enter Command
 Enter service number: 
 Enter number of tickets: 
-Error: Invalid ticket number.
+Invalid
 Enter number of tickets: 
-Error: Invalid ticket number.
+Invalid
+Enter number of tickets: 
+Error: Not a valid number
+Enter number of tickets: 
+Error: Not a valid number
 Enter number of tickets: 

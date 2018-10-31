@@ -22,6 +22,11 @@ public class ServiceCommands {
 	 * Output: int representing return status (0 if successful, -1 otherwise)
 	 */
 	public static int createService() {
+		// Ensure logged in
+		if (!CredentialCommands.loggedIn) {
+			System.out.println("Error: You are not logged in.");
+			return 0;
+		} // end if
 		
 		// Creating a service is only a planner operation
 		if (!(CredentialCommands.userType.equals("planner"))) {
@@ -75,6 +80,11 @@ public class ServiceCommands {
 	 * Output: int representing return status (0 if successful, -1 otherwise)
 	 */
 	public static int deleteService() {
+		// Ensure logged in
+		if (!CredentialCommands.loggedIn) {
+			System.out.println("Error: You are not logged in.");
+			return 0;
+		} // end if
 		
 		// Deleting a service is only a planner operation
 		if (!(CredentialCommands.userType.equals("planner"))) {
@@ -132,6 +142,12 @@ public class ServiceCommands {
 	 * Output: int representing -1 if service number already exists, service number otherwise
 	 */
 	private static int validateServiceNum(String serviceNum) {
+		// Ensure logged in
+		if (!CredentialCommands.loggedIn) {
+			System.out.println("Error: You are not logged in.");
+			return 0;
+		} // end if
+		
 		
 		// Service number must be exactly 5 characters
 		while (serviceNum.length() != 5) {
@@ -166,7 +182,6 @@ public class ServiceCommands {
 	 * Output: service name once valid
 	 */
 	private static String validateServiceName(String serviceName) {
-		
 		// Cannot start or end with spaces
 		while (serviceName.trim().length() != serviceName.length()) {
 			System.out.println("Service name cannot start or end with whitespace.");

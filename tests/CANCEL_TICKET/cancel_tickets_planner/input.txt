@@ -1,7 +1,7 @@
 login
 planner
 cancelticket
-1111
-0000
+11111
+00000
 35
 logout

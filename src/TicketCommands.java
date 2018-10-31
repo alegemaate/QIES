@@ -11,6 +11,8 @@ import java.util.*;
 
 public class TicketCommands {
 	
+	public static int ticketsChanged = 0;
+	public static int ticketsCancelled = 0;
 	public static ArrayList<TicketReceipt> ticketreceipts = new ArrayList<>();
 	
 	/*
@@ -81,21 +83,39 @@ public class TicketCommands {
 		int numTickets = Integer.parseInt(numTicketsString);
 		
 		// Ensure that the number of tickets is valid
-		// NOTE: ticket constraints may need to be added
-		// TODO: add ticket constraints if any apply here
-		while (numTickets < 1) {
-			System.out.println("Error: Invalid ticket number");
-			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
-		} // end while
-
-		// generating the ticket receipt for the transaction
-		TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets);
-		
-		// adding the generated ticket receipt to the ticketreceipts array
-		ticketreceipts.add(receipt);
-		
-		// adding the ticket transaction to the log
-		Log.addLine("CAN " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
+		if (CredentialCommands.userType.equals("agent")) { // Agent mode
+			// Agent cannot cancel more than 20 tickets per session
+			if ((ticketsCancelled + numTickets) <= 20) {
+				while (numTickets < 1 || numTickets > 10) {
+					System.out.println("Error: Invalid ticket number.");
+					numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+				} // end while
+				// generating the ticket receipt for the transaction
+				TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets);
+				
+				// adding the generated ticket receipt to the ticketreceipts array
+				ticketreceipts.add(receipt);
+				
+				// adding the ticket transaction to the log
+				Log.addLine("CAN " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
+			} else {
+				System.out.println("Cannot cancel more than 20 tickets per session as Agent.");
+				return -1;
+			} // end if/else
+		} else { // Planner mode
+			while (numTickets < 1) {
+				System.out.println("Error: Invalid ticket number");
+				numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+			} // end while
+			// generating the ticket receipt for the transaction
+			TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets);
+			
+			// adding the generated ticket receipt to the ticketreceipts array
+			ticketreceipts.add(receipt);
+			
+			// adding the ticket transaction to the log
+			Log.addLine("CAN " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
+		} // end if/else
 		
 		return 0;
 	} // end cancelTicket method
@@ -131,7 +151,6 @@ public class TicketCommands {
 			destServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a destination service number: "));
 		} // end while
 		
-
 		// prompt the user for a number of tickets
 		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
 		int numTickets = Integer.parseInt(numTicketsString);

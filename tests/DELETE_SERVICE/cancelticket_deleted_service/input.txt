@@ -1,5 +1,8 @@
 login
 planner
+deleteservice
+11111
 cancelticket
 11111
+11112
 logout

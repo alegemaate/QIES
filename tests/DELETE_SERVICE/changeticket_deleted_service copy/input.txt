@@ -1,8 +1,0 @@
-login
-planner
-deleteservice
-11111
-changeticket
-11111
-11112
-logout

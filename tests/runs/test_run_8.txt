@@ -508,36 +508,6 @@ EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
-./DELETE_SERVICE
-===========================[0m
-[31mFAILURE[0m
-
-log
---------
-Enter Command
-Force exiting...
-
-diff
---------
-
-
-
-[93m===========================
-copy
-===========================[0m
-[31mFAILURE[0m
-
-log
---------
-Enter Command
-Force exiting...
-
-diff
---------
-
-
-
-[93m===========================
 ./DELETE_SERVICE/deleteservice_agent
 ===========================[0m
 [32mSUCCESS[0m
@@ -735,7 +705,7 @@ EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [104mTESTS COMPLETE:[0m
-  [31mFails:16
+  [31mFails:14
   [32mSuccesses:45
-  [0mTests Run:61
+  [0mTests Run:59
 

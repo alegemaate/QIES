@@ -1,2 +1,1 @@
-empty transaction summary file
 EOS 00000 0 00000 **** 0

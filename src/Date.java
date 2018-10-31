@@ -126,7 +126,10 @@ public class Date {
 	 */
 	@Override
 	public String toString() {
-		return Integer.toString(year) + Integer.toString(month) + Integer.toString(day);
+		String dayStr = Integer.toString(day);
+		return Integer.toString(year) 
+				+ Integer.toString(month) 
+				+ String.format("%2s", dayStr).replace(" ", "0");
 	} // end toString method
 
 } // end Date class

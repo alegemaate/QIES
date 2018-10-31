@@ -52,6 +52,7 @@ public class TicketCommands {
 		ticketreceipts.add(receipt);
 		
 		// adding the ticket transaction to the log
+		numTicketsString = Integer.toString(numTickets);
 		Log.addLine("SEL " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
 		
 		return 0;
@@ -82,31 +83,14 @@ public class TicketCommands {
 		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
 		int numTickets = Integer.parseInt(numTicketsString);
 		
+		while (numTickets < 1 || (numTickets > 10 && CredentialCommands.userType.equals("agent"))) {
+			System.out.println("Error: Invalid ticket number.");
+			numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
+		} // end while
+		
 		// Ensure that the number of tickets is valid
-		if (CredentialCommands.userType.equals("agent")) { // Agent mode
-			// Agent cannot cancel more than 20 tickets per session
-			if ((ticketsCancelled + numTickets) <= 20) {
-				while (numTickets < 1 || numTickets > 10) {
-					System.out.println("Error: Invalid ticket number.");
-					numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
-				} // end while
-				// generating the ticket receipt for the transaction
-				TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets);
-				
-				// adding the generated ticket receipt to the ticketreceipts array
-				ticketreceipts.add(receipt);
-				
-				// adding the ticket transaction to the log
-				Log.addLine("CAN " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
-			} else {
-				System.out.println("Cannot cancel more than 20 tickets per session as Agent.");
-				return -1;
-			} // end if/else
-		} else { // Planner mode
-			while (numTickets < 1) {
-				System.out.println("Error: Invalid ticket number");
-				numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
-			} // end while
+		// Agent cannot cancel more than 20 tickets per session
+		if ((ticketsCancelled + numTickets) <= 20 || CredentialCommands.userType.equals("planner")) {
 			// generating the ticket receipt for the transaction
 			TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets);
 			
@@ -114,7 +98,11 @@ public class TicketCommands {
 			ticketreceipts.add(receipt);
 			
 			// adding the ticket transaction to the log
+			numTicketsString = Integer.toString(numTickets);
 			Log.addLine("CAN " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
+		} else {
+			System.out.println("Cannot cancel more than 20 tickets per session as Agent.");
+			return -1;
 		} // end if/else
 		
 		return 0;
@@ -170,6 +158,7 @@ public class TicketCommands {
 		ticketreceipts.add(receipt);
 		
 		// adding the ticket transaction to the log
+		numTicketsString = Integer.toString(numTickets);
 		Log.addLine("CHG " + sourceServiceNumString + " " + numTicketsString + " " + destServiceNumString + " **** 0");
 		
 		return 0;

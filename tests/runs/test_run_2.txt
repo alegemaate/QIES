@@ -1,7 +1,10 @@
-===========================
+[93m===========================
 ./CANCEL_TICKET/cancel_10_tickets_service
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -12,18 +15,22 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < CAN 1111 10 0 **** 0
 ---
 > CAN 1111 10 0 **** 20181004
 
 
-
-===========================
+[93m===========================
 ./CANCEL_TICKET/cancel_20_tickets_session
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -40,7 +47,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1,4c1,4
 < CAN 1111 8 0 **** 0
 < CAN 1112 5 0 **** 0
@@ -53,11 +62,13 @@ FAILED
 > EOS 0000 0 00000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CANCEL_TICKET/cancel_more_than_10_service
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -70,19 +81,20 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CANCEL_TICKET/cancel_more_than_20_session
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -105,21 +117,22 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,4c1
+
+diff
+--------
+1,3d0
 < CAN 1111 0000 0 **** 0
 < CAN 1112 0001 0 **** 0
 < CAN 1113 0002 0 **** 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CANCEL_TICKET/cancel_negative_tickets_agent
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -132,19 +145,20 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CANCEL_TICKET/cancel_negative_tickets_planner
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -157,19 +171,20 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CANCEL_TICKET/cancel_tickets_planner
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -182,20 +197,22 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,2c1,2
+
+diff
+--------
+1c1
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 **** 0
 ---
 > CAN 1111 0035 0000 R000001 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CANCEL_TICKET/invalid_destination_number
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -206,65 +223,34 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < CAN 1111 0505 0 **** 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CANCEL_TICKET/invalid_service_number
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter service number: 
-Error: Service number does not exist
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./CANCEL_TICKET/valid_destination_number
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter service number: 
-Enter number of tickets: 
-Enter Command
-1 is not a valid command.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-2c2
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./CANCEL_TICKET/valid_service_number
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -277,49 +263,29 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,2c1,2
+
+diff
+--------
+1c1
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 **** 0
 ---
 > CAN 1111 0001 0000 R000001 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_agent_ticket_limit
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-change is not a valid command.
-Enter Command
-ticket is not a valid command.
-Enter Command
-1111 is not a valid command.
-Enter Command
-2222 is not a valid command.
-Enter Command
-21 is not a valid command.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_current_service_number_check
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -331,7 +297,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -339,11 +307,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_invalid_current_service_number
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -357,7 +327,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -365,11 +337,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_invalid_new_service_number
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -385,7 +359,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -393,11 +369,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_invalid_ticket_number_zero
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -415,7 +393,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -423,11 +403,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_new_service_number_check
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -441,7 +423,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -449,11 +433,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_ticket_number_check
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -469,7 +455,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -477,11 +465,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_unlimited_planner
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -499,7 +489,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -508,11 +500,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_valid_to_valid_agent
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -530,7 +524,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -539,11 +535,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CHANGE_TICKET/change_valid_to_valid_planner
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -561,7 +559,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -570,11 +570,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_date_above_d_range
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -583,20 +585,22 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
-1c1,3
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004 
-> EOS 0000 0 0000 **** 0
+1a3
 > 
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_date_above_m_range
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -605,20 +609,22 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
-1c1,3
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+1a3
 > 
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_date_above_y_range
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -627,19 +633,20 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
-1c1,2
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_date_below_d_range
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -648,20 +655,22 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
-1c1,3
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+1a3
 > 
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_date_below_m_range
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -670,19 +679,20 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
-1c1,2
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_date_below_y_range
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -691,7 +701,9 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -700,11 +712,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_date_invalid_format
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -713,7 +727,9 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -722,11 +738,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_date_nondigit
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -735,7 +753,9 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -744,11 +764,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_name_begin_space
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -756,19 +778,20 @@ Enter Command
 Enter a new service number: 
 Enter a new service name: 
 Enter year: 
-FAILED
-1c1,2
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_name_end_space
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -776,7 +799,9 @@ Enter Command
 Enter a new service number: 
 Enter a new service name: 
 Enter year: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -785,11 +810,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_name_large
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -797,19 +824,20 @@ Enter Command
 Enter a new service number: 
 Enter a new service name: 
 Enter year: 
-FAILED
-1c1,2
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_name_nonalpha
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -818,7 +846,9 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -827,11 +857,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_name_small
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -839,19 +871,20 @@ Enter Command
 Enter a new service number: 
 Enter a new service name: 
 Enter year: 
-FAILED
-1c1,2
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_number_0_start
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -861,19 +894,20 @@ Invalid input: service number cannot begin with 0.
 Enter a new service number: 
 Enter a new service name: 
 Enter year: 
-FAILED
-1c1,2
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_number_duplicate
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -883,7 +917,9 @@ Service number already exists; cannot create new service.
 Enter a new service name: 
 Enter year: 
 Enter month: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -892,11 +928,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_number_large
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -906,7 +944,9 @@ Invalid input: service number must be exactly 5 characters.
 Enter a new service number: 
 Enter a new service name: 
 Enter year: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -915,11 +955,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_number_non_digit
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -929,19 +971,20 @@ Invalid input: service number must be exactly 5 characters.
 Enter a new service number: 
 Enter a new service name: 
 Enter year: 
-FAILED
-1c1,2
-< EOS 0000 0 0000 **** 0
----
+
+diff
+--------
+0a1
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/assign_service_number_small
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -951,7 +994,9 @@ Invalid input: service number must be exactly 5 characters.
 Enter a new service number: 
 Enter a new service name: 
 Enter year: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -960,11 +1005,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/create_new_service_valid
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -972,7 +1019,9 @@ Enter Command
 Enter a new service number: 
 Enter a new service name: 
 Enter year: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -981,11 +1030,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./CREATE_SERVICE/create_service_agent
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -995,7 +1046,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -1003,18 +1056,22 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./DELETE_SERVICE/cancelticket_deleted_service
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
 Enter Command
 Enter service number: 
 Enter number of tickets: 
-FAILED
+
+diff
+--------
 1c1,2
 < EOS 0000 0 0000 **** 0
 ---
@@ -1023,11 +1080,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./DELETE_SERVICE/deleteservice_agent
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -1037,7 +1096,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -1045,11 +1106,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./DELETE_SERVICE/get_service_name
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -1057,7 +1120,9 @@ Enter Command
 Enter an existing service number: 
 Enter service name: 
 Enter Command
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -1065,17 +1130,21 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./DELETE_SERVICE/get_service_number
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
 Enter Command
 Enter an existing service number: 
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -1083,11 +1152,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./DELETE_SERVICE/invalid_service_number
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -1098,7 +1169,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1c1
 < EOS 0000 0 0000 **** 0
 ---
@@ -1106,11 +1179,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./DELETE_SERVICE/valid_service_number
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
@@ -1121,7 +1196,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1,2c1,2
 < DEL 1111 0 00000 hello 0
 < EOS 0000 0 0000 **** 0
@@ -1131,11 +1208,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./LOGIN/agent_createservice
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -1143,19 +1222,20 @@ Enter Command
 Cannot create a service during agent session.
 Enter Command
 Force exiting...
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./LOGIN/agent_deleteservice
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -1163,255 +1243,182 @@ Enter Command
 Cannot delete a service during agent session.
 Enter Command
 Force exiting...
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./LOGIN/invalid_session_type_empty
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Error: User type exit does not exist.
 Enter Command
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./LOGIN/invalid_session_type_numeric
-===========================
+===========================[0m
+[31mFAILURE[0m
 
-FAILED
-1,2c1
+log
+--------
+
+
+diff
+--------
+1d0
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./LOGIN/invalid_session_type_string
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Error: User type spice does not exist.
 Enter Command
 Force exiting...
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./LOGIN/login_first
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter service number: 
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./LOGIN/login_session_agent
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
 Enter Command
 Force exiting...
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./LOGIN/login_session_planner
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as planner.
 Enter Command
 Force exiting...
-FAILED
-1,2c1
+
+diff
+--------
+1d0
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./LOGIN/login_twice_agent
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Error: You are already logged in.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./LOGIN/login_twice_planner
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as planner.
-Enter Command
-Error: You are already logged in.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./LOGIN/start_front_end_session
-===========================
-
-Enter Command
-Enter user type
-Error: User type exit does not exist.
-Enter Command
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./LOGIN/valid_services_file_read
-===========================
-
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./LOGOUT/login_accepted_after_logout
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter service number: 
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./LOGOUT/logout_not_logged_in
-===========================
-
-Enter Command
-Error: You are not logged in.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./LOGOUT/only_login_accepted_after_logout
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter service number: 
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./LOGOUT/transaction_summary_file
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter service number: 
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./SELL_TICKET/sell_existing_service_one
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -1422,20 +1429,22 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,2c1,2
+
+diff
+--------
+1c1
 < SEL 1111 1 0 **** 0
-< EOS 0000 0 0000 **** 0
 ---
 > SEL 1111 0001 0000 R00001 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./SELL_TICKET/sell_existing_service_two
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -1446,42 +1455,29 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,2c1,2
+
+diff
+--------
+1c1
 < SEL 1111 2 0 **** 0
-< EOS 0000 0 0000 **** 0
 ---
 > SEL 1111 0002 0000 R00001 20181004
-> EOS 0000 0 0000 **** 0
 
 
-
-===========================
+[93m===========================
 ./SELL_TICKET/sell_invalid_service_number
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter service number: 
-Error: Service number does not exist
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 0000 0 0000 **** 0
----
-> EOS 0000 0 0000 **** 0
+===========================[0m
+[32mSUCCESS[0m
 
 
 
-===========================
+[93m===========================
 ./SELL_TICKET/sell_ticket_number_large
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -1494,7 +1490,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1,2c1,2
 < SEL 1111 10001 0 **** 0
 < EOS 0000 0 0000 **** 0
@@ -1504,11 +1502,13 @@ FAILED
 \ No newline at end of file
 
 
-
-===========================
+[93m===========================
 ./SELL_TICKET/sell_ticket_number_small
-===========================
+===========================[0m
+[31mFAILURE[0m
 
+log
+--------
 Enter Command
 Enter user type
 Successfully logged in as agent.
@@ -1521,7 +1521,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
+
+diff
+--------
 1,2c1,2
 < SEL 1111 0 0 **** 0
 < EOS 0000 0 0000 **** 0
@@ -1531,9 +1533,8 @@ FAILED
 \ No newline at end of file
 
 
-
-TESTS COMPLETE:
- Fails:68
- Successes:0
- Tests Run:68
+[104mTESTS COMPLETE:[0m
+  [31mFails:56
+  [32mSuccesses:12
+  [0mTests Run:68
 

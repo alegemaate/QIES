@@ -13,36 +13,51 @@ for line in $(find . -iname 'input.txt'); do
 	DIR=$(dirname "${line}")
 	
 	# Test header
-	echo -e "===========================\n${DIR}\n===========================\n"
+	echo -e "\e[93m===========================\n${DIR}\n===========================\e[0m"
 	
 	# Clear last test
-	rm "${DIR}/txnsum_actual.txt"
+	rm "${DIR}/txnsum_actual.txt" 2> /dev/null
+	rm "${DIR}/console.log" 2> /dev/null
+	rm "${DIR}/diff.log" 2> /dev/null
 	
 	# Run Test
 	cp "${DIR}/vsf.txt" "../build/vsf.txt"
 	cd "../build/"
-	echo -e "${value}\nexit" | java -cp ../bin "QIESBase" "vsf.txt"
+	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "QIESBase" "vsf.txt")
 	
 	# Copy txn summary
 	cd "../tests/"
 	cp "../build/transactions/txnsum.txt" "${DIR}/txnsum_actual.txt"
 	
+	
 	# Compare files
+	diff_output=""
 	if cmp -s "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt"
 	then
-		echo "SUCCESS"
+		echo -e "\e[32mSUCCESS\e[0m\n"
 		successes=$((successes+1))
 	else
-		echo "FAILED"
-		diff "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt"
+		echo -e "\e[31mFAILURE\e[0m\n"
+		echo -e "log\n--------"
+		echo -e "$run_output"
+		echo -e "\ndiff\n--------"
+		diff_output=$(diff "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt")
+		echo -e "$diff_output"
 		fails=$((fails+1))
 	fi
 	
-	echo -e "\n\n"
+	# Write to logs
+	echo -e "$run_output" > "${DIR}/console.log"
+	echo -e "$diff_output" > "${DIR}/diff.log"
 	
+	
+	# Formatting
+	echo -e "\n"
+	
+	# Increment total runs
 	tests_run=$((tests_run+1))
 done
 
 # Output
-echo -e "TESTS COMPLETE:\n Fails:${fails}\n Successes:${successes}\n Tests Run:${tests_run}\n"
+echo -e "\e[104mTESTS COMPLETE:\e[0m\n  \e[31mFails:${fails}\n  \e[32mSuccesses:${successes}\n  \e[0mTests Run:${tests_run}\n"
 

@@ -64,7 +64,7 @@ public class Log {
 					transactionSummaryFile.println(lines.get(i));
 				}
 			}
-			transactionSummaryFile.println("EOS 0000 0 0000 ** 0");
+			transactionSummaryFile.println("EOS 0000 0 0000 **** 0");
 			transactionSummaryFile.close();
 		}
 	} //end writeFile(fileName)

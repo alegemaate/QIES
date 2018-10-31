@@ -41,14 +41,16 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1,3c1,3
+1,4c1,4
 < CAN 1111 8 0 **** 0
 < CAN 1112 5 0 **** 0
 < CAN 1113 7 0 **** 0
+< EOS 0000 0 0000 **** 0
 ---
-> CAN 1111 8 0 **** 20181004
-> CAN 1112 5 0 ****  20181004
-> CAN 1112 7 0 ****  20181004
+> CAN 1111 8 00000 **** 20181004
+> CAN 1112 5 00000 **** 20181004
+> CAN 1113 7 00000 **** 20181004
+> EOS 0000 0 00000 **** 0
 
 
 
@@ -69,8 +71,11 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1d0
+1,2c1
 < CAN 1111 0000 0 **** 0
+< EOS 0000 0 0000 **** 0
+---
+> EOS 0000 0 0000 **** 0
 
 
 
@@ -101,10 +106,13 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1,3d0
+1,4c1
 < CAN 1111 0000 0 **** 0
 < CAN 1112 0001 0 **** 0
 < CAN 1113 0002 0 **** 0
+< EOS 0000 0 0000 **** 0
+---
+> EOS 0000 0 0000 **** 0
 
 
 
@@ -125,8 +133,11 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1d0
+1,2c1
 < CAN 1111 0000 0 **** 0
+< EOS 0000 0 0000 **** 0
+---
+> EOS 0000 0 0000 **** 0
 
 
 
@@ -147,8 +158,11 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1d0
+1,2c1
 < CAN 1111 0000 0 **** 0
+< EOS 0000 0 0000 **** 0
+---
+> EOS 0000 0 0000 **** 0
 
 
 
@@ -169,10 +183,12 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1c1
+1,2c1,2
 < CAN 1111 0000 0 **** 0
+< EOS 0000 0 0000 **** 0
 ---
 > CAN 1111 0035 0000 R000001 20181004
+> EOS 0000 0 0000 **** 0
 
 
 
@@ -191,8 +207,11 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1d0
+1,2c1
 < CAN 1111 0505 0 **** 0
+< EOS 0000 0 0000 **** 0
+---
+> EOS 0000 0 0000 **** 0
 
 
 
@@ -210,7 +229,11 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-SUCCESS
+FAILED
+1c1
+< EOS 0000 0 0000 **** 0
+---
+> EOS 0000 0 0000 **** 0
 
 
 
@@ -230,7 +253,11 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-SUCCESS
+FAILED
+2c2
+< EOS 0000 0 0000 **** 0
+---
+> EOS 0000 0 0000 **** 0
 
 
 
@@ -251,10 +278,12 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1c1
+1,2c1,2
 < CAN 1111 0000 0 **** 0
+< EOS 0000 0 0000 **** 0
 ---
 > CAN 1111 0001 0000 R000001 20181004
+> EOS 0000 0 0000 **** 0
 
 
 
@@ -1504,7 +1533,7 @@ FAILED
 
 
 TESTS COMPLETE:
- Fails:66
- Successes:2
+ Fails:68
+ Successes:0
  Tests Run:68
 

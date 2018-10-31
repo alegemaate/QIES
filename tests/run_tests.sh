@@ -15,27 +15,29 @@ for line in $(find . -iname 'input.txt'); do
 	# Test header
 	echo -e "===========================\n${DIR}\n===========================\n"
 	
+	# Clear last test
+	rm "${DIR}/txnsum_actual.txt"
+	
 	# Run Test
-	cp "${DIR}/input_file.txt" "../build/vsf.txt"
+	cp "${DIR}/vsf.txt" "../build/vsf.txt"
 	cd "../build/"
 	echo -e "${value}\nexit" | java -cp ../bin "QIESBase" "vsf.txt"
 	
 	# Copy txn summary
 	cd "../tests/"
-	cp "../build/transactions/txnsum.txt" "${DIR}/txnsum.txt"
+	cp "../build/transactions/txnsum.txt" "${DIR}/txnsum_actual.txt"
 	
 	# Compare files
-	if cmp -s "${DIR}/txnsum.txt" "${DIR}/output_file.txt"
+	if cmp -s "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt"
 	then
 		echo "SUCCESS"
 		successes=$((successes+1))
 	else
 		echo "FAILED"
-		diff "${DIR}/txnsum.txt" "${DIR}/output_file.txt"
+		diff "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt"
 		fails=$((fails+1))
 	fi
-
-	#rm "${DIR}/txnsum.txt"
+	
 	echo -e "\n\n"
 	
 	tests_run=$((tests_run+1))

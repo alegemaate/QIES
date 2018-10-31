@@ -49,7 +49,7 @@ public class TicketCommands {
 		ticketReciepts.add(reciept);
 		
 		// adding the ticket transaction to the log
-		Log.addLine("SEL " + serviceNumString + " " + numTicketsString + " 0 **** 0");
+		Log.addLine("SEL " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
 		
 		return 0;
 		
@@ -94,7 +94,7 @@ public class TicketCommands {
 		ticketReciepts.add(reciept);
 		
 		// adding the ticket transaction to the log
-		Log.addLine("CAN " + serviceNumString + " " + numTicketsString + " 0 **** 0");
+		Log.addLine("CAN " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
 		
 		return 0;
 	} // end cancelTicket method

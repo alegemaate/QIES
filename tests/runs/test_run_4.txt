@@ -1,0 +1,1085 @@
+[93m===========================
+./CANCEL_TICKET/cancel_10_tickets_service
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter service number: 
+Error: Service number does not exist
+Enter Command
+10 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+0a1
+> CAN 11111 10 00000 **** 20181004
+1a3
+> 
+
+
+[93m===========================
+./CANCEL_TICKET/cancel_20_tickets_session
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter service number: 
+Error: Service number does not exist
+Enter Command
+8 is not a valid command.
+Enter Command
+Enter service number: 
+Error: Service number does not exist
+Enter Command
+5 is not a valid command.
+Enter Command
+Enter service number: 
+Error: Service number does not exist
+Enter Command
+7 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+1c1,4
+< EOS 00000 0 00000 **** 0
+---
+> CAN 11111 8 00000 **** 20181004
+> CAN 11112 5 00000 **** 20181004
+> CAN 11113 7 00000 **** 20181004
+> EOS 0000 0 00000 **** 0
+
+
+[93m===========================
+./CANCEL_TICKET/cancel_more_than_10_service
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CANCEL_TICKET/cancel_more_than_20_session
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CANCEL_TICKET/cancel_negative_tickets_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CANCEL_TICKET/cancel_negative_tickets_planner
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CANCEL_TICKET/cancel_tickets_planner
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter service number: 
+Error: Service number does not exist
+Enter Command
+00000 is not a valid command.
+Enter Command
+35 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+0a1
+> CAN 11111 0035 00000 **** 20181004
+1a3
+> 
+
+
+[93m===========================
+./CANCEL_TICKET/invalid_destination_number
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CANCEL_TICKET/invalid_service_number
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CANCEL_TICKET/valid_destination_number
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter service number: 
+Error: Service number does not exist
+Enter Command
+00000 is not a valid command.
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+0a1
+> CAN 11111 0 00000 **** 0
+1a3
+> 
+
+
+[93m===========================
+./CANCEL_TICKET/valid_service_number
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter service number: 
+Error: Service number does not exist
+Enter Command
+00000 is not a valid command.
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+0a1
+> CAN 11111 0001 00000 **** 20181004
+1a3
+> 
+
+
+[93m===========================
+./CHANGE_TICKET/change_agent_ticket_limit
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CHANGE_TICKET/change_current_service_number_check
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CHANGE_TICKET/change_invalid_current_service_number
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CHANGE_TICKET/change_invalid_new_service_number
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CHANGE_TICKET/change_invalid_ticket_number_zero
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CHANGE_TICKET/change_new_service_number_check
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CHANGE_TICKET/change_ticket_number_check
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./CHANGE_TICKET/change_unlimited_planner
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a source service number: 
+Error: Service number does not exist
+Enter Command
+22222 is not a valid command.
+Enter Command
+21 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+0a1
+> CHG 11111 0021 22222 **** 0
+
+
+[93m===========================
+./CHANGE_TICKET/change_valid_to_valid_agent
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a source service number: 
+Error: Service number does not exist
+Enter Command
+22222 is not a valid command.
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+0a1
+> CHG 11111 0001 22222 **** 0
+
+
+[93m===========================
+./CHANGE_TICKET/change_valid_to_valid_planner
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a source service number: 
+Error: Service number does not exist
+Enter Command
+22222 is not a valid command.
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+0a1
+> CHG 11111 0001 22222 **** 0
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_date_above_d_range
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004 
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_date_above_m_range
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_date_above_y_range
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_date_below_d_range
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_date_below_m_range
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_date_below_y_range
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_date_invalid_format
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_date_nondigit
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_name_begin_space
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_name_end_space
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_name_large
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_name_nonalpha
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_name_small
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_number_0_start
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Invalid input: service number cannot begin with 0.
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_number_duplicate
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Service number already exists; cannot create new service.
+Enter a new service name: 
+Enter year: 
+Enter month: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_number_large
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Invalid input: service number must be exactly 5 characters.
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_number_non_digit
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Invalid input: service number must be exactly 5 characters.
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/assign_service_number_small
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Invalid input: service number must be exactly 5 characters.
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/create_new_service_valid
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+diff
+--------
+0a1
+> CRE 00000 0 12345 NEWSERVICE 20181004
+
+
+[93m===========================
+./CREATE_SERVICE/create_service_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./DELETE_SERVICE/cancelticket_deleted_service
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./DELETE_SERVICE/deleteservice_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./DELETE_SERVICE/get_service_name
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./DELETE_SERVICE/get_service_number
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./DELETE_SERVICE/invalid_service_number
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./DELETE_SERVICE/valid_service_number
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter an existing service number: 
+Enter service name: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+1c1
+< DEL 11111 0 00000 hello 0
+---
+> DEL 11111 0 00000 **** 0
+
+
+[93m===========================
+./LOGIN/agent_createservice
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Cannot create a service during agent session.
+Enter Command
+Force exiting...
+
+diff
+--------
+1d0
+< DEL 11111 0 00000 hello 0
+
+
+[93m===========================
+./LOGIN/agent_deleteservice
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Cannot delete a service during agent session.
+Enter Command
+Force exiting...
+
+diff
+--------
+1d0
+< DEL 11111 0 00000 hello 0
+
+
+[93m===========================
+./LOGIN/invalid_session_type_empty
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Error: User type exit does not exist.
+Enter Command
+
+diff
+--------
+1d0
+< DEL 11111 0 00000 hello 0
+
+
+[93m===========================
+./LOGIN/invalid_session_type_numeric
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+
+
+diff
+--------
+1d0
+< DEL 11111 0 00000 hello 0
+
+
+[93m===========================
+./LOGIN/invalid_session_type_string
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Error: User type spice does not exist.
+Enter Command
+Force exiting...
+
+diff
+--------
+1d0
+< DEL 11111 0 00000 hello 0
+
+
+[93m===========================
+./LOGIN/login_first
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter service number: 
+
+diff
+--------
+1d0
+< DEL 11111 0 00000 hello 0
+
+
+[93m===========================
+./LOGIN/login_session_agent
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Force exiting...
+
+diff
+--------
+1d0
+< DEL 11111 0 00000 hello 0
+
+
+[93m===========================
+./LOGIN/login_session_planner
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Force exiting...
+
+diff
+--------
+1d0
+< DEL 11111 0 00000 hello 0
+
+
+[93m===========================
+./LOGIN/login_twice_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./LOGIN/login_twice_planner
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./LOGIN/start_front_end_session
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./LOGIN/valid_services_file_read
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./LOGOUT/login_accepted_after_logout
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./LOGOUT/logout_not_logged_in
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./LOGOUT/only_login_accepted_after_logout
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./LOGOUT/transaction_summary_file
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./SELL_TICKET/sell_existing_service_one
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./SELL_TICKET/sell_existing_service_two
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./SELL_TICKET/sell_invalid_service_number
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./SELL_TICKET/sell_ticket_number_large
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+./SELL_TICKET/sell_ticket_number_small
+===========================[0m
+[31mFAILURE[0m
+
+log
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter service number: 
+Enter number of tickets: 
+Enter Command
+40 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+
+diff
+--------
+1c1
+< SEL 11111 0 00000 **** 0
+---
+> SEL 11111 1 00000 **** 0
+
+
+[104mTESTS COMPLETE:[0m
+  [31mFails:37
+  [32mSuccesses:31
+  [0mTests Run:68
+

@@ -74,14 +74,12 @@ public class Date {
 	 * Input: int representing year
 	 * Output: return status (0 if valid, -1 otherwise)
 	 */
-	public int setYear(int year) {
-		if (year >= 1980 && year <= 2999) {
-			this.year = year;
-			return 0;
-		} else {
-			System.out.println("Error: invalid year in date");
-			return -1;
-		} // end if/else
+	public void setYear(int year) {
+		while (year < 1980 || year > 2999) {
+			System.out.println("Error: year cannot be less than 1980 or greater than 2999.");
+			year = Integer.parseInt(ScannerWrapper.getInput("Enter year: "));
+		} // end while
+		this.year = year;
 	} // end setYear method
 	
 	//---------------------------------------------------------------------------------------------
@@ -93,14 +91,12 @@ public class Date {
 	 * Input: int representing month
 	 * Output: return status (0 if valid, -1 otherwise)
 	 */
-	public int setMonth(int month) {
-		if (month >= 1 && month <= 12) {
-			this.month = month;
-			return 0;
-		} else {
-			System.out.println("Error: invalid month in date");
-			return -1;
-		} // end if/else
+	public void setMonth(int month) {
+		while (month < 1 || month > 12) {
+			System.out.println("Error: month cannot be less than 1 or greater than 12.");
+			month = Integer.parseInt(ScannerWrapper.getInput("Enter month: "));
+		} // end while
+		this.month = month;
 	} // end setMonth method
 	
 	//---------------------------------------------------------------------------------------------
@@ -112,14 +108,12 @@ public class Date {
 	 * Input: int representing day
 	 * Output: return status (0 if valid, -1 otherwise)
 	 */
-	public int setDay(int day) {
-		if (day >= 1 && day <= 31) {
-			this.day = day;
-			return 0;
-		} else {
-			System.out.println("Error: invalid day in date");
-			return -1;
-		} // end if/else
+	public void setDay(int day) {
+		while (day < 1 || day > 12) {
+			System.out.println("Error: day cannot be less than 1 or greater than 31.");
+			day = Integer.parseInt(ScannerWrapper.getInput("Enter day: "));
+		} // end while
+		this.day = day;
 	} // end setDay method
 	
 	//---------------------------------------------------------------------------------------------

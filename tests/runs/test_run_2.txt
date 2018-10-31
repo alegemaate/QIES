@@ -54,7 +54,7 @@ diff
 < CAN 1111 8 0 **** 0
 < CAN 1112 5 0 **** 0
 < CAN 1113 7 0 **** 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CAN 1111 8 00000 **** 20181004
 > CAN 1112 5 00000 **** 20181004
@@ -301,9 +301,9 @@ Force exiting...
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -331,9 +331,9 @@ Force exiting...
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -363,9 +363,9 @@ Force exiting...
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -397,9 +397,9 @@ Force exiting...
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -427,9 +427,9 @@ Force exiting...
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -459,9 +459,9 @@ Force exiting...
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -493,10 +493,10 @@ Force exiting...
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CHG 1111 0021 2222 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -528,10 +528,10 @@ Force exiting...
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CHG 1111 0001 2222 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -563,10 +563,10 @@ Force exiting...
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CHG 1111 0001 2222 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -705,10 +705,10 @@ Enter month:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -731,10 +731,10 @@ Enter month:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -757,10 +757,10 @@ Enter month:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -803,10 +803,10 @@ Enter year:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -850,10 +850,10 @@ Enter month:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -921,10 +921,10 @@ Enter month:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -948,10 +948,10 @@ Enter year:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -998,10 +998,10 @@ Enter year:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1023,10 +1023,10 @@ Enter year:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1050,9 +1050,9 @@ Force exiting...
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1073,10 +1073,10 @@ Enter number of tickets:
 diff
 --------
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > empty transaction summary file
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1100,9 +1100,9 @@ Force exiting...
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1124,9 +1124,9 @@ Enter Command
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1146,9 +1146,9 @@ Enter an existing service number:
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1173,9 +1173,9 @@ Force exiting...
 diff
 --------
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1201,10 +1201,10 @@ diff
 --------
 1,2c1,2
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > 1111 hello 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1495,10 +1495,10 @@ diff
 --------
 1,2c1,2
 < SEL 1111 10001 0 **** 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > SEL 1111 0001 0000 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1526,10 +1526,10 @@ diff
 --------
 1,2c1,2
 < SEL 1111 0 0 **** 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> SEL 1111 0001 0000 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> SEL 1111 1 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 

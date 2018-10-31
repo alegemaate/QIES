@@ -1,6 +1,6 @@
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > empty transaction summary file
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file

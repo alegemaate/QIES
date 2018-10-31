@@ -281,9 +281,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -304,9 +304,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -330,9 +330,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -358,9 +358,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -388,9 +388,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -414,9 +414,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -442,9 +442,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -472,10 +472,10 @@ Enter Command
 Force exiting...
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CHG 1111 0021 2222 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -503,10 +503,10 @@ Enter Command
 Force exiting...
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CHG 1111 0001 2222 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -534,10 +534,10 @@ Enter Command
 Force exiting...
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CHG 1111 0001 2222 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -556,10 +556,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,3
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004 
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 > 
 
 
@@ -578,10 +578,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,3
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 > 
 
 
@@ -600,10 +600,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -621,10 +621,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,3
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 > 
 
 
@@ -643,10 +643,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -664,10 +664,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -686,10 +686,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -708,10 +708,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -729,10 +729,10 @@ Enter a new service name:
 Enter year: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -749,10 +749,10 @@ Enter a new service name:
 Enter year: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -770,10 +770,10 @@ Enter a new service name:
 Enter year: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -791,10 +791,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -812,10 +812,10 @@ Enter a new service name:
 Enter year: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -834,10 +834,10 @@ Enter a new service name:
 Enter year: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -856,10 +856,10 @@ Enter year:
 Enter month: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -879,10 +879,10 @@ Enter a new service name:
 Enter year: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -902,10 +902,10 @@ Enter a new service name:
 Enter year: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -924,10 +924,10 @@ Enter a new service name:
 Enter year: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -945,10 +945,10 @@ Enter a new service name:
 Enter year: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -968,9 +968,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -987,10 +987,10 @@ Enter service number:
 Enter number of tickets: 
 FAILED
 1c1,2
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > empty transaction summary file
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1010,9 +1010,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1030,9 +1030,9 @@ Enter service name:
 Enter Command
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1048,9 +1048,9 @@ Enter Command
 Enter an existing service number: 
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1071,9 +1071,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1095,10 +1095,10 @@ Force exiting...
 FAILED
 1,2c1,2
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > 1111 hello 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1117,9 +1117,9 @@ Force exiting...
 FAILED
 1,2c1
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1137,9 +1137,9 @@ Force exiting...
 FAILED
 1,2c1
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1154,9 +1154,9 @@ Enter Command
 FAILED
 1,2c1
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1167,9 +1167,9 @@ FAILED
 FAILED
 1,2c1
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1185,9 +1185,9 @@ Force exiting...
 FAILED
 1,2c1
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1200,9 +1200,9 @@ Enter service number:
 FAILED
 1,2c1
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1218,9 +1218,9 @@ Force exiting...
 FAILED
 1,2c1
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1236,9 +1236,9 @@ Force exiting...
 FAILED
 1,2c1
 < DEL 1111 0 00000 hello 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1257,9 +1257,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1278,9 +1278,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1294,9 +1294,9 @@ Error: User type exit does not exist.
 Enter Command
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1306,9 +1306,9 @@ FAILED
 
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1323,9 +1323,9 @@ Enter Command
 Enter service number: 
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1339,9 +1339,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1356,9 +1356,9 @@ Enter Command
 Enter service number: 
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1373,9 +1373,9 @@ Enter Command
 Enter service number: 
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1396,10 +1396,10 @@ Force exiting...
 FAILED
 1,2c1,2
 < SEL 1111 1 0 **** 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > SEL 1111 0001 0000 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1420,10 +1420,10 @@ Force exiting...
 FAILED
 1,2c1,2
 < SEL 1111 2 0 **** 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > SEL 1111 0002 0000 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1443,9 +1443,9 @@ Enter Command
 Force exiting...
 FAILED
 1c1
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 
 
 
@@ -1468,10 +1468,10 @@ Force exiting...
 FAILED
 1,2c1,2
 < SEL 1111 10001 0 **** 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > SEL 1111 0001 0000 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 
@@ -1495,10 +1495,10 @@ Force exiting...
 FAILED
 1,2c1,2
 < SEL 1111 0 0 **** 0
-< EOS 0000 0 0000 **** 0
+< EOS 00000 0 00000 **** 0
 ---
 > SEL 1111 0001 0000 R00001 20181004
-> EOS 0000 0 0000 **** 0
+> EOS 00000 0 00000 **** 0
 \ No newline at end of file
 
 

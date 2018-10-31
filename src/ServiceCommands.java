@@ -45,9 +45,9 @@ public class ServiceCommands {
 		serviceName = validateServiceName(serviceName);
 		
 		// Prompt user for service date
-		int year = Integer.parseInt(ScannerWrapper.getInput("Enter year: "));
-		int month = Integer.parseInt(ScannerWrapper.getInput("Enter month: "));
-		int day = Integer.parseInt(ScannerWrapper.getInput("Enter day: "));
+		int year = ScannerWrapper.getInputInt("Enter year:  ");
+		int month = ScannerWrapper.getInputInt("Enter month: ");
+		int day = ScannerWrapper.getInputInt("Enter day: ");
 		Date date = new Date(year, month, day);
 		
 		/*
@@ -64,7 +64,7 @@ public class ServiceCommands {
 						+ "0" + " " // Number of tickets (unused field)
 						+ "00000" + " " // Destination service number (unused field)
 						+ serviceName + " "// Service name
-						+ date.toString() + " "; // Service date
+						+ date.toString() + ""; // Service date
 		Log.addLine(logEntry);
 		return 0;
 	} // end createService method

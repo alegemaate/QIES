@@ -4,4 +4,10 @@ Successfully logged in as planner.
 Enter Command
 Enter a new service number: 
 Enter a new service name: 
+Enter year:  
+Error: Not a valid number
+Enter year:  
+Enter month: 
+Enter day: 
+Error: year cannot be less than 1980 or greater than 2999.
 Enter year: 

@@ -29,12 +29,17 @@ public class TicketCommands {
 		} // end if
 		
 		// prompt the user for a service number
-		int serviceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter service number: "));
-		
-		// Ensure that service number exists
-		while (Services.find(serviceNumber) == false) { 
-			System.out.println("Error: Service number does not exist");
-			serviceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter service number: "));
+		int serviceNumber = 0;
+		while (true) {
+			serviceNumber = ScannerWrapper.getInputInt("Enter service number: ");
+			if (serviceNumber < 10000 || serviceNumber > 99999) {
+				System.out.println("Service number out of range");
+				continue;
+			}
+			if (Services.find(serviceNumber) == false) {
+				System.out.println("Error: Service number does not exist");
+			}
+			break;
 		} // end while
 		
 		// prompt the user for a number of tickets

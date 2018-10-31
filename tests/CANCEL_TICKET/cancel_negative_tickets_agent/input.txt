@@ -3,3 +3,5 @@ agent
 cancelticket
 11111
 -3
+1
+logout

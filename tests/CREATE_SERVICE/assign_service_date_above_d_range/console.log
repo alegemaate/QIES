@@ -4,7 +4,7 @@ Successfully logged in as planner.
 Enter Command
 Enter a new service number: 
 Enter a new service name: 
-Enter year: 
+Enter year:  
 Enter month: 
 Enter day: 
 Error: day cannot be less than 1 or greater than 31.

@@ -1,6 +1,0 @@
-login
-agent
-changeticket
-11111
-22222
-logout

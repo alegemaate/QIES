@@ -24,8 +24,7 @@ public class TicketCommands {
 	public static int sellTicket() {
 		
 		// prompt the user for a service number
-		String serviceNumString = ScannerWrapper.getInput("Enter service number: ");
-		int serviceNumber = Integer.parseInt(serviceNumString);
+		int serviceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter service number: "));
 		
 		// Ensure that service number exists
 		while (Services.find(serviceNumber) == false) { 
@@ -53,7 +52,7 @@ public class TicketCommands {
 		
 		// adding the ticket transaction to the log
 		numTicketsString = Integer.toString(numTickets);
-		Log.addLine("SEL " + serviceNumString + " " + numTicketsString + " 00000 **** 0");
+		Log.addLine("SEL " + serviceNumber + " " + numTicketsString + " 00000 **** 0");
 		
 		return 0;
 		
@@ -120,8 +119,7 @@ public class TicketCommands {
 	public static int changeTicket() {
 
 		// prompt the user for a source service number
-		String sourceServiceNumString = ScannerWrapper.getInput("Enter a source service number: ");
-		int sourceServiceNumber = Integer.parseInt(sourceServiceNumString);
+		int sourceServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a source service number: "));
 		
 		// Ensure that source service number exists
 		while (Services.find(sourceServiceNumber) == false) { 
@@ -130,8 +128,7 @@ public class TicketCommands {
 		} // end while
 
 		// prompt the user for a destination service number
-		String destServiceNumString = ScannerWrapper.getInput("Enter a destination service number: ");
-		int destServiceNumber = Integer.parseInt(destServiceNumString);
+		int destServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a destination service number: "));
 		
 		// Ensure that destination service number exists
 		while (Services.find(destServiceNumber) == false) { 
@@ -140,8 +137,7 @@ public class TicketCommands {
 		} // end while
 		
 		// prompt the user for a number of tickets
-		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
-		int numTickets = Integer.parseInt(numTicketsString);
+		int numTickets = Integer.parseInt(ScannerWrapper.getInput("Enter number of tickets: "));
 		
 		// Ensure that the number of tickets is valid
 		// NOTE: ticket constraints may need to be added
@@ -158,8 +154,7 @@ public class TicketCommands {
 		ticketreceipts.add(receipt);
 		
 		// adding the ticket transaction to the log
-		numTicketsString = Integer.toString(numTickets);
-		Log.addLine("CHG " + sourceServiceNumString + " " + numTicketsString + " " + destServiceNumString + " **** 0");
+		Log.addLine("CHG " + sourceServiceNumber + " " + numTickets + " " + destServiceNumber + " **** 0");
 		
 		return 0;
 	} // end changeTicket method

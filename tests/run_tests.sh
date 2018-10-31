@@ -35,7 +35,7 @@ for line in $(find . -iname 'input.txt'); do
 		fails=$((fails+1))
 	fi
 
-	rm "${DIR}/txnsum.txt"
+	#rm "${DIR}/txnsum.txt"
 	echo -e "\n\n"
 	
 	tests_run=$((tests_run+1))

@@ -22,7 +22,7 @@ public class TicketCommands {
 	public static int sellTicket() {
 		
 		// prompt the user for a service number
-		String serviceNumString = ScannerWrapper.getInput("Enter a new service number: ");
+		String serviceNumString = ScannerWrapper.getInput("Enter service number: ");
 		int serviceNumber = Integer.parseInt(serviceNumString);
 		
 		// Ensure that service number exists
@@ -32,7 +32,7 @@ public class TicketCommands {
 		} // end if
 		
 		// prompt the user for a number of tickets
-		String numTicketsString = ScannerWrapper.getInput("Enter desired service number: ");
+		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
 		int numTickets = Integer.parseInt(numTicketsString);
 		
 		// Ensure that the number of tickets is valid
@@ -66,7 +66,7 @@ public class TicketCommands {
 	public static int cancelTicket() {
 		
 		// prompt the user for a service number
-		String serviceNumString = ScannerWrapper.getInput("Enter desired service number: ");
+		String serviceNumString = ScannerWrapper.getInput("Enter service number: ");
 		int serviceNumber = Integer.parseInt(serviceNumString);
 		
 		// Ensure that service number exists
@@ -76,7 +76,7 @@ public class TicketCommands {
 		} // end if
 
 		// prompt the user for a number of tickets
-		String numTicketsString = ScannerWrapper.getInput("Enter a new service number: ");
+		String numTicketsString = ScannerWrapper.getInput("Enter number of tickets: ");
 		int numTickets = Integer.parseInt(numTicketsString);
 		
 		// Ensure that the number of tickets is valid

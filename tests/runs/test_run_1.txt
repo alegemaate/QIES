@@ -9,7 +9,9 @@ Enter Command
 Enter desired service number: 
 Enter a new service number: 
 FAILED
-0a1
+1c1
+< SEL 1111 0 0 **** 0
+---
 > CAN 1111 0008 0000 R000001 20181004
 
 
@@ -62,12 +64,8 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1,2c1
+1d0
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 ** 0
----
-> EOS 0000 0 0000 ** 0
-\ No newline at end of file
 
 
 
@@ -98,14 +96,10 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1,4c1
+1,3d0
 < CAN 1111 0000 0 **** 0
 < CAN 1112 0001 0 **** 0
 < CAN 1113 0002 0 **** 0
-< EOS 0000 0 0000 ** 0
----
-> EOS 0000 0 0000 ** 0
-\ No newline at end of file
 
 
 
@@ -126,12 +120,8 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1,2c1
+1d0
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 ** 0
----
-> EOS 0000 0 0000 ** 0
-\ No newline at end of file
 
 
 
@@ -152,12 +142,8 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1,2c1
+1d0
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 ** 0
----
-> EOS 0000 0 0000 ** 0
-\ No newline at end of file
 
 
 
@@ -178,13 +164,10 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1,2c1,2
+1c1
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 ** 0
 ---
 > CAN 1111 0035 0000 R000001 20181004
-> EOS 0000 0 0000 ** 0
-\ No newline at end of file
 
 
 
@@ -203,12 +186,8 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1,2c1
+1d0
 < CAN 1111 0505 0 **** 0
-< EOS 0000 0 0000 ** 0
----
-> EOS 0000 0 0000 ** 0
-\ No newline at end of file
 
 
 
@@ -246,13 +225,7 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1,2c1,2
-< CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 ** 0
----
-> CAN 1111 0001 0000 R000001 20181004
-> EOS 0000 0 0000 ** 0
+SUCCESS
 
 
 
@@ -273,13 +246,10 @@ Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1,2c1,2
+1c1
 < CAN 1111 0000 0 **** 0
-< EOS 0000 0 0000 ** 0
 ---
 > CAN 1111 0001 0000 R000001 20181004
-> EOS 0000 0 0000 ** 0
-\ No newline at end of file
 
 
 
@@ -1412,19 +1382,15 @@ Enter Command
 Enter user type
 Successfully logged in as agent.
 Enter Command
-sell is not a valid command.
-Enter Command
-ticket is not a valid command.
-Enter Command
-1111 is not a valid command.
-Enter Command
-1 is not a valid command.
+Enter a new service number: 
+Enter desired service number: 
 Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1c1,2
+1,2c1,2
+< SEL 1111 1 0 **** 0
 < EOS 0000 0 0000 ** 0
 ---
 > SEL 1111 0001 0000 R00001 20181004
@@ -1440,19 +1406,15 @@ Enter Command
 Enter user type
 Successfully logged in as agent.
 Enter Command
-sell is not a valid command.
-Enter Command
-ticket is not a valid command.
-Enter Command
-1111 is not a valid command.
-Enter Command
-2 is not a valid command.
+Enter a new service number: 
+Enter desired service number: 
 Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1c1,2
+1,2c1,2
+< SEL 1111 2 0 **** 0
 < EOS 0000 0 0000 ** 0
 ---
 > SEL 1111 0002 0000 R00001 20181004
@@ -1468,11 +1430,8 @@ Enter Command
 Enter user type
 Successfully logged in as agent.
 Enter Command
-sell is not a valid command.
-Enter Command
-ticket is not a valid command.
-Enter Command
-2222 is not a valid command.
+Enter a new service number: 
+Error: Service number does not exist
 Enter Command
 Successfully logged out.
 Enter Command
@@ -1486,82 +1445,61 @@ FAILED
 
 
 ===========================
-./SELL_TICKET/sell_invalid_ticket_number
+./SELL_TICKET/sell_ticket_number_large
 ===========================
 
 Enter Command
 Enter user type
 Successfully logged in as agent.
 Enter Command
-sell is not a valid command.
+Enter a new service number: 
+Enter desired service number: 
 Enter Command
-ticket is not a valid command.
-Enter Command
-1111 is not a valid command.
-Enter Command
-0 is not a valid command.
+40 is not a valid command.
 Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1c1
+1,2c1,2
+< SEL 1111 10001 0 **** 0
 < EOS 0000 0 0000 ** 0
 ---
+> SEL 1111 0001 0000 R00001 20181004
 > EOS 0000 0 0000 ** 0
+\ No newline at end of file
 
 
 
 ===========================
-./SELL_TICKET/sell_service_number_check
+./SELL_TICKET/sell_ticket_number_small
 ===========================
 
 Enter Command
 Enter user type
 Successfully logged in as agent.
 Enter Command
-sell is not a valid command.
+Enter a new service number: 
+Enter desired service number: 
 Enter Command
-ticket is not a valid command.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 0000 0 0000 ** 0
----
-> EOS 0000 0 0000 ** 0
-
-
-
-===========================
-./SELL_TICKET/sell_ticket_number_check
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-sell is not a valid command.
-Enter Command
-ticket is not a valid command.
-Enter Command
-1111 is not a valid command.
+40 is not a valid command.
 Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
 FAILED
-1c1
+1,2c1,2
+< SEL 1111 0 0 **** 0
 < EOS 0000 0 0000 ** 0
 ---
+> SEL 1111 0001 0000 R00001 20181004
 > EOS 0000 0 0000 ** 0
+\ No newline at end of file
 
 
 
 TESTS COMPLETE:
- Fails:68
- Successes:1
- Tests Run:69
+ Fails:66
+ Successes:2
+ Tests Run:68
 

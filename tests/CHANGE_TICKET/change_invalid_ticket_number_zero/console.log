@@ -5,7 +5,5 @@ Enter Command
 Enter a source service number: 
 Enter a destination service number: 
 Enter number of tickets: 
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
+Error: Invalid ticket number
+Enter number of tickets: 

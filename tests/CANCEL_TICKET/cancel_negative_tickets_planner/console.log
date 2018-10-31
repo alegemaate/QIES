@@ -4,9 +4,7 @@ Successfully logged in as planner.
 Enter Command
 Enter service number: 
 Enter number of tickets: 
-Enter Command
--5 is not a valid command.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
+Error: Invalid ticket number
+Enter number of tickets: 
+Error: Invalid ticket number
+Enter number of tickets: 

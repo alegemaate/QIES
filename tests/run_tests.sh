@@ -19,6 +19,7 @@ for line in $(find . -iname 'input.txt'); do
 	rm "${DIR}/txnsum_actual.txt" 2> /dev/null
 	rm "${DIR}/console.log" 2> /dev/null
 	rm "${DIR}/diff.log" 2> /dev/null
+	rm "../build/transactions/txnsum.txt" 2> /dev/null
 	
 	# Run Test
 	cp "${DIR}/vsf.txt" "../build/vsf.txt"

@@ -24,8 +24,8 @@ public class ServiceCommands {
 	public static int createService() {
 		
 		// Creating a service is only a planner operation
-		if (CredentialCommands.userType.equals("agent")) {
-			System.out.println("Cannot create a service during agent session.");
+		if (!(CredentialCommands.userType.equals("planner"))) {
+			System.out.println("Cannot create a service except during planner session.");
 			return -1;
 		} // end if
 		
@@ -77,8 +77,8 @@ public class ServiceCommands {
 	public static int deleteService() {
 		
 		// Deleting a service is only a planner operation
-		if (CredentialCommands.userType.equals("agent")) {
-			System.out.println("Cannot delete a service during agent session.");
+		if (!(CredentialCommands.userType.equals("planner"))) {
+			System.out.println("Cannot delete a service except during planner session.");
 			return -1;
 		} // end if
 		

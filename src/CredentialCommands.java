@@ -37,11 +37,11 @@ public class CredentialCommands {
 		} // end if
 		
 		// Get user type
-		userType = ScannerWrapper.getInput("Enter user type");
-		if (!validUsers.contains(userType)) {
+		userType = ScannerWrapper.getInput("Enter user type: ");
+		while (!validUsers.contains(userType)) {
 			System.out.println("Error: User type " + userType + " does not exist.");
-			return false;
-		} // end if
+			userType = ScannerWrapper.getInput("Enter user type: ");
+		} // end while
 		
 		// Success
 		loggedIn = true;

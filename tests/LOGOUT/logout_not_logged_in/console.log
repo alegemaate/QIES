@@ -1,4 +1,8 @@
 Enter Command
 Error: You are not logged in.
 Enter Command
-Force exiting...
+Enter user type: 
+Error: User type logout does not exist.
+Enter user type: 
+Error: User type exit does not exist.
+Enter user type: 

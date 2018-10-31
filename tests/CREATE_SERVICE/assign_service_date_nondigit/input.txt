@@ -2,7 +2,9 @@ login
 planner
 createservice
 12345
-INVALIDD
-20181004
 NEWSERVICE
+INVALIDD
+2018
+10
+04
 logout

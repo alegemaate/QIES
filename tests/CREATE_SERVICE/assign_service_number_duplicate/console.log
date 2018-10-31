@@ -7,3 +7,8 @@ Service number already exists; cannot create new service.
 Enter a new service name: 
 Enter year: 
 Enter month: 
+Enter day: 
+Error: year cannot be less than 1980 or greater than 2999.
+Enter year: 
+Error: year cannot be less than 1980 or greater than 2999.
+Enter year: 

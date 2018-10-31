@@ -2,6 +2,8 @@ login
 planner
 createservice
 12345
-20181004
 NEWSERVICE
+2018
+10
+04
 logout

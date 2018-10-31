@@ -6,3 +6,10 @@ Enter a new service number:
 Enter a new service name: 
 Enter year: 
 Enter month: 
+Enter day: 
+Error: day cannot be less than 1 or greater than 31.
+Enter day: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...

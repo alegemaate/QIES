@@ -42,7 +42,7 @@ for line in $(find . -iname 'input.txt'); do
 		echo -e "log\n--------"
 		echo -e "$run_output"
 		echo -e "\ndiff\n--------"
-		diff_output=$(diff "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt")
+		diff_output=$(diff -y "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt")
 		echo -e "$diff_output"
 		fails=$((fails+1))
 	fi

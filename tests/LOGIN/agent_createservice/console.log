@@ -1,7 +1,7 @@
 Enter Command
-Enter user type
+Enter user type: 
 Successfully logged in as agent.
 Enter Command
-Cannot create a service during agent session.
+Cannot create a service except during planner session.
 Enter Command
 Force exiting...

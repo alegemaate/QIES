@@ -1,10 +1,7 @@
 Enter Command
-Enter user type
+Enter user type: 
 Successfully logged in as agent.
 Enter Command
 Enter a source service number: 
 Error: Service number does not exist
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
+Enter a source service number: 

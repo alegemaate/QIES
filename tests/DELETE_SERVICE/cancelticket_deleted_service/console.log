@@ -2,5 +2,13 @@ Enter Command
 Enter user type: 
 Successfully logged in as planner.
 Enter Command
-Enter service number: 
-Enter number of tickets: 
+Enter an existing service number: 
+Enter service name: 
+Enter Command
+11111 is not a valid command.
+Enter Command
+11112 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...

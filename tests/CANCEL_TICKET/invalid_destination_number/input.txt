@@ -1,6 +1,0 @@
-login
-agent
-cancelticket
-11111
-0505
-logout

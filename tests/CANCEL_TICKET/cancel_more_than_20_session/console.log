@@ -1,27 +1,15 @@
 Enter Command
-Enter user type
+Enter user type: 
 Successfully logged in as agent.
 Enter Command
 Enter service number: 
-Error: Service number does not exist
-Enter Command
-00000 is not a valid command.
-Enter Command
-10 is not a valid command.
+Enter number of tickets: 
 Enter Command
 Enter service number: 
-Error: Service number does not exist
-Enter Command
-00001 is not a valid command.
-Enter Command
-9 is not a valid command.
+Enter number of tickets: 
 Enter Command
 Enter service number: 
-Error: Service number does not exist
-Enter Command
-00002 is not a valid command.
-Enter Command
-5 is not a valid command.
+Enter number of tickets: 
 Enter Command
 Successfully logged out.
 Enter Command

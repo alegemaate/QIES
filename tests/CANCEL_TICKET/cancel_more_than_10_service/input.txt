@@ -2,6 +2,5 @@ login
 agent
 cancelticket
 11111
-00000
 11
 logout

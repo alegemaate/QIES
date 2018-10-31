@@ -1,5 +1,6 @@
 Enter Command
-Enter user type
+Enter user type: 
 Error: User type spice does not exist.
-Enter Command
-Force exiting...
+Enter user type: 
+Error: User type exit does not exist.
+Enter user type: 

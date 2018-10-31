@@ -5,4 +5,5 @@ sellticket
 1
 logout
 login
+agent
 logout

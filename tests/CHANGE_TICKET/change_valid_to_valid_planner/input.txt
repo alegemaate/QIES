@@ -1,6 +1,6 @@
 login
 planner
-change ticket
+changeticket
 11111
 22222
 1

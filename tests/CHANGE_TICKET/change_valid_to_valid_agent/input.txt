@@ -1,6 +1,6 @@
 login
 agent
-change ticket
+changeticket
 11111
 22222
 1

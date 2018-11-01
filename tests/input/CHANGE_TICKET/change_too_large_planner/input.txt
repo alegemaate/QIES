@@ -3,5 +3,6 @@ planner
 changeticket
 11111
 22222
-21
+1001
+1000
 logout

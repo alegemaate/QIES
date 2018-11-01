@@ -1,0 +1,7 @@
+login
+planner
+cancelticket
+11111
+1001
+1000
+logout

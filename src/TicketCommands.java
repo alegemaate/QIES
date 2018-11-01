@@ -50,7 +50,7 @@ public class TicketCommands {
 		int numTickets = 0;
 		while (true) {
 			numTickets = ScannerWrapper.getInputInt("Enter number of tickets: ");
-			if (numTickets < 1) {
+			if (numTickets < 1 || numTickets > 1000) {
 				System.out.println("Invalid");
 				continue;
 			}
@@ -103,7 +103,7 @@ public class TicketCommands {
 		int numTickets = 0;
 		while (true) {
 			numTickets = ScannerWrapper.getInputInt("Enter number of tickets: ");
-			if (numTickets < 1 || (numTickets > 10 && CredentialCommands.userType.equals("agent"))) {
+			if (numTickets < 1 || numTickets > 1000 || (numTickets > 10 && CredentialCommands.userType.equals("agent"))) {
 				System.out.println("Invalid");
 				continue;
 			}
@@ -183,7 +183,7 @@ public class TicketCommands {
 		// TODO: add ticket constraints if any apply here
 		while (true) {
 			numTickets = ScannerWrapper.getInputInt("Enter number of tickets: ");
-			if (numTickets < 1 || ticketsChanged + numTickets >= 20 && CredentialCommands.userType.equals("agent")) {
+			if (numTickets < 1 || numTickets > 1000 || ticketsChanged + numTickets >= 20 && CredentialCommands.userType.equals("agent")) {
 				System.out.println("Invalid");
 				continue;
 			}

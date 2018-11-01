@@ -2,6 +2,6 @@ login
 agent
 sellticket
 11111
-1000
-40
+asdfasdf
+1
 logout

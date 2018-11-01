@@ -146,23 +146,33 @@ public class TicketCommands {
 		} // end if
 		
 		// prompt the user for a source service number
-		int sourceServiceNum = Integer.parseInt(ScannerWrapper.getInput("Enter a source service number: "));
-		int sourceServiceNumber = ServiceCommands.validateServiceNum(sourceServiceNum);
-		
-		// Ensure that source service number exists
-		while (Services.find(sourceServiceNumber) == false) { 
-			System.out.println("Error: Service number does not exist");
-			sourceServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a source service number: "));
+		int sourceServiceNumber = 0;
+		while (true) { 
+			sourceServiceNumber = ScannerWrapper.getInputInt("Enter a source service number: ");
+			if (!ServiceCommands.validateServiceNum(sourceServiceNumber)) {
+				continue;
+			}
+			// Ensure that service number doesn't already exist
+			if (!Services.find(sourceServiceNumber)) { 
+				System.out.println("Service number does not exist.");
+				continue;
+			} // end if
+			break;
 		} // end while
-
-		// prompt the user for a destination service number
-		int destServiceNum = Integer.parseInt(ScannerWrapper.getInput("Enter a destination service number: "));
-		int destServiceNumber = ServiceCommands.validateServiceNum(destServiceNum);
 		
-		// Ensure that destination service number exists
-		while (Services.find(destServiceNumber) == false) { 
-			System.out.println("Error: Service number does not exist");
-			destServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a destination service number: "));
+		// prompt the user for a source service number
+		int destServiceNumber = 0;
+		while (true) { 
+			destServiceNumber = ScannerWrapper.getInputInt("Enter a destination service number: ");
+			if (!ServiceCommands.validateServiceNum(destServiceNumber)) {
+				continue;
+			}
+			// Ensure that service number doesn't already exist
+			if (!Services.find(destServiceNumber)) { 
+				System.out.println("Service number does not exist.");
+				continue;
+			} // end if
+			break;
 		} // end while
 		
 		// prompt the user for a number of tickets

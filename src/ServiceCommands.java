@@ -118,6 +118,7 @@ public class ServiceCommands {
 			}
 			// Ensure that service number doesn't already exist
 			if (!Services.find(serviceNumber)) { 
+				System.out.println("Error: Service number does not exist");
 				continue;
 			} // end if
 			break;

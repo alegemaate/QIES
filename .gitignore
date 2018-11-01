@@ -2,3 +2,5 @@
 *.class
 *.DS_Store
 /tests/output/*
+/build/transactions/txnsum.txt
+/build/vsf.txt

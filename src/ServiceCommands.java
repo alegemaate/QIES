@@ -204,7 +204,13 @@ public class ServiceCommands {
 		
 		// Cannot be greater than 39 characters
 		if (serviceName.length() > 39) {
-			System.out.println("Service name cannot be greater than 39 characters.");
+			System.out.println("Service name can not be greater than 39 characters.");
+			return false;
+		} // end while
+		
+		// Cannot contain anything but letters and '
+		if (!serviceName.matches("[a-zA-Z']+")) {
+			System.out.println("Service name can not contain characters other than alpha and '.");
 			return false;
 		} // end while
 

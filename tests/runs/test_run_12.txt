@@ -1,12 +1,12 @@
 [93m===========================
-cancel_10_tickets_service
+cancel_10_tickets_service_agent
 ===========================[0m
 [32mSUCCESS[0m
 
 
 
 [93m===========================
-cancel_20_tickets_session
+cancel_20_tickets_session_agent
 ===========================[0m
 [32mSUCCESS[0m
 
@@ -20,14 +20,21 @@ cancel_large_tickets_planner
 
 
 [93m===========================
-cancel_more_than_10_service
+cancel_more_than_10_service_agent
 ===========================[0m
 [32mSUCCESS[0m
 
 
 
 [93m===========================
-cancel_more_than_20_session
+cancel_more_than_10_service_multitrans_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+cancel_more_than_20_session_agent
 ===========================[0m
 [32mSUCCESS[0m
 
@@ -91,6 +98,13 @@ valid_service_number
 
 [93m===========================
 change_agent_ticket_limit
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+change_agent_ticket_limit_multi_trans
 ===========================[0m
 [32mSUCCESS[0m
 
@@ -497,6 +511,6 @@ sell_ticket_number_zero
 
 [104mTESTS COMPLETE:[0m
   [31mFails:0
-  [32mSuccesses:71
-  [0mTests Run:71
+  [32mSuccesses:73
+  [0mTests Run:73
 

@@ -7,10 +7,17 @@
  *		valid service file.
  *	Outputs transaction summary file to a subdirectory in the running
  *		directory called 'transactions'
- *	To run open the command line and navigate to the /bin/ directory
- *		Run as follows
- *			java -cp ../bin "QIESBase" "vsf.txt"
- *		From the build directory
+ *
+ *  You must have java installed on your system
+ *  	run java -h to check if it is installed
+ *
+ *  QIES can be built, or you can use the provided .class files.
+ *  	To build QUIES navigate to ./src/ directory and execute:
+ *  	javac QIESBase.java -d ../bin/
+ *
+ *	To run QUIES navigate to ./build/ directory and execute:
+ *		java -cp ../bin "QIESBase" "vsf.txt"
+ *
  * Spice Tests TEAM 13
  * 13/10/2018
  */

@@ -1,0 +1,15 @@
+Enter Command
+Enter user type: 
+Successfully logged in as planner.
+Enter Command
+Enter service number: 
+Enter a new service name: 
+Enter year:  
+Enter month: 
+Enter day: 
+Error: month cannot be less than 1 or greater than 12.
+Enter month: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...

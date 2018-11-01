@@ -146,7 +146,8 @@ public class TicketCommands {
 		} // end if
 		
 		// prompt the user for a source service number
-		int sourceServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a source service number: "));
+		int sourceServiceNum = Integer.parseInt(ScannerWrapper.getInput("Enter a source service number: "));
+		int sourceServiceNumber = ServiceCommands.validateServiceNum(sourceServiceNum);
 		
 		// Ensure that source service number exists
 		while (Services.find(sourceServiceNumber) == false) { 
@@ -155,7 +156,8 @@ public class TicketCommands {
 		} // end while
 
 		// prompt the user for a destination service number
-		int destServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a destination service number: "));
+		int destServiceNum = Integer.parseInt(ScannerWrapper.getInput("Enter a destination service number: "));
+		int destServiceNumber = ServiceCommands.validateServiceNum(destServiceNum);
 		
 		// Ensure that destination service number exists
 		while (Services.find(destServiceNumber) == false) { 

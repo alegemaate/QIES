@@ -141,7 +141,6 @@ public class TicketCommands {
 			return 0;
 		} // end if
 		
-		
 		// prompt the user for a source service number
 		int sourceServiceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter a source service number: "));
 		
@@ -168,7 +167,7 @@ public class TicketCommands {
 		// TODO: add ticket constraints if any apply here
 		while (true) {
 			numTickets = ScannerWrapper.getInputInt("Enter number of tickets: ");
-			if (numTickets < 1 || ticketsChanged >= 20 && CredentialCommands.userType.equals("agent")) {
+			if (numTickets < 1 || ticketsChanged + numTickets >= 20 && CredentialCommands.userType.equals("agent")) {
 				System.out.println("Invalid");
 				continue;
 			}

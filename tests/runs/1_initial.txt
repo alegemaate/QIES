@@ -1300,7 +1300,7 @@ FAILED
 
 
 TESTS COMPLETE:
- Fails:66
- Successes:2
+ Fails:53
+ Successes:15
  Tests Run:68
 

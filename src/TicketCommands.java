@@ -38,6 +38,7 @@ public class TicketCommands {
 			}
 			if (Services.find(serviceNumber) == false) {
 				System.out.println("Error: Service number does not exist");
+				continue;
 			}
 			break;
 		} // end while
@@ -86,13 +87,16 @@ public class TicketCommands {
 		
 		
 		// prompt the user for a service number
-		String serviceNumString = ScannerWrapper.getInput("Enter service number: ");
-		int serviceNumber = Integer.parseInt(serviceNumString);
+		int serviceNumber = 0;
 		
 		// Ensure that service number exists
-		while (Services.find(serviceNumber) == false) { 
-			System.out.println("Error: Service number does not exist");
-			serviceNumber = Integer.parseInt(ScannerWrapper.getInput("Enter service number:"));
+		while (true) { 
+			serviceNumber = ScannerWrapper.getInputInt("Enter service number: ");
+			if (Services.find(serviceNumber) == false) {
+				System.out.println("Error: Service number does not exist");
+				continue;
+			}
+			break;
 		} // end while
 
 		// prompt the user for a number of tickets
@@ -116,7 +120,7 @@ public class TicketCommands {
 			ticketreceipts.add(receipt);
 			
 			// adding the ticket transaction to the log
-			Log.addLine("CAN " + serviceNumString + " " + numTickets + " 00000 **** 0");
+			Log.addLine("CAN " + serviceNumber + " " + numTickets + " 00000 **** 0");
 		} else {
 			System.out.println("Cannot cancel more than 20 tickets per session as Agent.");
 			return -1;

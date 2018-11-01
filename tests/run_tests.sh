@@ -30,11 +30,9 @@ for line in $(find . -iname 'input.txt'); do
 	cd "../tests/"
 	cp "../build/transactions/txnsum.txt" "${DIR}/txnsum_actual.txt"
 	
-	
 	# Compare files
 	diff_output=""
-	if cmp -s "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt"
-	then
+	if cmp -s "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt"; then
 		echo -e "\e[32mSUCCESS\e[0m\n"
 		successes=$((successes+1))
 	else

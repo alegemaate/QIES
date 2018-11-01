@@ -5,34 +5,42 @@ fails=0
 successes=0
 tests_run=0
 
+# Clear past run
+rm -rf output/*
+
+# Parse inputs
 for line in $(find . -iname 'input.txt'); do
 	# Lines from input
 	value="$(cat $line)"
 
-	# Directory 
-	DIR=$(dirname "${line}")
+	# Test Directory and Name
+	TESTDIR=$(dirname "${line}")
+	CATDIR=$(dirname "${TESTDIR}")
+	testname=${TESTDIR##*/} 
+	catname=${CATDIR##*/} 
+	
+	# Make Output Directory
+	mkdir -p "./output/${catname}/"
+	mkdir -p "./output/${catname}/${testname}/"
 	
 	# Test header
-	echo -e "\e[93m===========================\n${DIR}\n===========================\e[0m"
+	echo -e "\e[93m===========================\n${testname}\n===========================\e[0m"
 	
-	# Clear last test
-	rm "${DIR}/txnsum_actual.txt" 2> /dev/null
-	rm "${DIR}/console.log" 2> /dev/null
-	rm "${DIR}/diff.log" 2> /dev/null
+	# Clear last txn summary
 	rm "../build/transactions/txnsum.txt" 2> /dev/null
 	
 	# Run Test
-	cp "${DIR}/vsf.txt" "../build/vsf.txt"
+	cp "./input/${catname}/${testname}/vsf.txt" "../build/vsf.txt"
 	cd "../build/"
 	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "QIESBase" "vsf.txt")
 	
 	# Copy txn summary
 	cd "../tests/"
-	cp "../build/transactions/txnsum.txt" "${DIR}/txnsum_actual.txt"
+	cp "../build/transactions/txnsum.txt" "./output/${catname}/${testname}/txnsum.txt"
 	
 	# Compare files
 	diff_output=""
-	if cmp -s "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt"; then
+	if cmp -s "expected/${catname}/${testname}/txnsum.txt" "output/${catname}/${testname}/txnsum.txt"; then
 		echo -e "\e[32mSUCCESS\e[0m\n"
 		successes=$((successes+1))
 	else
@@ -40,14 +48,14 @@ for line in $(find . -iname 'input.txt'); do
 		echo -e "log\n--------"
 		echo -e "$run_output"
 		echo -e "\ndiff\n--------"
-		diff_output=$(diff -y "${DIR}/txnsum_actual.txt" "${DIR}/txnsum_expected.txt")
+		diff_output=$(diff -y "expected/${catname}/${testname}/txnsum.txt" "output/${catname}/${testname}/txnsum.txt")
 		echo -e "$diff_output"
 		fails=$((fails+1))
 	fi
 	
 	# Write to logs
-	echo -e "$run_output" > "${DIR}/console.log"
-	echo -e "$diff_output" > "${DIR}/diff.log"
+	echo -e "$run_output" > "output/${catname}/${testname}/console.log"
+	echo -e "$diff_output" > "output/${catname}/${testname}/diff.log"
 	
 	
 	# Formatting

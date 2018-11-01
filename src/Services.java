@@ -61,8 +61,11 @@ public class Services {
 	 * Output: none
 	 */
 	public static void remove(int serviceNumber) {
-		ServiceNumber serviceNum = new ServiceNumber(serviceNumber);
-		serviceList.remove(serviceNum);
+		for (int i = 0; i < serviceList.size(); i++) {
+			if (serviceList.get(i).getNumber() == serviceNumber) {
+				serviceList.remove(serviceList.get(i));
+			}
+		}
 	} // end remove method
 	
 	//---------------------------------------------------------------------------------------------

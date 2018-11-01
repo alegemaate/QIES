@@ -6,9 +6,9 @@ Enter an existing service number:
 Enter service name: 
 Enter Command
 Enter service number: 
+Error: Service number does not exist
+Enter service number: 
 Enter number of tickets: 
-Enter Command
-1 is not a valid command.
 Enter Command
 Successfully logged out.
 Enter Command

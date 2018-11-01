@@ -25,7 +25,7 @@ public class ServiceCommands {
 		// Ensure logged in
 		if (!CredentialCommands.loggedIn) {
 			System.out.println("Error: You are not logged in.");
-			return 0;
+			return -1;
 		} // end if
 		
 		// Creating a service is only a planner operation
@@ -35,14 +35,30 @@ public class ServiceCommands {
 		} // end if
 		
 		// Prompt user for new service number
-		String serviceNumString = ScannerWrapper.getInput("Enter a new service number: ");
-		// Ensures valid service number
-		int serviceNumber = validateServiceNum(serviceNumString);
-		Services.add(serviceNumber);
+		// Ensure that service number exists
+		int serviceNumber = 0;
+		while (true) { 
+			serviceNumber = ScannerWrapper.getInputInt("Enter service number: ");
+			if (!validateServiceNum(serviceNumber)) {
+				continue;
+			}
+			// Ensure that service number doesn't already exist
+			if (Services.find(serviceNumber)) { 
+				System.out.println("Service number already exists; cannot create new service.");
+				continue;
+			} // end if
+			break;
+		} // end while
 		
 		// Prompt user for new service name
-		String serviceName = ScannerWrapper.getInput("Enter a new service name: ");
-		serviceName = validateServiceName(serviceName);
+		String serviceName = "";
+		while (true) { 
+			serviceName = ScannerWrapper.getInput("Enter a new service name: ");
+			if (!validateServiceName(serviceName)) {
+				continue;
+			}
+			break;
+		} // end while
 		
 		// Prompt user for service date
 		int year = ScannerWrapper.getInputInt("Enter year:  ");
@@ -93,20 +109,32 @@ public class ServiceCommands {
 		} // end if
 		
 		// Prompt user for new service number
-		String serviceNumString = ScannerWrapper.getInput("Enter an existing service number: ");
-		int serviceNumber = Integer.parseInt(serviceNumString);
-		
-		// Ensure that service number exists and isn't already deleted
-		if (Services.find(serviceNumber) == false) { 
-			System.out.println("Service number does not exist; cannot delete.");
-			return -1;
-		} // end if
+		// Ensure that service number exists
+		int serviceNumber = 0;
+		while (true) { 
+			serviceNumber = ScannerWrapper.getInputInt("Enter service number: ");
+			if (!validateServiceNum(serviceNumber)) {
+				continue;
+			}
+			// Ensure that service number doesn't already exist
+			if (!Services.find(serviceNumber)) { 
+				continue;
+			} // end if
+			break;
+		} // end while
 		
 		// Remove service number from serviceList
 		Services.remove(serviceNumber);
 		
-		// Ask for service name
-		String serviceName = ScannerWrapper.getInput("Enter service name: ");
+		// Prompt user for new service name
+		String serviceName = "";
+		while (true) { 
+			serviceName = ScannerWrapper.getInput("Enter a new service name: ");
+			if (!validateServiceName(serviceName)) {
+				continue;
+			}
+			break;
+		} // end while
 		
 		/*
 		 * Add transaction to Log: CCC AAAA MMMM BBBB NNNNNN YYYYMMDD where:
@@ -141,34 +169,13 @@ public class ServiceCommands {
 	 * Input: none
 	 * Output: int representing -1 if service number already exists, service number otherwise
 	 */
-	private static int validateServiceNum(String serviceNum) {
-		// Ensure logged in
-		if (!CredentialCommands.loggedIn) {
-			System.out.println("Error: You are not logged in.");
-			return 0;
-		} // end if
-		
-		
+	public static boolean validateServiceNum(int serviceNum) {
 		// Service number must be exactly 5 characters
-		while (serviceNum.length() != 5) {
+		if (serviceNum < 10000 || serviceNum > 99999) {
 			System.out.println("Invalid input: service number must be exactly 5 characters.");
-			serviceNum = ScannerWrapper.getInput("Enter a new service number: ");
+			return false;
 		} // end if
-		
-		// Service number cannot start with 0
-		while (serviceNum.charAt(0) == '0') {
-			System.out.println("Invalid input: service number cannot begin with 0.");
-			serviceNum = ScannerWrapper.getInput("Enter a new service number: ");
-		} // end if
-		
-		// Ensure that service number doesn't already exist
-		int serviceNumber = Integer.parseInt(serviceNum);
-		if (Services.find(serviceNumber) == true) { 
-			System.out.println("Service number already exists; cannot create new service.");
-			return -1;
-		} // end if
-
-		return serviceNumber;
+		return true;
 	} // send validateServiceNum method
 	
 	//---------------------------------------------------------------------------------------------
@@ -181,27 +188,27 @@ public class ServiceCommands {
 	 * Input: none
 	 * Output: service name once valid
 	 */
-	private static String validateServiceName(String serviceName) {
+	public static boolean validateServiceName(String serviceName) {
 		// Cannot start or end with spaces
-		while (serviceName.trim().length() != serviceName.length()) {
+		if (serviceName.trim().length() != serviceName.length()) {
 			System.out.println("Service name cannot start or end with whitespace.");
-			serviceName = ScannerWrapper.getInput("Enter a new service name: ");
+			return false;
 		} // end while
 		
 		// Cannot be less than 3 characters
-		while (serviceName.length() < 3) {
+		if (serviceName.length() < 3) {
 			System.out.println("Service name must be at least 3 characters.");
-			serviceName = ScannerWrapper.getInput("Enter a new service name: ");
+			return false;
 		} // end while
 		
 		// Cannot be greater than 39 characters
-		while (serviceName.length() > 39) {
+		if (serviceName.length() > 39) {
 			System.out.println("Service name cannot be greater than 39 characters.");
-			serviceName = ScannerWrapper.getInput("Enter a new service name: ");
+			return false;
 		} // end while
 
 		// Name is valid!
-		return serviceName;
+		return true;
 	} // end validateServiceName
 	
 } // end ServiceCommands class

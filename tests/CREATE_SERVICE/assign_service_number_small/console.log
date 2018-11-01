@@ -2,9 +2,9 @@ Enter Command
 Enter user type: 
 Successfully logged in as planner.
 Enter Command
-Enter a new service number: 
+Enter service number: 
 Invalid input: service number must be exactly 5 characters.
-Enter a new service number: 
+Enter service number: 
 Enter a new service name: 
 Enter year:  
 Enter month: 

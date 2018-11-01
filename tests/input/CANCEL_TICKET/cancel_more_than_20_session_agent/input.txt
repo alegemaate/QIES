@@ -2,12 +2,12 @@ login
 agent
 cancelticket
 11111
-10
+8
 cancelticket
 11112
-9
+5
 cancelticket
 11113
-5
-1
+8
+7
 logout

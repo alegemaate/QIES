@@ -10,9 +10,6 @@
 import java.util.*;
 
 public class TicketCommands {
-	
-	public static int ticketsChanged = 0;
-	public static int ticketsCancelled = 0;
 	public static ArrayList<TicketReceipt> ticketreceipts = new ArrayList<>();
 	
 	/*
@@ -58,7 +55,7 @@ public class TicketCommands {
 		} // end while
 		
 		// generating the ticket receipt for the transaction
-		TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets);
+		TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets, "SEL");
 		
 		// adding the generated ticket receipt to the ticketreceipts array
 		ticketreceipts.add(receipt);
@@ -85,6 +82,11 @@ public class TicketCommands {
 			return 0;
 		} // end if
 		
+		// Ensure have not cancelled over max amount
+		if (ticketsProcessedSession("CAN") >= 20 && CredentialCommands.userType.equals("agent")) {
+			System.out.println("Error: Max number tickets sold in this session");
+			return 0;
+		}
 		
 		// prompt the user for a service number
 		int serviceNumber = 0;
@@ -96,6 +98,10 @@ public class TicketCommands {
 				System.out.println("Error: Service number does not exist");
 				continue;
 			}
+			if (ticketsProcessedService(serviceNumber, "CAN") >= 10 && CredentialCommands.userType.equals("agent")) {
+				System.out.println("Error: Max number tickets sold for this service");
+				return 0;
+			}
 			break;
 		} // end while
 
@@ -103,28 +109,29 @@ public class TicketCommands {
 		int numTickets = 0;
 		while (true) {
 			numTickets = ScannerWrapper.getInputInt("Enter number of tickets: ");
-			if (numTickets < 1 || numTickets > 1000 || (numTickets > 10 && CredentialCommands.userType.equals("agent"))) {
-				System.out.println("Invalid");
+			if (numTickets + ticketsProcessedSession("CAN") > 20 && CredentialCommands.userType.equals("agent")) {
+				System.out.println("Error: Ticket count above max allowed for this session");
+				continue;
+			}
+			if (numTickets + ticketsProcessedService(serviceNumber, "CAN") > 10 && CredentialCommands.userType.equals("agent")) {
+				System.out.println("Error: Too many tickets sold for this service");
+				continue;
+			}
+			if (numTickets < 1 || numTickets > 1000) {
+				System.out.println("Error: Invalid ticket number");
 				continue;
 			}
 			break;
 		} // end while
 		
-		// Ensure that the number of tickets is valid
-		// Agent cannot cancel more than 20 tickets per session
-		if ((ticketsCancelled + numTickets) <= 20 || CredentialCommands.userType.equals("planner")) {
-			// generating the ticket receipt for the transaction
-			TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets);
-			
-			// adding the generated ticket receipt to the ticketreceipts array
-			ticketreceipts.add(receipt);
-			
-			// adding the ticket transaction to the log
-			Log.addLine("CAN " + serviceNumber + " " + numTickets + " 00000 **** 0");
-		} else {
-			System.out.println("Cannot cancel more than 20 tickets per session as Agent.");
-			return -1;
-		} // end if/else
+		// generating the ticket receipt for the transaction
+		TicketReceipt receipt = new TicketReceipt(serviceNumber, numTickets, "CAN");
+		
+		// adding the generated ticket receipt to the ticketreceipts array
+		ticketreceipts.add(receipt);
+		
+		// adding the ticket transaction to the log
+		Log.addLine("CAN " + serviceNumber + " " + numTickets + " 00000 **** 0");
 		
 		return 0;
 	} // end cancelTicket method
@@ -144,6 +151,12 @@ public class TicketCommands {
 			System.out.println("Error: You are not logged in.");
 			return 0;
 		} // end if
+		
+		// Ensure have not changed over max amount
+		if (ticketsProcessedSession("CHG") >= 20 && CredentialCommands.userType.equals("agent")) {
+			System.out.println("Error: Max number tickets changed in this session");
+			return 0;
+		}
 		
 		// prompt the user for a source service number
 		int sourceServiceNumber = 0;
@@ -183,15 +196,15 @@ public class TicketCommands {
 		// TODO: add ticket constraints if any apply here
 		while (true) {
 			numTickets = ScannerWrapper.getInputInt("Enter number of tickets: ");
-			if (numTickets < 1 || numTickets > 1000 || ticketsChanged + numTickets >= 20 && CredentialCommands.userType.equals("agent")) {
-				System.out.println("Invalid");
+			if (numTickets < 1 || numTickets > 1000 || (numTickets + ticketsProcessedSession("CHG") > 20 && CredentialCommands.userType.equals("agent"))) {
+				System.out.println("Error: Invalid Number");
 				continue;
 			}
 			break;
 		} // end while
 
 		// generating the ticket receipt for the transaction
-		TicketReceipt receipt = new TicketReceipt(sourceServiceNumber, numTickets);
+		TicketReceipt receipt = new TicketReceipt(sourceServiceNumber, numTickets, "CHG");
 		
 		// adding the generated ticket receipt to the ticketReceipts array
 		ticketreceipts.add(receipt);
@@ -201,5 +214,42 @@ public class TicketCommands {
 		
 		return 0;
 	} // end changeTicket method
+	
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * TICKETSSOLDSESSION counts tickets sold for service
+	 * 
+	 * Input: none
+	 * Output: number tickets sold this session
+	 */
+	private static int ticketsProcessedSession(String txnType) {
+		int num = 0;
+		for (int i = 0; i < ticketreceipts.size(); i++) {
+			if (ticketreceipts.get(i).getTxnType() == txnType) {
+				num += ticketreceipts.get(i).getNumSold();
+			}
+		}
+		return num;
+	}
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * TICKETSSOLDSERVICE counts tickets sold for service
+	 * 
+	 * Input: serviceNum
+	 * Output: number tickets sold for this service
+	 */
+	private static int ticketsProcessedService(int serviceNum, String txnType) {
+		int num = 0;
+		for (int i = 0; i < ticketreceipts.size(); i++) {
+			if (ticketreceipts.get(i).getServiceNum() == serviceNum && ticketreceipts.get(i).getTxnType() == txnType) {
+				num += ticketreceipts.get(i).getNumSold();
+			}
+		}
+		return num;
+	}
 
 } // end TicketCommands class

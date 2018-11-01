@@ -9,6 +9,7 @@ public class TicketReceipt {
 	
 	private int serviceNumber;
 	private int quantity;
+	private String transaction;
 	
 	/*
 	 * TicketReceipt constructor.
@@ -16,34 +17,11 @@ public class TicketReceipt {
 	 * Parameters: int for service number, int for quantity of tickets for 
 	 * 			   that transaction
 	 */
-	public TicketReceipt(int serviceNumber, int quantity) {
-		setServiceNum(serviceNumber);
-		setNumSold(quantity);
-	} // end TicketReceipt constructor
-	
-	//---------------------------------------------------------------------------------------------
-	
-	/*
-	 * SETSERVICENUM: Sets the service number.
-	 * 
-	 * Input: int representing service number
-	 * Output: none
-	 */
-	public void setServiceNum(int serviceNumber) {
+	public TicketReceipt(int serviceNumber, int quantity, String transaction) {
 		this.serviceNumber = serviceNumber;
-	} // end setServiceNum method
-	
-	//---------------------------------------------------------------------------------------------
-	
-	/*
-	 * SETNUMSOLD: Sets the number of tickets sold.
-	 * 
-	 * Input: int representing number of tickets sold
-	 * Output: none
-	 */
-	public void setNumSold(int quantity) {
 		this.quantity = quantity;
-	} // end setNumSold method
+		this.transaction = transaction;
+	} // end TicketReceipt constructor
 	
 	//---------------------------------------------------------------------------------------------
 
@@ -58,13 +36,24 @@ public class TicketReceipt {
 	
 	//---------------------------------------------------------------------------------------------
 	
-	/* GETNUMSOLD: Retrieve number of tickets sold.
+	/* GETNUMSOLD: Retrieve number of tickets processed.
 	 * 
 	 * Input: none
 	 * Output: number of tickets sold as int
 	 */
 	public int getNumSold() {
 		return quantity;
+	} // end getNumSold method
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/* GETTXNTYPE: Retrieve transaction type.
+	 * 
+	 * Input: none
+	 * Output: number of tickets sold as int
+	 */
+	public String getTxnType() {
+		return transaction;
 	} // end getNumSold method
 
 }

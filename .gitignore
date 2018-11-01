@@ -1,2 +1,4 @@
 /bin/
 *.class
+*.DS_Store
+/tests/output/*

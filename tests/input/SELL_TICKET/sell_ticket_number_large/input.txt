@@ -3,5 +3,4 @@ agent
 sellticket
 11111
 1000
-40
 logout

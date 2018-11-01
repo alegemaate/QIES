@@ -1,84 +1,22 @@
 [93m===========================
 cancel_10_tickets_service_agent
 ===========================[0m
-[31mFAILURE[0m
+[32mSUCCESS[0m
 
-console output
---------
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter desired service number: 
-Enter a new service number: 
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-Enter Command
-
-txn summary diff
---------
-CAN 11111 10 00000 **** 0				      |	CAN 11111 10 0 **** 0
-EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
 cancel_20_tickets_session_agent
 ===========================[0m
-[31mFAILURE[0m
+[32mSUCCESS[0m
 
-console output
---------
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter desired service number: 
-Enter a new service number: 
-Enter Command
-Enter desired service number: 
-Enter a new service number: 
-Enter Command
-Enter desired service number: 
-Enter a new service number: 
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-Enter Command
-
-txn summary diff
---------
-CAN 11111 8 00000 **** 0				      |	CAN 11111 8 0 **** 0
-CAN 11112 5 00000 **** 0				      |	CAN 11112 5 0 **** 0
-CAN 11113 7 00000 **** 0				      |	CAN 11113 7 0 **** 0
-EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
 cancel_large_tickets_planner
 ===========================[0m
-[31mFAILURE[0m
+[32mSUCCESS[0m
 
-console output
---------
-Enter Command
-Enter user type
-Successfully logged in as planner.
-Enter Command
-Enter desired service number: 
-Enter a new service number: 
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-Enter Command
-
-txn summary diff
---------
-CAN 11111 1000 00000 **** 0				      |	CAN 11111 1000 0 **** 0
-EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
@@ -104,7 +42,7 @@ Enter Command
 
 txn summary diff
 --------
-CAN 11111 10 00000 **** 0				      |	CAN 11111 11 0 **** 0
+CAN 11111 10 00000 **** 0				      |	CAN 11111 11 00000 **** 0
 EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
@@ -159,9 +97,9 @@ Enter Command
 
 txn summary diff
 --------
-CAN 11111 8 00000 **** 0				      |	CAN 11111 8 0 **** 0
-CAN 11112 5 00000 **** 0				      |	CAN 11112 5 0 **** 0
-CAN 11113 7 00000 **** 0				      |	CAN 11113 8 0 **** 0
+CAN 11111 8 00000 **** 0					CAN 11111 8 00000 **** 0
+CAN 11112 5 00000 **** 0					CAN 11112 5 00000 **** 0
+CAN 11113 7 00000 **** 0				      |	CAN 11113 8 00000 **** 0
 EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
@@ -243,26 +181,8 @@ txn summary diff
 [93m===========================
 cancel_tickets_planner
 ===========================[0m
-[31mFAILURE[0m
+[32mSUCCESS[0m
 
-console output
---------
-Enter Command
-Enter user type
-Successfully logged in as planner.
-Enter Command
-Enter desired service number: 
-Enter a new service number: 
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-Enter Command
-
-txn summary diff
---------
-CAN 11111 5 00000 **** 0				      |	CAN 11111 5 0 **** 0
-EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
@@ -288,7 +208,7 @@ Enter Command
 
 txn summary diff
 --------
-CAN 11111 1000 00000 **** 0				      |	CAN 11111 1001 0 **** 0
+CAN 11111 1000 00000 **** 0				      |	CAN 11111 1001 00000 **** 0
 EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
@@ -342,26 +262,8 @@ txn summary diff
 [93m===========================
 valid_service_number
 ===========================[0m
-[31mFAILURE[0m
+[32mSUCCESS[0m
 
-console output
---------
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter desired service number: 
-Enter a new service number: 
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-Enter Command
-
-txn summary diff
---------
-CAN 11111 1 00000 **** 0				      |	CAN 11111 1 0 **** 0
-EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
@@ -1134,7 +1036,7 @@ Enter Command
 txn summary diff
 --------
 DEL 11111 0 00000 hello 0					DEL 11111 0 00000 hello 0
-CAN 11112 1 00000 **** 0				      |	CAN 11111 11112 0 **** 0
+CAN 11112 1 00000 **** 0				      |	CAN 11111 11112 00000 **** 0
 EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
@@ -1201,7 +1103,7 @@ Enter Command
 txn summary diff
 --------
 DEL 11111 0 00000 hello 0					DEL 11111 0 00000 hello 0
-SEL 11112 1 00000 **** 0				      |	SEL 11111 11112 0 **** 0
+SEL 11112 1 00000 **** 0				      |	SEL 11111 11112 00000 **** 0
 EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
@@ -1363,31 +1265,8 @@ txn summary diff
 [93m===========================
 login_accepted_after_logout
 ===========================[0m
-[31mFAILURE[0m
+[32mSUCCESS[0m
 
-console output
---------
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter a new service number: 
-Enter desired service number: 
-Enter Command
-Successfully logged out.
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-Enter Command
-
-txn summary diff
---------
-SEL 11111 1 00000 **** 0				      |	SEL 11111 1 0 **** 0
-EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
@@ -1407,51 +1286,15 @@ only_login_accepted_after_logout
 [93m===========================
 sell_existing_service_one
 ===========================[0m
-[31mFAILURE[0m
+[32mSUCCESS[0m
 
-console output
---------
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter a new service number: 
-Enter desired service number: 
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-Enter Command
-
-txn summary diff
---------
-SEL 11111 1 00000 **** 0				      |	SEL 11111 1 0 **** 0
-EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
 sell_existing_service_two
 ===========================[0m
-[31mFAILURE[0m
+[32mSUCCESS[0m
 
-console output
---------
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter a new service number: 
-Enter desired service number: 
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-Enter Command
-
-txn summary diff
---------
-SEL 11111 2 00000 **** 0				      |	SEL 11111 2 0 **** 0
-EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
@@ -1504,28 +1347,8 @@ txn summary diff
 [93m===========================
 sell_ticket_number_large
 ===========================[0m
-[31mFAILURE[0m
+[32mSUCCESS[0m
 
-console output
---------
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter a new service number: 
-Enter desired service number: 
-Enter Command
-40 is not a valid command.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-Enter Command
-
-txn summary diff
---------
-SEL 11111 1000 00000 **** 0				      |	SEL 11111 1000 0 **** 0
-EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [93m===========================
@@ -1572,7 +1395,7 @@ Enter Command
 
 txn summary diff
 --------
-SEL 11111 1000 00000 **** 0				      |	SEL 11111 10000 0 **** 0
+SEL 11111 1000 00000 **** 0				      |	SEL 11111 10000 00000 **** 0
 EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
@@ -1599,12 +1422,12 @@ Enter Command
 
 txn summary diff
 --------
-SEL 11111 1 00000 **** 0				      |	SEL 11111 0 0 **** 0
+SEL 11111 1 00000 **** 0				      |	SEL 11111 0 00000 **** 0
 EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
 
 
 [104mTESTS COMPLETE:[0m
-  [31mFails:57
-  [32mSuccesses:15
+  [31mFails:48
+  [32mSuccesses:24
   [0mTests Run:72
 

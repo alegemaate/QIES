@@ -288,28 +288,6 @@ FAILED
 
 
 
-===========================
-./CHANGE_TICKET/change_current_service_number_check
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-change is not a valid command.
-Enter Command
-ticket is not a valid command.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
-
 
 
 ===========================
@@ -329,12 +307,8 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
+SUCCESS
+
 
 
 
@@ -357,12 +331,7 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
+SUCCESS
 
 
 
@@ -387,66 +356,9 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
+SUCCESS
 
 
-
-===========================
-./CHANGE_TICKET/change_new_service_number_check
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-change is not a valid command.
-Enter Command
-ticket is not a valid command.
-Enter Command
-1111 is not a valid command.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
-
-
-
-===========================
-./CHANGE_TICKET/change_ticket_number_check
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-change is not a valid command.
-Enter Command
-ticket is not a valid command.
-Enter Command
-1111 is not a valid command.
-Enter Command
-2222 is not a valid command.
-Enter Command
-Successfully logged out.
-Enter Command
-Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -477,7 +389,6 @@ FAILED
 ---
 > CHG 1111 0021 2222 R00001 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -508,7 +419,6 @@ FAILED
 ---
 > CHG 1111 0001 2222 R00001 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -539,7 +449,6 @@ FAILED
 ---
 > CHG 1111 0001 2222 R00001 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -674,7 +583,6 @@ FAILED
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -696,7 +604,6 @@ FAILED
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -718,7 +625,6 @@ FAILED
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -760,7 +666,6 @@ FAILED
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -803,7 +708,6 @@ FAILED
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -870,7 +774,6 @@ FAILED
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -893,7 +796,6 @@ FAILED
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -939,7 +841,6 @@ FAILED
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -960,7 +861,6 @@ FAILED
 ---
 > CRE 00000 0000 12345 NEWSERVICE 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -977,12 +877,7 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
+SUCCESS
 
 
 
@@ -996,13 +891,7 @@ Successfully logged in as planner.
 Enter Command
 Enter service number: 
 Enter number of tickets: 
-FAILED
-1c1,2
-< EOS 00000 0 00000 **** 0
----
-> empty transaction summary file
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
+SUCCESS
 
 
 
@@ -1019,50 +908,7 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
-
-
-
-===========================
-./DELETE_SERVICE/get_service_name
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as planner.
-Enter Command
-Enter an existing service number: 
-Enter service name: 
-Enter Command
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
-
-
-
-===========================
-./DELETE_SERVICE/get_service_number
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as planner.
-Enter Command
-Enter an existing service number: 
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
+SUCCESS
 
 
 
@@ -1080,12 +926,7 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-\ No newline at end of file
+SUCCESS
 
 
 
@@ -1110,7 +951,6 @@ FAILED
 ---
 > 1111 hello 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -1274,11 +1114,7 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
+SUCCESS
 
 
 
@@ -1296,41 +1132,7 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-
-
-
-
-===========================
-./LOGIN/start_front_end_session
-===========================
-
-Enter Command
-Enter user type
-Error: User type exit does not exist.
-Enter Command
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-
-
-
-
-===========================
-./LOGIN/valid_services_file_read
-===========================
-
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
+SUCCESS
 
 
 
@@ -1344,11 +1146,7 @@ Enter user type
 Successfully logged in as agent.
 Enter Command
 Enter service number: 
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
+SUCCESS
 
 
 
@@ -1361,11 +1159,7 @@ Enter Command
 Error: You are not logged in.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
+SUCCESS
 
 
 
@@ -1379,29 +1173,7 @@ Enter user type
 Successfully logged in as agent.
 Enter Command
 Enter service number: 
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
-
-
-
-
-===========================
-./LOGOUT/transaction_summary_file
-===========================
-
-Enter Command
-Enter user type
-Successfully logged in as agent.
-Enter Command
-Enter service number: 
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
+SUCCESS
 
 
 
@@ -1470,11 +1242,7 @@ Enter Command
 Successfully logged out.
 Enter Command
 Force exiting...
-FAILED
-1c1
-< EOS 00000 0 00000 **** 0
----
-> EOS 00000 0 00000 **** 0
+SUCCESS
 
 
 
@@ -1502,7 +1270,6 @@ FAILED
 ---
 > SEL 1111 0001 0000 R00001 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 
@@ -1529,7 +1296,6 @@ FAILED
 ---
 > SEL 1111 0001 0000 R00001 20181004
 > EOS 00000 0 00000 **** 0
-\ No newline at end of file
 
 
 

@@ -1,0 +1,1610 @@
+[93m===========================
+cancel_10_tickets_service_agent
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 10 00000 **** 0				      |	CAN 11111 10 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+cancel_20_tickets_session_agent
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 8 00000 **** 0				      |	CAN 11111 8 0 **** 0
+CAN 11112 5 00000 **** 0				      |	CAN 11112 5 0 **** 0
+CAN 11113 7 00000 **** 0				      |	CAN 11113 7 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+cancel_large_tickets_planner
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 1000 00000 **** 0				      |	CAN 11111 1000 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+cancel_more_than_10_service_agent
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+10 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 10 00000 **** 0				      |	CAN 11111 11 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+cancel_more_than_10_service_multitrans_agent
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+cancel_more_than_20_session_agent
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+7 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 8 00000 **** 0				      |	CAN 11111 8 0 **** 0
+CAN 11112 5 00000 **** 0				      |	CAN 11112 5 0 **** 0
+CAN 11113 7 00000 **** 0				      |	CAN 11113 8 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+cancel_negative_tickets_agent
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Error: Invalid ticket number
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 1 00000 **** 0				      <
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+cancel_negative_tickets_planner
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Error: Invalid ticket number
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 1 00000 **** 0				      <
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+cancel_number_tickets_string
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+cancel_tickets_planner
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 5 00000 **** 0				      |	CAN 11111 5 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+cancel_too_large_tickets_planner
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+1000 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 1000 00000 **** 0				      |	CAN 11111 1001 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+invalid_service_number
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+Error: Service number does not exist
+Enter Command
+11111 is not a valid command.
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 1 00000 **** 0				      <
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+invalid_service_number_string
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+valid_service_number
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CAN 11111 1 00000 **** 0				      |	CAN 11111 1 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+change_agent_ticket_limit
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a source service number: 
+Enter a destination service number: 
+Enter a new service number: 
+Enter Command
+20 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CHG 11111 20 22222 **** 0				      |	CHG 11111 21 22222 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+change_agent_ticket_limit_multi_trans
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a source service number: 
+Enter a destination service number: 
+Enter a new service number: 
+Enter Command
+Enter a source service number: 
+Enter a destination service number: 
+Enter a new service number: 
+Enter Command
+10 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CHG 11111 10 22222 **** 0					CHG 11111 10 22222 **** 0
+CHG 11111 10 22222 **** 0				      |	CHG 11111 11 22222 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+change_invalid_current_service_number
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a source service number: 
+Enter a destination service number: 
+Enter a new service number: 
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CHG 11111 1 22222 **** 0				      |	CHG 0 22222 11111 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+change_invalid_new_service_number
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a source service number: 
+Enter a destination service number: 
+Enter a new service number: 
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CHG 11111 1 22222 **** 0				      |	CHG 11111 22222 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+change_invalid_ticket_number_zero
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a source service number: 
+Enter a destination service number: 
+Enter a new service number: 
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CHG 11111 1 22222 **** 0				      |	CHG 11111 0 22222 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+change_large_planner
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+change_too_large_planner
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a source service number: 
+Enter a destination service number: 
+Enter a new service number: 
+Enter Command
+1000 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CHG 11111 1000 22222 **** 0				      |	CHG 11111 1001 22222 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+change_valid_to_valid_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+change_valid_to_valid_planner
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+assign_service_date_above_d_range
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Error: invalid day in date
+Enter Command
+04 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018100 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_date_above_m_range
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Error: invalid month in date
+Enter Command
+10 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 201804 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_date_above_y_range
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Error: invalid year in date
+Enter Command
+2018 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 0104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_date_below_d_range
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Error: invalid day in date
+Enter Command
+04 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018100 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_date_below_m_range
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Error: invalid month in date
+Enter Command
+10 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 201804 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_date_below_y_range
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Error: invalid year in date
+Enter Command
+2018 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 0104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_date_invalid_format
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+assign_service_date_nondigit
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+assign_service_name_begin_space
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Enter Command
+abcd is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_name_end_space
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Enter Command
+abcd is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_name_large
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Enter Command
+abcdefghijklmnopqrstuvwxyz1234567890ABCD is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_name_nonalpha
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+assign_service_name_small
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Enter Command
+ab is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_number_0_start
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Invalid input: service number cannot begin with 0.
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_number_duplicate
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Service number already exists; cannot create new service.
+Enter a new service name: 
+Enter year: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+assign_service_number_large
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Invalid input: service number must be exactly 5 characters.
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_number_non_digit
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Invalid input: service number must be exactly 5 characters.
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+assign_service_number_small
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Invalid input: service number must be exactly 5 characters.
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+create_new_service_valid
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter a new service number: 
+Enter a new service name: 
+Enter year: 
+Enter month: 
+Enter day: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+CRE 12345 0 00000 NEWSERVICE 20181004			      |	CRE 12345 0 00000 NEWSERVICE 2018104 
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+create_service_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+agent_deleteservice
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+cancelticket_deleted_service
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter an existing service number: 
+Enter service name: 
+Enter Command
+Enter desired service number: 
+Enter a new service number: 
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+DEL 11111 0 00000 hello 0					DEL 11111 0 00000 hello 0
+CAN 11112 1 00000 **** 0				      |	CAN 11111 11112 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+deleteservice_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+invalid_service_number
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter an existing service number: 
+Service number does not exist; cannot delete.
+Enter Command
+11111 is not a valid command.
+Enter Command
+hello is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+DEL 11111 0 00000 hello 0				      <
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+sellticket_deleted_service
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as planner.
+Enter Command
+Enter an existing service number: 
+Enter service name: 
+Enter Command
+Enter a new service number: 
+Enter desired service number: 
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+DEL 11111 0 00000 hello 0					DEL 11111 0 00000 hello 0
+SEL 11112 1 00000 **** 0				      |	SEL 11111 11112 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+valid_service_number
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+cancelticket_before_login
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter desired service number: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+createservice_before_login
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter a new service number: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+deleteservice_before_login
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter an existing service number: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+invalid_session_type_empty
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+invalid_session_type_numeric
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Error: User type 8838 does not exist.
+Enter Command
+agent is not a valid command.
+Enter Command
+Error: You are not logged in.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+invalid_session_type_string
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Error: User type spice does not exist.
+Enter Command
+agent is not a valid command.
+Enter Command
+Error: You are not logged in.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+login_session_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+login_session_planner
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+login_twice_agent
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+login_twice_planner
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+logout_before_login
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+sellticket_before_login
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter a new service number: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+login_accepted_after_logout
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a new service number: 
+Enter desired service number: 
+Enter Command
+Successfully logged out.
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+SEL 11111 1 00000 **** 0				      |	SEL 11111 1 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+logout_not_logged_in
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+only_login_accepted_after_logout
+===========================[0m
+[32mSUCCESS[0m
+
+
+
+[93m===========================
+sell_existing_service_one
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a new service number: 
+Enter desired service number: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+SEL 11111 1 00000 **** 0				      |	SEL 11111 1 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+sell_existing_service_two
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a new service number: 
+Enter desired service number: 
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+SEL 11111 2 00000 **** 0				      |	SEL 11111 2 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+sell_invalid_service_number
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a new service number: 
+Error: Service number does not exist
+Enter Command
+11111 is not a valid command.
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+SEL 11111 1 00000 **** 0				      <
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+sell_invalid_service_number_string
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a new service number: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+sell_ticket_number_large
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a new service number: 
+Enter desired service number: 
+Enter Command
+40 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+SEL 11111 1000 00000 **** 0				      |	SEL 11111 1000 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+sell_ticket_number_string
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a new service number: 
+Enter desired service number: 
+
+txn summary diff
+--------
+
+
+
+[93m===========================
+sell_ticket_number_too_large
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a new service number: 
+Enter desired service number: 
+Enter Command
+1000 is not a valid command.
+Enter Command
+40 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+SEL 11111 1000 00000 **** 0				      |	SEL 11111 10000 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[93m===========================
+sell_ticket_number_zero
+===========================[0m
+[31mFAILURE[0m
+
+console output
+--------
+Enter Command
+Enter user type
+Successfully logged in as agent.
+Enter Command
+Enter a new service number: 
+Enter desired service number: 
+Enter Command
+1 is not a valid command.
+Enter Command
+Successfully logged out.
+Enter Command
+Force exiting...
+Enter Command
+
+txn summary diff
+--------
+SEL 11111 1 00000 **** 0				      |	SEL 11111 0 0 **** 0
+EOS 00000 0 00000 **** 0					EOS 00000 0 00000 **** 0
+
+
+[104mTESTS COMPLETE:[0m
+  [31mFails:57
+  [32mSuccesses:15
+  [0mTests Run:72
+

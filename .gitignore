@@ -1,6 +1,6 @@
-/bin/
+/frontend/bin/
 *.class
 *.DS_Store
-/tests/output/*
-/build/transactions/txnsum.txt
-/build/vsf.txt
+/frontend/tests/output/*
+/frontend/build/transactions/txnsum.txt
+/frontend/build/vsf.txt

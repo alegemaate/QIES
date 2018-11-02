@@ -12,10 +12,10 @@
 #
 #   QIES can be built, or you can use the provided .class files.
 #     To build QUIES navigate to ./src/ directory and execute:
-#     javac QIESBase.java -d ../bin/
+#     javac FrontEnd.java -d ../bin/
 #
 #	  To run QUIES navigate to ./build/ directory and execute:
-#			java -cp ../bin "QIESBase" "vsf.txt"
+#			java -cp ../bin "FrontEnd" "vsf.txt"
 #
 #   Once java is installed, and QIES is built... 
 #     you may simply run ./run_tests.sh
@@ -72,7 +72,7 @@ for line in $(find . -iname 'input.txt'); do
 	# Run Test
 	cp "./input/${catname}/${testname}/vsf.txt" "../build/vsf.txt"
 	cd "../build/"
-	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "QIESBase" "vsf.txt")
+	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "FrontEnd" "vsf.txt")
 	
 	# Copy txn summary
 	cd "../tests/"

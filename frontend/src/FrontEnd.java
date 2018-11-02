@@ -13,10 +13,10 @@
  *
  *  QIES can be built, or you can use the provided .class files.
  *  	To build QUIES navigate to ./src/ directory and execute:
- *  	javac QIESBase.java -d ../bin/
+ *  	javac FrontEnd.java -d ../bin/
  *
  *	To run QUIES navigate to ./build/ directory and execute:
- *		java -cp ../bin "QIESBase" "vsf.txt"
+ *		java -cp ../bin "FrontEnd" "vsf.txt"
  *
  * Spice Tests TEAM 13
  * 13/10/2018

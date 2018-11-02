@@ -1,7 +1,32 @@
 package backoffice;
 
+import java.io.File;
+
 public class BackOffice {
 
+	/* 
+	 * VALIDATEPATH: Checks if file/directory exists
+	 * 
+	 * Input: String representing file path
+	 * Output: boolean (true on exists, false on not exists)
+	 */
+	public static boolean validatePath(String path) {
+		// Ensure valid services file exists
+		File f2 = new File(path);
+		if (!f2.exists()) {
+			return false;
+		} // end if
+		return true;
+	} // end validatePath method
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * MAIN METHOD: starting point for program.
+	 * 
+	 * Input: Merged TXN Summary File, Central Services File
+	 * Output: New Central Service File, New VSF
+	 */
 	public static void main(String[] args) {
 		System.out.println("Backoffice!");
 		

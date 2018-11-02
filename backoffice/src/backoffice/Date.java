@@ -34,6 +34,29 @@ public class Date {
 	//---------------------------------------------------------------------------------------------
 	
 	/*
+	 * Date constructor:
+	 * calls setYear, setMonth, and setDay methods
+	 * after separating string in format YYYYMMDD
+	 * if all successful, the date is set
+	 * 
+	 * Parameters:
+	 * 		String date: the date in format YYYYMMDD
+	 */
+	public Date(String date) throws InputOutOfRangeException, InvalidDateFormatException {
+		// Check length
+		if (date.length() != 8) {
+			throw new InvalidDateFormatException("Error: Invalid date format.");
+		}
+		
+		// Validate numbers
+		setYear(year);
+		setMonth(month);
+		setDay(day);
+	} // end setDate method
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
 	 * GETYEAR: Returns year.
 	 * 
 	 * Input: none

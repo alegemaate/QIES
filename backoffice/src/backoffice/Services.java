@@ -155,7 +155,7 @@ public class Services {
 		// Parse services and add numbers to serviceNumberStr
 		String serviceNumberStr = "";
 		for (Service ser : serviceList) {
-			serviceNumberStr += ser.getNumber() + ",\n";
+			serviceNumberStr += ser.getNumber() + "\n";
 		}
 		return serviceNumberStr;
 	}

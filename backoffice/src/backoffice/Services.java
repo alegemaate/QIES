@@ -68,28 +68,32 @@ public class Services {
 								   new Date(splitLine[4]));
 			} 
 			catch (NumberFormatException e) {
+				br.close();
 				System.out.println(e.getMessage());
 				throw new InvalidInputFileException("Error: Invalid Central Service File.");
 			}
 			catch (InputOutOfRangeException e) {
+				br.close();
 				System.out.println(e.getMessage());
 				throw new InvalidInputFileException("Error: Invalid Central Service File.");
 			}
 			catch (InvalidServiceNameException e) {
+				br.close();
 				System.out.println(e.getMessage());
 				throw new InvalidInputFileException("Error: Invalid Central Service File.");
 			}
 			catch (InvalidDateFormatException e) {
+				br.close();
 				System.out.println(e.getMessage());
 				throw new InvalidInputFileException("Error: Invalid Central Service File.");
-			}
-			finally {
-				br.close();
 			}
 			
 			// Success, add service
 			addService(serv);
 	  	}
+		
+		// Close
+		br.close();
 	}
 	
 	//---------------------------------------------------------------------------------------------

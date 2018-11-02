@@ -196,10 +196,10 @@ public class Service {
 	 */
 	@Override
 	public String toString() {
-		return "" + String.format("%2s", "" + number).replace(" ", "0") 
-				  + String.format("%2s", "" + capacity).replace(" ", "0")
-				  + String.format("%2s", "" + numberSold).replace(" ", "0")
-				  + name
+		return "" + String.format("%2s", "" + number).replace(" ", "0") + " "
+				  + String.format("%2s", "" + capacity).replace(" ", "0") + " " 
+				  + String.format("%2s", "" + numberSold).replace(" ", "0") + " " 
+				  + name + " "
 				  + date.toString();
 	} // end toString method
 }

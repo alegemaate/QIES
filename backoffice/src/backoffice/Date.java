@@ -49,9 +49,9 @@ public class Date {
 		}
 		
 		// Validate numbers
-		setYear(year);
-		setMonth(month);
-		setDay(day);
+		setYear(Integer.parseInt(date.substring(0,4)));
+		setMonth(Integer.parseInt(date.substring(4,6)));
+		setDay(Integer.parseInt(date.substring(6,8)));
 	} // end setDate method
 	
 	//---------------------------------------------------------------------------------------------

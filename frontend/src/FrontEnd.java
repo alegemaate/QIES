@@ -24,7 +24,7 @@
 
 import java.io.File;
 
-public class QIESBase {
+public class FrontEnd {
 	// Input handler
 	public static InputHandler input = new InputHandler();
 	

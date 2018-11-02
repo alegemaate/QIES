@@ -9,6 +9,7 @@ package backoffice;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,10 +40,10 @@ public class Services {
 	 * Input: location of CSF
 	 * Output: none
 	 */
-	public static void readCSF(String csfPath) throws IOException, InvalidInputFileException {
+	public static void readCSF(String csfPath) throws InvalidInputFileException, IOException {
 		// Validate path
 		if (!validatePath(csfPath)) {
-			throw new IOException("Error: Central service file does not exist.");
+			throw new FileNotFoundException("Error: Central service file does not exist.");
 		}
 		
 		// Create file object
@@ -55,6 +56,7 @@ public class Services {
 			
 			// Throw exception
 			if (splitLine.length != 5) {
+				br.close();
 				throw new InvalidInputFileException("Error: Central service file has invalid line with length " + splitLine.length);
 			}
 			
@@ -104,20 +106,25 @@ public class Services {
 	 * Input: location of TSF
 	 * Output: none
 	 */
-	public static void readTSF(String tsfPath) throws IOException {
+	public static void readTSF(String tsfPath) throws IOException, InvalidInputFileException {
 		// Validate path
 		if (!validatePath(tsfPath)) {
-			throw new IOException("Error: Transaction summary file does not exist.");
+			throw new FileNotFoundException("Error: Transaction summary file does not exist.");
 		}
 		
 		// Create file object
 		File file = new File(tsfPath); 
 		BufferedReader br = new BufferedReader(new FileReader(file)); 
 	  
+		// Load file into buffer
 		String line; 
+		ArrayList<String> lines = new ArrayList<String>();
 		while ((line = br.readLine()) != null) {
-			
+			lines.add(line);
 		}
+		
+		// Temp services
+		ArrayList<ServiceTemporary> tempServices = new ArrayList<ServiceTemporary>();
 		
 		// Parse TXN SUM file
 		//  Separate lines by service number
@@ -129,6 +136,34 @@ public class Services {
 		//    again.. if there is another line it MUST be create service
 		//    sum starts again...
 		//  Take sums for each service (if not deleted) and add to services
+		while (!lines.isEmpty()) {
+			for (String txn : lines) {
+				// Split line
+				String[] splitTXN = txn.split(" ");
+				
+				// Throw exception
+				if (splitTXN.length != 6) {
+					br.close();
+					throw new InvalidInputFileException("Error: Transaction summary file has invalid line with length " + splitTXN.length);
+				}
+				
+				// Check type
+				if (splitTXN[0] == "CRE") {
+					tempServices.add(
+							new ServiceTemporary(
+								splitTXN[1], 
+								0, 
+							  	0, 
+							  	splitTXN[4], 
+							  	splitTXN[5]
+							  	)
+						);
+				}
+			}
+		}
+		
+		// Close
+		br.close();
 	}
 		
 	//---------------------------------------------------------------------------------------------

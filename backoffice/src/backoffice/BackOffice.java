@@ -33,7 +33,7 @@ public class BackOffice {
 			System.exit(1);
 		}
 		catch (InvalidInputFileException e) {
-			System.out.println("Error: TSF format incorrect.");
+			System.out.println("Error: CSF format incorrect.");
 			System.exit(1);
 		}
 		
@@ -45,6 +45,11 @@ public class BackOffice {
 			System.out.println("Error: TSF read issue.");
 			System.exit(1);
 		}
+		catch (InvalidInputFileException e) {
+			System.out.println("Error: TSF format incorrect.");
+			System.exit(1);
+		}
+
 		
 		// Write Files
 		System.out.println("CSF:\n" + Services.getCSFString());

@@ -123,9 +123,6 @@ public class Services {
 			lines.add(line);
 		}
 		
-		// Temp services
-		ArrayList<ServiceTemporary> tempServices = new ArrayList<ServiceTemporary>();
-		
 		// Parse TXN SUM file
 		//  Separate lines by service number
 		//  Parse separated lines
@@ -136,29 +133,55 @@ public class Services {
 		//    again.. if there is another line it MUST be create service
 		//    sum starts again...
 		//  Take sums for each service (if not deleted) and add to services
-		while (!lines.isEmpty()) {
-			for (String txn : lines) {
-				// Split line
-				String[] splitTXN = txn.split(" ");
-				
-				// Throw exception
-				if (splitTXN.length != 6) {
+		for (String txn : lines) {
+			// Split line
+			String[] splitLine = txn.split(" ");
+			
+			// Throw exception
+			if (splitLine.length != 6) {
+				br.close();
+				throw new InvalidInputFileException("Error: Transaction summary file has invalid line with length " + splitLine.length);
+			}
+			
+			// Check type
+			if (splitLine[0].equals("CRE")) {
+				// Create and add service
+				Service serv;
+				try {
+					serv = new Service(Integer.parseInt(splitLine[1]), 
+									   1000, 
+									   0, 
+									   splitLine[4], 
+									   new Date(splitLine[5]));
+				} 
+				catch (NumberFormatException e) {
 					br.close();
-					throw new InvalidInputFileException("Error: Transaction summary file has invalid line with length " + splitTXN.length);
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
+				}
+				catch (InputOutOfRangeException e) {
+					br.close();
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
+				}
+				catch (InvalidServiceNameException e) {
+					br.close();
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
+				}
+				catch (InvalidDateFormatException e) {
+					br.close();
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
 				}
 				
-				// Check type
-				if (splitTXN[0] == "CRE") {
-					tempServices.add(
-							new ServiceTemporary(
-								splitTXN[1], 
-								0, 
-							  	0, 
-							  	splitTXN[4], 
-							  	splitTXN[5]
-							  	)
-						);
-				}
+				// Success, add service
+				addService(serv);
+			}
+			
+			// Check type
+			if (splitLine[0].equals("DEL")) {
+				removeService(Integer.parseInt(splitLine[1]));
 			}
 		}
 		
@@ -178,6 +201,23 @@ public class Services {
 		serviceList.add(newService);
 	}
 	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * REMOVESERVICE: Removes service from list.
+	 * 
+	 * Input: Service number to remove
+	 * Output: none
+	 */
+	public static void removeService(int serviceNumber) {
+		for (Service ser : serviceList) {
+			if (ser.getNumber() == serviceNumber) {
+				serviceList.remove(ser);
+				return;
+			}
+		}
+	}
+
 	//---------------------------------------------------------------------------------------------
 	
 	/*

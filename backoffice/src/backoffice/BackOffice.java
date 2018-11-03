@@ -54,8 +54,6 @@ public class BackOffice {
 		// Write Files
 		System.out.println("CSF:\n" + Services.getCSFString());
 		System.out.println("VSF:\n" + Services.getVSFString());
-		
-		System.out.println("Backoffice!");
 	}
 
 }

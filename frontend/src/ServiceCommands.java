@@ -66,6 +66,9 @@ public class ServiceCommands {
 		int day = ScannerWrapper.getInputInt("Enter day: ");
 		Date date = new Date(year, month, day);
 		
+		// Add service number
+		Services.add(serviceNumber);
+		
 		/*
 		 * Add transaction to Log: CCC AAAA MMMM BBBB NNNNNN YYYYMMDD where:
 		 * 		a) CCC = "CRE" for create service

@@ -109,7 +109,7 @@ public class Date {
 	 * Output: return status (0 if valid, -1 otherwise)
 	 */
 	public void setDay(int day) {
-		while (day < 1 || day > 12) {
+		while (day < 1 || day > 31) {
 			System.out.println("Error: day cannot be less than 1 or greater than 31.");
 			day = Integer.parseInt(ScannerWrapper.getInput("Enter day: "));
 		} // end while

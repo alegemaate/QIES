@@ -261,7 +261,11 @@ public class Services {
 	 * Output: Service object, corresponding to the input service number
 	 */
 	public static Service findService(int serviceNum) {
-		// TODO: Implement this plzzzzz
+		for (Service ser : serviceList) {
+			if (ser.getNumber() == serviceNum) {
+				return ser;
+			}
+		}
 		return null;
 	}
 	

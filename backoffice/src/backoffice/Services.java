@@ -310,7 +310,7 @@ public class Services {
 	public static Service sellTicket(Service service, int ticketNum) throws InputOutOfRangeException {
 		// Check for null services
 		if (service == null) {
-			throw new NullPointerException("Error: Service is null.");
+			throw new NullPointerException("Error: Can not sell ticket on non existing service.");
 		}
 		
 		service.setNumberSold(service.getNumberSold() + ticketNum);
@@ -328,7 +328,7 @@ public class Services {
 	public static Service cancelTicket(Service service, int ticketNum) throws InputOutOfRangeException {
 		// Check for null services
 		if (service == null) {
-			throw new NullPointerException("Error: Service is null.");
+			throw new NullPointerException("Error: Can not cancel ticket on non existing service.");
 		}
 		
 		service.setNumberSold(service.getNumberSold() - ticketNum);
@@ -347,7 +347,7 @@ public class Services {
 	public static Service[] changeTicket(Service originalService, Service destinationService, int ticketNum) throws InputOutOfRangeException {
 		// Check for null services
 		if (originalService == null || destinationService == null) {
-			throw new NullPointerException("Error: Service is null.");
+			throw new NullPointerException("Error: Can not change ticket on non existing service.");
 		}
 		
 		originalService.setNumberSold(originalService.getNumberSold() - ticketNum);

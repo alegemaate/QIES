@@ -49,9 +49,14 @@ public class Date {
 		}
 		
 		// Validate numbers
-		setYear(Integer.parseInt(date.substring(0,4)));
-		setMonth(Integer.parseInt(date.substring(4,6)));
-		setDay(Integer.parseInt(date.substring(6,8)));
+		try {
+			setYear(Integer.parseInt(date.substring(0,4)));
+			setMonth(Integer.parseInt(date.substring(4,6)));
+			setDay(Integer.parseInt(date.substring(6,8)));
+		} catch (NumberFormatException e) {
+			throw new InvalidDateFormatException("Error: Invalid date format.");
+		} // end try/catch
+		
 	} // end setDate method
 	
 	//---------------------------------------------------------------------------------------------

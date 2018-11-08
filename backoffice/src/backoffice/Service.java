@@ -15,13 +15,14 @@ public class Service {
 	private Date date;
 	
 	// Constructor
-	public Service(int number, int capacity, int numberSold, String name, Date date) throws InputOutOfRangeException, InvalidServiceNameException {
+	public Service(int number, int capacity, int numberSold, String name, Date date) 
+			throws InputOutOfRangeException, InvalidServiceNameException {
 		setNumber(number);
 		setCapacity(capacity);
 		setNumberSold(numberSold);
 		setName(name);
 		setDate(date);
-	}
+	} // end Service constructor
 	
 	//---------------------------------------------------------------------------------------------
 	
@@ -33,7 +34,7 @@ public class Service {
 	 */
 	public int getNumber() {
 		return number;
-	}
+	} 
 	
 	//---------------------------------------------------------------------------------------------
 	
@@ -130,7 +131,7 @@ public class Service {
 	 * Output: none
 	 * Throws: InputOutOfRangeException
 	 */
-	private void setNumberSold(int numberSold) throws InputOutOfRangeException {
+	public void setNumberSold(int numberSold) throws InputOutOfRangeException {
 		if (numberSold < 0) {
 			throw new InputOutOfRangeException("Error: Number of tickets sold can not be below 0.");
 		}

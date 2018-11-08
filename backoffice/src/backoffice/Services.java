@@ -251,4 +251,79 @@ public class Services {
 		}
 		return serviceListStr;
 	}
-}
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * findService: looks through the serviceList and finds the required service object
+	 * 
+	 * Input: valid service number
+	 * Output: Service object, corresponding to the input service number
+	 */
+	public static Service findService(int serviceNum) {
+		// TODO: Implement this plzzzzz
+		return null;
+	}
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * sellTicket: adds the given number of tickets to the given service object
+	 * 
+	 * Input: Service object to be updated, number of tickets sold
+	 * Output: updated Service object
+	 */
+	public static Service sellTicket(Service service, int ticketNum) {
+		try {
+			service.setNumberSold(service.getNumberSold() + ticketNum);
+			return service;
+		} catch (InputOutOfRangeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * cancelTicket: cancels the given number of tickets from the given service object
+	 * 
+	 * Input: Service object to be updated, number of tickets canceled
+	 * Output: updated Service object
+	 */
+	public static Service cancelTicket(Service service, int ticketNum) {
+		try {
+			service.setNumberSold(service.getNumberSold() - ticketNum);
+			return service;
+		} catch (InputOutOfRangeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * changeTicket: changes the given number of tickets from the original service to the destination
+	 * 		service
+	 * 
+	 * Input: original Service object, destination Service object, number of tickets changed
+	 * Output: array of updated Service objects [updated original Service object, updated destination Service object]
+	 */
+	public static Service[] changeTicket(Service originalService, Service destinationService, int ticketNum) {
+		try {
+			originalService.setNumberSold(originalService.getNumberSold() - ticketNum);
+			destinationService.setNumberSold(destinationService.getNumberSold() + ticketNum);
+			Service[] serviceList = new Service[] {originalService, destinationService};
+			return serviceList;
+		} catch (InputOutOfRangeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+
+} // end Services class

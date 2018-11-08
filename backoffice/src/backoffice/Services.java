@@ -149,7 +149,7 @@ public class Services {
 				Service serv;
 				try {
 					serv = new Service(Integer.parseInt(splitLine[1]), 
-									   1000, 
+									   30, 
 									   0, 
 									   splitLine[4], 
 									   new Date(splitLine[5]));
@@ -179,9 +179,39 @@ public class Services {
 				addService(serv);
 			}
 			
-			// Check type
-			if (splitLine[0].equals("DEL")) {
+			// Delete service
+			else if (splitLine[0].equals("DEL")) {
 				removeService(Integer.parseInt(splitLine[1]));
+			}
+			
+			// Sell tickets
+			else if (splitLine[0].equals("SEL")) {
+				try {
+					sellTicket(findService(Integer.parseInt(splitLine[1])), Integer.parseInt(splitLine[2]));
+				} 
+				catch (NumberFormatException | InputOutOfRangeException | NullPointerException e) {
+					br.close();
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
+				}
+			}
+			
+			// Change tickets
+			else if (splitLine[0].equals("CHG")) {
+				try {
+					changeTicket(findService(Integer.parseInt(splitLine[1])), findService(Integer.parseInt(splitLine[3])), Integer.parseInt(splitLine[2]));
+				} 
+				catch (NumberFormatException | InputOutOfRangeException | NullPointerException e) {
+					br.close();
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
+				}
+			}
+			
+			// Change tickets
+			else if (!splitLine[0].equals("EOS")) {
+				br.close();
+				throw new InvalidInputFileException("Error: Invalid txn code " + splitLine[0] + ".");
 			}
 		}
 		
@@ -277,15 +307,14 @@ public class Services {
 	 * Input: Service object to be updated, number of tickets sold
 	 * Output: updated Service object
 	 */
-	public static Service sellTicket(Service service, int ticketNum) {
-		try {
-			service.setNumberSold(service.getNumberSold() + ticketNum);
-			return service;
-		} catch (InputOutOfRangeException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
+	public static Service sellTicket(Service service, int ticketNum) throws InputOutOfRangeException {
+		// Check for null services
+		if (service == null) {
+			throw new NullPointerException("Error: Service is null.");
 		}
+		
+		service.setNumberSold(service.getNumberSold() + ticketNum);
+		return service;
 	}
 	
 	//---------------------------------------------------------------------------------------------
@@ -296,15 +325,14 @@ public class Services {
 	 * Input: Service object to be updated, number of tickets canceled
 	 * Output: updated Service object
 	 */
-	public static Service cancelTicket(Service service, int ticketNum) {
-		try {
-			service.setNumberSold(service.getNumberSold() - ticketNum);
-			return service;
-		} catch (InputOutOfRangeException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
+	public static Service cancelTicket(Service service, int ticketNum) throws InputOutOfRangeException {
+		// Check for null services
+		if (service == null) {
+			throw new NullPointerException("Error: Service is null.");
 		}
+		
+		service.setNumberSold(service.getNumberSold() - ticketNum);
+		return service;
 	}
 	
 	//---------------------------------------------------------------------------------------------
@@ -316,17 +344,16 @@ public class Services {
 	 * Input: original Service object, destination Service object, number of tickets changed
 	 * Output: array of updated Service objects [updated original Service object, updated destination Service object]
 	 */
-	public static Service[] changeTicket(Service originalService, Service destinationService, int ticketNum) {
-		try {
-			originalService.setNumberSold(originalService.getNumberSold() - ticketNum);
-			destinationService.setNumberSold(destinationService.getNumberSold() + ticketNum);
-			Service[] serviceList = new Service[] {originalService, destinationService};
-			return serviceList;
-		} catch (InputOutOfRangeException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
+	public static Service[] changeTicket(Service originalService, Service destinationService, int ticketNum) throws InputOutOfRangeException {
+		// Check for null services
+		if (originalService == null || destinationService == null) {
+			throw new NullPointerException("Error: Service is null.");
 		}
+		
+		originalService.setNumberSold(originalService.getNumberSold() - ticketNum);
+		destinationService.setNumberSold(destinationService.getNumberSold() + ticketNum);
+		Service[] serviceList = new Service[] {originalService, destinationService};
+		return serviceList;
 	}
 	
 

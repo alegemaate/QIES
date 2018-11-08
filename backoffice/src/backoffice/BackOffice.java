@@ -1,7 +1,8 @@
 package backoffice;
 
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class BackOffice {
 
@@ -46,6 +47,7 @@ public class BackOffice {
 			System.exit(1);
 		}
 		catch (InvalidInputFileException e) {
+			System.out.println(e.getMessage());
 			System.out.println("Error: TSF format incorrect.");
 			System.exit(1);
 		}
@@ -54,6 +56,27 @@ public class BackOffice {
 		// Write Files
 		System.out.println("CSF:\n" + Services.getCSFString());
 		System.out.println("VSF:\n" + Services.getVSFString());
+		
+		PrintWriter out;
+		try {
+			out = new PrintWriter("newcsf.txt");
+			out.println(Services.getCSFString());
+			out.close();
+		} 
+		catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			out = new PrintWriter("vsf.txt");
+			out.println(Services.getVSFString());
+			out.close();
+		} 
+		catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
-
 }

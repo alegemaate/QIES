@@ -262,6 +262,7 @@ public class Services {
 	 */
 	public static Service findService(int serviceNum) {
 		// TODO: Implement this plzzzzz
+		return null;
 	}
 	
 	//---------------------------------------------------------------------------------------------
@@ -274,10 +275,12 @@ public class Services {
 	 */
 	public static Service sellTicket(Service service, int ticketNum) {
 		try {
-			service.setNumberSold(service.getNumberSold() - ticketNum);
+			service.setNumberSold(service.getNumberSold() + ticketNum);
+			return service;
 		} catch (InputOutOfRangeException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
 	}
 	
@@ -290,7 +293,14 @@ public class Services {
 	 * Output: updated Service object
 	 */
 	public static Service cancelTicket(Service service, int ticketNum) {
-		// TODO: Implement this plzzzzz
+		try {
+			service.setNumberSold(service.getNumberSold() - ticketNum);
+			return service;
+		} catch (InputOutOfRangeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	//---------------------------------------------------------------------------------------------
@@ -303,7 +313,16 @@ public class Services {
 	 * Output: array of updated Service objects [updated original Service object, updated destination Service object]
 	 */
 	public static Service[] changeTicket(Service originalService, Service destinationService, int ticketNum) {
-		// TODO: Implement this plzzzzz
+		try {
+			originalService.setNumberSold(originalService.getNumberSold() - ticketNum);
+			destinationService.setNumberSold(destinationService.getNumberSold() + ticketNum);
+			Service[] serviceList = new Service[] {originalService, destinationService};
+			return serviceList;
+		} catch (InputOutOfRangeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 

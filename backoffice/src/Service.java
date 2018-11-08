@@ -4,7 +4,7 @@
  * Spice Tests
  * 02/11/2018
  */
-package backoffice;
+
 
 public class Service {
 	// Attributes

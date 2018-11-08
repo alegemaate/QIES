@@ -1,4 +1,26 @@
-package backoffice;
+/*
+ * BackOffice entry point
+ * 	Takes 4 parameters in the command line. 
+ * 		A path to a 
+ *		transaction summary file and central service file.
+ *		and an output path to
+ *		the new csf and a valid service file
+ *	Outputs valid service file and updated central service
+ *		file to running directory with specified names
+ *
+ *  You must have java installed on your system
+ *  	run java -h to check if it is installed
+ *
+ *  BackOffice can be built, or you can use the provided .class files.
+ *  	To build QUIES navigate to ./src/ directory and execute:
+ *  	javac BackOffice.java -d ../bin/
+ *
+ *	To run BackOffice navigate to ./build/ directory and execute:
+ *		java -cp ../bin "BackOffice" "csf.txt" "tsf.txt" "newcsf.txt" "vsf.txt"
+ *
+ * Spice Tests TEAM 13
+ * 08/11/2018
+ */
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,14 +36,14 @@ public class BackOffice {
 	 */
 	public static void main(String[] args) {
 		// Ensure we are receiving 2 inputs
-		if (args.length < 2) {
-			System.out.println("You must provide a Merged TXN Summary File and Central Services File.");
+		if (args.length < 4) {
+			System.out.println("You must provide a Merged TXN Summary File and Central Services File as well as paths to an output CSF and VSF.");
 			System.exit(1);
 		}
 		
 		// Too many parameters
-		if (args.length > 2) {
-			System.out.println("Too many arguments. You must only provide a Merged TXN Summary File and Central Services File.");
+		if (args.length > 4) {
+			System.out.println("Too many arguments. You must only provide a Merged TXN Summary File and Central Services File as well as paths to an output CSF and VSF.");
 			System.exit(1);
 		}
 		
@@ -59,7 +81,7 @@ public class BackOffice {
 		
 		PrintWriter out;
 		try {
-			out = new PrintWriter("newcsf.txt");
+			out = new PrintWriter(args[2]);
 			out.println(Services.getCSFString());
 			out.close();
 		} 
@@ -69,7 +91,7 @@ public class BackOffice {
 		}
 		
 		try {
-			out = new PrintWriter("vsf.txt");
+			out = new PrintWriter(args[3]);
 			out.println(Services.getVSFString());
 			out.close();
 		} 

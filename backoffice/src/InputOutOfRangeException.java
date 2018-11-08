@@ -5,7 +5,7 @@
  * 02/11/2018
  */
 
-package backoffice;
+
 
 public class InputOutOfRangeException extends Exception {
 	private static final long serialVersionUID = 8773664691438151542L;

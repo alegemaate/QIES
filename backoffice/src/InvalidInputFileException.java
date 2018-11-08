@@ -5,7 +5,7 @@
  * 02/11/2018
  */
 
-package backoffice;
+
 
 public class InvalidInputFileException extends Exception{
 	private static final long serialVersionUID = -7669109671596046816L;

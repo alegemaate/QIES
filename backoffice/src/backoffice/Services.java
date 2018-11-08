@@ -284,7 +284,7 @@ public class Services {
 	 * Input: Service object to be updated, number of tickets canceled
 	 * Output: updated Service object
 	 */
-	public static Servie cancelTicket(Service service, ticketNum) {
+	public static Servie cancelTicket(Service service, int ticketNum) {
 		// TODO: Implement this plzzzzz
 	}
 	

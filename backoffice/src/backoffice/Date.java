@@ -54,7 +54,7 @@ public class Date {
 			setMonth(Integer.parseInt(date.substring(4,6)));
 			setDay(Integer.parseInt(date.substring(6,8)));
 		} catch (NumberFormatException e) {
-			throw InvalidDateFormat("Invalid date format.");
+			throw new InvalidDateFormat("Error: Invalid date format.");
 		} // end try/catch
 		
 	} // end setDate method

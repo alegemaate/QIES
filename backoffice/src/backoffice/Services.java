@@ -273,7 +273,7 @@ public class Services {
 	 * Output: updated Service object
 	 */
 	public static Service sellTicket(Service service, int ticketNum) {
-		// TODO: Implement this plzzzzz
+		//service.setNumberSold(service.getNumberSold() - ticketNum);
 	}
 	
 	//---------------------------------------------------------------------------------------------

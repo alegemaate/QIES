@@ -131,7 +131,7 @@ public class Service {
 	 * Output: none
 	 * Throws: InputOutOfRangeException
 	 */
-	private void setNumberSold(int numberSold) throws InputOutOfRangeException {
+	public void setNumberSold(int numberSold) throws InputOutOfRangeException {
 		if (numberSold < 0) {
 			throw new InputOutOfRangeException("Error: Number of tickets sold can not be below 0.");
 		}

@@ -273,7 +273,12 @@ public class Services {
 	 * Output: updated Service object
 	 */
 	public static Service sellTicket(Service service, int ticketNum) {
-		//service.setNumberSold(service.getNumberSold() - ticketNum);
+		try {
+			service.setNumberSold(service.getNumberSold() - ticketNum);
+		} catch (InputOutOfRangeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	//---------------------------------------------------------------------------------------------
@@ -284,7 +289,7 @@ public class Services {
 	 * Input: Service object to be updated, number of tickets canceled
 	 * Output: updated Service object
 	 */
-	public static Servie cancelTicket(Service service, int ticketNum) {
+	public static Service cancelTicket(Service service, int ticketNum) {
 		// TODO: Implement this plzzzzz
 	}
 	

@@ -167,7 +167,7 @@ public class Service {
 		}
 		
 		// Cannot contain anything but letters and '
-		if (!name.matches("[a-zA-Z']+")) {
+		if (!name.matches("[a-zA-Z0-9 ']+")) {
 			throw new InvalidServiceNameException("Service name can not contain characters other than alpha and '.");
 		}
 		

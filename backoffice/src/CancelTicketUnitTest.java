@@ -1,5 +1,5 @@
 
-public class ChangeServiceUnitTest {
+public class CancelTicketUnitTest {
 	public static void main(String[] args) {
 		
 	}

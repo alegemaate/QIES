@@ -64,11 +64,6 @@ public class Services {
 			Service serv;
 			
 			// Check if service number exists
-			if (findService(Integer.parseInt(splitLine[0])) != null) {
-				br.close();
-				throw new InvalidInputFileException("Error: Can not create service, service with this number exists.");
-			}
-			
 			try {
 				serv = new Service(Integer.parseInt(splitLine[0]), 
 								   Integer.parseInt(splitLine[1]), 
@@ -152,12 +147,6 @@ public class Services {
 			
 			// Check type
 			if (splitLine[0].equals("CRE")) {
-				// Check if service number exists
-				if (findService(Integer.parseInt(splitLine[1])) != null) {
-					br.close();
-					throw new InvalidInputFileException("Error: Can not create service, service with this number exists.");
-				}
-				
 				// Create and add service
 				Service serv;
 				try {
@@ -240,7 +229,12 @@ public class Services {
 	 * Input: New service to add
 	 * Output: none
 	 */
-	public static void addService(Service newService) {
+	public static void addService(Service newService) throws InvalidInputFileException {
+		// Check if service number exists
+		if (findService(newService.getNumber()) != null) {
+			throw new InvalidInputFileException("Error: Can add service, service with this number exists.");
+		}
+		
 		serviceList.add(newService);
 	}
 	

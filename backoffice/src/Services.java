@@ -298,10 +298,12 @@ public class Services {
 	 * Output: Service object, corresponding to the input service number
 	 */
 	public static Service findService(int serviceNum) {
-		for (Service ser : serviceList) {
-			if (ser.getNumber() == serviceNum) {
-				return ser;
+		int i = 0;
+		while (i < serviceList.size()) {
+			if (serviceList.get(i).getNumber() == serviceNum) {
+				return serviceList.get(i);
 			}
+			i++;
 		}
 		return null;
 	}
@@ -333,6 +335,11 @@ public class Services {
 	 * Output: updated Service object
 	 */
 	public static Service cancelTicket(Service service, int ticketNum) throws InputOutOfRangeException {
+		// Check for negative cancel
+		if (ticketNum < 0) {
+			throw new InputOutOfRangeException("Error: Can not cancel negative number of tickets.");
+		}
+		
 		// Check for null services
 		if (service == null) {
 			throw new NullPointerException("Error: Can not cancel ticket on non existing service.");

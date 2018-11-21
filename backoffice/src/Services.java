@@ -392,5 +392,16 @@ public class Services {
 		return serviceList;
 	}
 	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * clearServices: removes all services
+	 * 
+	 * Input: 
+	 * Output:
+	 */
+	public static void clearServices() {
+		serviceList.clear();
+	}
 
 } // end Services class

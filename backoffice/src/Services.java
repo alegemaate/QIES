@@ -54,6 +54,11 @@ public class Services {
 		while ((line = br.readLine()) != null) {
 			String[] splitLine = line.split(" ");
 			
+			// Empty line, ignore
+			if (splitLine.length == 0) {
+				continue;
+			}
+			
 			// Throw exception
 			if (splitLine.length != 5) {
 				br.close();
@@ -138,6 +143,11 @@ public class Services {
 		for (String txn : lines) {
 			// Split line
 			String[] splitLine = txn.split(" ");
+			
+			// Empty line, ignore
+			if (splitLine.length == 0) {
+				continue;
+			}
 			
 			// Throw exception
 			if (splitLine.length != 6) {

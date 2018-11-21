@@ -52,10 +52,12 @@ public class BackOffice {
 			Services.readCSF(args[0]);
 		} 
 		catch (IOException e) {
+			System.out.println(e.getMessage());
 			System.out.println("Error: CSF read issue.");
 			System.exit(1);
 		}
 		catch (InvalidInputFileException e) {
+			System.out.println(e.getMessage());
 			System.out.println("Error: CSF format incorrect.");
 			System.exit(1);
 		}
@@ -65,6 +67,7 @@ public class BackOffice {
 			Services.readTSF(args[1]);
 		} 
 		catch (IOException e) {
+			System.out.println(e.getMessage());
 			System.out.println("Error: TSF read issue.");
 			System.exit(1);
 		}

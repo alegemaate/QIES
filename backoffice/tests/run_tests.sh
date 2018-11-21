@@ -73,19 +73,19 @@ for line in $(find input -iname 'tsf.txt'); do
 	cp "./input/${catname}/${testname}/csf.txt" "../build/csf.txt"
   cp "./input/${catname}/${testname}/tsf.txt" "../build/tsf.txt"
 	cd "../build/"
-	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "BackOffice" "csf.txt" "tsf.txt")
+	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "BackOffice" "csf.txt" "tsf.txt" "vsf.txt" "newcsf.txt")
 	
 	# Copy txn summary
 	cd "../tests/"
-	cp "../build/vsf.txt" "./output/${catname}/${testname}/vsf.txt"
-  cp "../build/csf.txt" "./output/${catname}/${testname}/csf.txt"
+	cp "../build/newcsf.txt" "./output/${catname}/${testname}/newcsf.txt"
+  cp "../build/vsf.txt" "./output/${catname}/${testname}/vsf.txt"
 	
 	# Log console output
 	echo -e "$run_output" > "output/${catname}/${testname}/console.log"
 	
 	# Compare files
 	if cmp -s "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt" &&
-		 cmp -s "expected/${catname}/${testname}/csf.txt" "output/${catname}/${testname}/csf.txt" ; then
+		 cmp -s "expected/${catname}/${testname}/newcsf.txt" "output/${catname}/${testname}/newcsf.txt" ; then
 		echo -e "\e[32mSUCCESS\e[0m\n"
 		successes=$((successes+1))
 	else

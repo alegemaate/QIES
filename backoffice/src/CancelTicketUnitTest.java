@@ -22,7 +22,7 @@ public class CancelTicketUnitTest {
 		}
 		
 		//----------------------------------------------------------------------------------------------
-		// TEST 3
+		// TEST 2
 		// Covers:	cancel ticket operation
 		//			set number sold attribute
 		//			return number sold
@@ -42,7 +42,7 @@ public class CancelTicketUnitTest {
 		}
 		
 		//----------------------------------------------------------------------------------------------
-		// TEST 4
+		// TEST 3
 		// Covers:	number sold < 0 check
 		//			input out of range execption throw number < 0
 		try {

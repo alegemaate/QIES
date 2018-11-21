@@ -4,3 +4,8 @@
 /frontend/tests/output/*
 /frontend/build/transactions/txnsum.txt
 /frontend/build/vsf.txt
+/backoffice/tests/output/*
+/backoffice/build/csf.txt
+/backoffice/build/tsf.txt
+/backoffice/build/vsf.txt
+/backoffice/build/newcsf.txt

@@ -54,6 +54,11 @@ public class Services {
 		while ((line = br.readLine()) != null) {
 			String[] splitLine = line.split(" ");
 			
+			// Empty line, ignore
+			if (splitLine.length == 0) {
+				continue;
+			}
+			
 			// Throw exception
 			if (splitLine.length != 5) {
 				br.close();
@@ -139,6 +144,11 @@ public class Services {
 			// Split line
 			String[] splitLine = txn.split(" ");
 			
+			// Empty line, ignore
+			if (splitLine.length == 0) {
+				continue;
+			}
+			
 			// Throw exception
 			if (splitLine.length != 6) {
 				br.close();
@@ -184,6 +194,23 @@ public class Services {
 			// Delete service
 			else if (splitLine[0].equals("DEL")) {
 				removeService(Integer.parseInt(splitLine[1]));
+			}
+			
+			// Cancel ticket
+			else if (splitLine[0].equals("CAN")) {
+				try {
+					cancelTicket(findService(Integer.parseInt(splitLine[1])), Integer.parseInt(splitLine[2]));
+				} 
+				catch (NumberFormatException e) {
+					br.close();
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
+				} 
+				catch (InputOutOfRangeException e) {
+					br.close();
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
+				}
 			}
 			
 			// Sell tickets
@@ -365,5 +392,16 @@ public class Services {
 		return serviceList;
 	}
 	
+	//---------------------------------------------------------------------------------------------
+	
+	/*
+	 * clearServices: removes all services
+	 * 
+	 * Input: 
+	 * Output:
+	 */
+	public static void clearServices() {
+		serviceList.clear();
+	}
 
 } // end Services class

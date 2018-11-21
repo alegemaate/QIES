@@ -73,7 +73,7 @@ for line in $(find input -iname 'tsf.txt'); do
 	cp "./input/${catname}/${testname}/csf.txt" "../build/csf.txt"
   cp "./input/${catname}/${testname}/tsf.txt" "../build/tsf.txt"
 	cd "../build/"
-	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "BackOffice" "csf.txt" "tsf.txt" "vsf.txt" "newcsf.txt")
+	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "BackOffice" "csf.txt" "tsf.txt" "newcsf.txt" "vsf.txt")
 	
 	# Copy txn summary
 	cd "../tests/"

@@ -7,17 +7,7 @@
 
 public class CreateServiceUnitTest {
 	// Entry point for unit test
-	public static void main(String[] args) {
-		// 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13
-		try {
-			@SuppressWarnings("unused")
-			Service serv = new Service(10000, 10, 0, "service", null);
-			System.out.println("Path 1 Reached.");
-		} 
-		catch (InputOutOfRangeException | InvalidServiceNameException e) {
-			System.out.println("Path 1 Error.");
-		}
-		
+	/*public static void main(String[] args) {
 		// 1, END
 		try {
 			@SuppressWarnings("unused")
@@ -143,5 +133,15 @@ public class CreateServiceUnitTest {
 		catch (InputOutOfRangeException | InvalidServiceNameException e) {
 			System.out.println("Path 13 Error.");
 		}
-	}
+		
+		// 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13
+		try {
+			@SuppressWarnings("unused")
+			Service serv = new Service(10000, 10, 0, "service", null);
+			System.out.println("Path 1 Reached.");
+		} 
+		catch (InputOutOfRangeException | InvalidServiceNameException e) {
+			System.out.println("Path 1 Error.");
+		}
+	}*/
 }

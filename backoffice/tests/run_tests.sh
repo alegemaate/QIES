@@ -12,10 +12,10 @@
 #
 #   QIES can be built, or you can use the provided .class files.
 #     To build QUIES navigate to ./src/ directory and execute:
-#     javac FrontEnd.java -d ../bin/
+#     javac BackEnd.java -d ../bin/
 #
 #	  To run QUIES navigate to ./build/ directory and execute:
-#			java -cp ../bin "FrontEnd" "vsf.txt"
+#			java -cp ../bin "BackEnd" "vsf.txt"
 #
 #   Once java is installed, and QIES is built... 
 #     you may simply run ./run_tests.sh
@@ -67,23 +67,25 @@ for line in $(find . -iname 'input.txt'); do
 	echo -e "\e[93m===========================\n${testname}\n===========================\e[0m"
 	
 	# Clear last txn summary
-	rm "../build/transactions/txnsum.txt" 2> /dev/null
+	rm "../build/txnsum.txt" 2> /dev/null
 	
 	# Run Test
-	cp "./input/${catname}/${testname}/vsf.txt" "../build/vsf.txt"
+	cp "./input/${catname}/${testname}/csf.txt" "../build/csf.txt"
+  cp "./input/${catname}/${testname}/tsf.txt" "../build/tsf.txt"
 	cd "../build/"
-	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "FrontEnd" "vsf.txt")
+	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "BackEnd" "csf.txt" "tsf.txt")
 	
 	# Copy txn summary
 	cd "../tests/"
-	cp "../build/transactions/txnsum.txt" "./output/${catname}/${testname}/txnsum.txt"
+	cp "../build/vsf.txt" "./output/${catname}/${testname}/vsf.txt"
+  cp "../build/csf.txt" "./output/${catname}/${testname}/csf.txt"
 	
 	# Log console output
 	echo -e "$run_output" > "output/${catname}/${testname}/console.log"
 	
 	# Compare files
-	if cmp -s "expected/${catname}/${testname}/txnsum.txt" "output/${catname}/${testname}/txnsum.txt" &&
-		 cmp -s "expected/${catname}/${testname}/console.log" "output/${catname}/${testname}/console.log" ; then
+	if cmp -s "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt" &&
+		 cmp -s "expected/${catname}/${testname}/csf.txt" "output/${catname}/${testname}/csf.txt" ; then
 		echo -e "\e[32mSUCCESS\e[0m\n"
 		successes=$((successes+1))
 	else
@@ -93,17 +95,17 @@ for line in $(find . -iname 'input.txt'); do
 		echo -e "console output\n--------"
 		echo -e "$run_output"
 		
-		# Txn summary differences
+		# VSF differences
 		echo -e "\ntxn summary diff\n--------"
-		txn_diff_output=$(diff -y "expected/${catname}/${testname}/txnsum.txt" "output/${catname}/${testname}/txnsum.txt")
-		echo -e "$txn_diff_output"
-		echo -e "$txn_diff_output" > "output/${catname}/${testname}/txn_diff.log"
+		txn_diff_output=$(diff -y "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt")
+		echo -e "$vsf_diff_output"
+		echo -e "$vsf_diff_output" > "output/${catname}/${testname}/vsf_diff.log"
 		
-		# Console output differences
+		# CSF differences
 		echo -e "\nconsole output diff\n--------"
-		con_diff_output=$(diff -y "expected/${catname}/${testname}/console.log" "output/${catname}/${testname}/console.log")
-		echo -e "$con_diff_output"
-		echo -e "$con_diff_output" > "output/${catname}/${testname}/con_diff.log"
+		con_diff_output=$(diff -y "expected/${catname}/${testname}/csf.txt" "output/${catname}/${testname}/csf.txt")
+		echo -e "$csf_diff_output"
+		echo -e "$csf_diff_output" > "output/${catname}/${testname}/csf_diff.log"
 		
 		fails=$((fails+1))
 	fi

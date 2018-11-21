@@ -12,10 +12,10 @@
 #
 #   QIES can be built, or you can use the provided .class files.
 #     To build QUIES navigate to ./src/ directory and execute:
-#     javac BackEnd.java -d ../bin/
+#     javac BackOffice.java -d ../bin/
 #
 #	  To run QUIES navigate to ./build/ directory and execute:
-#			java -cp ../bin "BackEnd" "vsf.txt"
+#			java -cp ../bin "BackOffice" "vsf.txt"
 #
 #   Once java is installed, and QIES is built... 
 #     you may simply run ./run_tests.sh
@@ -48,7 +48,7 @@ tests_run=0
 rm -rf output/*
 
 # Parse inputs
-for line in $(find . -iname 'input.txt'); do
+for line in $(find input -iname 'tsf.txt'); do
 	# Lines from input file
 	value="$(cat $line)"
 
@@ -73,7 +73,7 @@ for line in $(find . -iname 'input.txt'); do
 	cp "./input/${catname}/${testname}/csf.txt" "../build/csf.txt"
   cp "./input/${catname}/${testname}/tsf.txt" "../build/tsf.txt"
 	cd "../build/"
-	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "BackEnd" "csf.txt" "tsf.txt")
+	run_output=$(echo -e "${value}\nexit" | java -cp ../bin "BackOffice" "csf.txt" "tsf.txt")
 	
 	# Copy txn summary
 	cd "../tests/"

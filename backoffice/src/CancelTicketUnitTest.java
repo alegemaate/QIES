@@ -22,23 +22,7 @@ public class CancelTicketUnitTest {
 		}
 		
 		//----------------------------------------------------------------------------------------------
-		// TEST 2:
-		// Covers:	null service check
-		// 			null pointer exception throw
-		Service nullService = null;
-		
-		try {
-			Services.cancelTicket(nullService, 1);
-			
-			System.out.println("Test 2: Success");
-			
-		} catch (InputOutOfRangeException e) {
-			System.out.println("Test 2: Error: InputOutOfRangeException");
-			e.printStackTrace();
-		}
-		
-		//----------------------------------------------------------------------------------------------
-		// TEST 3
+		// TEST 2
 		// Covers:	cancel ticket operation
 		//			set number sold attribute
 		//			return number sold
@@ -58,7 +42,7 @@ public class CancelTicketUnitTest {
 		}
 		
 		//----------------------------------------------------------------------------------------------
-		// TEST 4
+		// TEST 3
 		// Covers:	number sold < 0 check
 		//			input out of range execption throw number < 0
 		try {

@@ -11,11 +11,13 @@ public class CancelTicketUnitTest {
 			
 			Services.cancelTicket(validService, -1);
 			
+			System.out.println("Test 1: Success");
+			
 		} catch (InputOutOfRangeException e1) {
-			// TODO Auto-generated catch block
+			System.out.println("Test 1: Error: InputOutOfRangeException");
 			e1.printStackTrace();
 		} catch (InvalidServiceNameException e1) {
-			// TODO Auto-generated catch block
+			System.out.println("Test 1: Error: InvalidServiceNameException");
 			e1.printStackTrace();
 		}
 		
@@ -27,8 +29,11 @@ public class CancelTicketUnitTest {
 		
 		try {
 			Services.cancelTicket(nullService, 1);
+			
+			System.out.println("Test 2: Success");
+			
 		} catch (InputOutOfRangeException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Test 2: Error: InputOutOfRangeException");
 			e.printStackTrace();
 		}
 		
@@ -42,11 +47,13 @@ public class CancelTicketUnitTest {
 			
 			Services.cancelTicket(validService, 1);
 			
+			System.out.println("Test 3: Success");
+			
 		} catch (InputOutOfRangeException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Test 3: Error: InputOutOfRangeExceptionn");
 			e.printStackTrace();
 		} catch (InvalidServiceNameException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Test 3: Error: InvalidServiceNameException");
 			e.printStackTrace();
 		}
 		
@@ -60,11 +67,13 @@ public class CancelTicketUnitTest {
 			
 			Services.cancelTicket(validService, 3);
 			
+			System.out.println("Test 4: Success");
+			
 		} catch (InputOutOfRangeException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Test 4: Error: InputOutOfRangeException");
 			e.printStackTrace();
 		} catch (InvalidServiceNameException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Test 4: Error: InvalidServiceNameException");
 			e.printStackTrace();
 		}
 		

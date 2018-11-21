@@ -196,6 +196,23 @@ public class Services {
 				removeService(Integer.parseInt(splitLine[1]));
 			}
 			
+			// Cancel ticket
+			else if (splitLine[0].equals("CAN")) {
+				try {
+					cancelTicket(findService(Integer.parseInt(splitLine[1])), Integer.parseInt(splitLine[2]));
+				} 
+				catch (NumberFormatException e) {
+					br.close();
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
+				} 
+				catch (InputOutOfRangeException e) {
+					br.close();
+					System.out.println(e.getMessage());
+					throw new InvalidInputFileException("Error: Invalid Central Service File.");
+				}
+			}
+			
 			// Sell tickets
 			else if (splitLine[0].equals("SEL")) {
 				try {

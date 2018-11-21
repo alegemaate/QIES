@@ -340,11 +340,6 @@ public class Services {
 			throw new InputOutOfRangeException("Error: Can not cancel negative number of tickets.");
 		}
 		
-		// Check for null services
-		if (service == null) {
-			throw new NullPointerException("Error: Can not cancel ticket on non existing service.");
-		}
-		
 		service.setNumberSold(service.getNumberSold() - ticketNum);
 		return service;
 	}

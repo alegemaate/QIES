@@ -54,12 +54,12 @@ public class BackOffice {
 		catch (IOException e) {
 			System.out.println(e.getMessage());
 			System.out.println("Error: CSF read issue.");
-			System.exit(1);
+			System.out.println("CSF:\n" + Services.getCSFString());
+			System.out.println("VSF:\n" + Services.getVSFString());
 		}
 		catch (InvalidInputFileException e) {
 			System.out.println(e.getMessage());
 			System.out.println("Error: CSF format incorrect.");
-			System.exit(1);
 		}
 		
 		// Load TSF
@@ -69,12 +69,10 @@ public class BackOffice {
 		catch (IOException e) {
 			System.out.println(e.getMessage());
 			System.out.println("Error: TSF read issue.");
-			System.exit(1);
 		}
 		catch (InvalidInputFileException e) {
 			System.out.println(e.getMessage());
 			System.out.println("Error: TSF format incorrect.");
-			System.exit(1);
 		}
 
 		
@@ -85,7 +83,7 @@ public class BackOffice {
 		PrintWriter out;
 		try {
 			out = new PrintWriter(args[2]);
-			out.println(Services.getCSFString());
+			out.print(Services.getCSFString());
 			out.close();
 		} 
 		catch (FileNotFoundException e) {
@@ -95,7 +93,7 @@ public class BackOffice {
 		
 		try {
 			out = new PrintWriter(args[3]);
-			out.println(Services.getVSFString());
+			out.print(Services.getVSFString());
 			out.close();
 		} 
 		catch (FileNotFoundException e) {

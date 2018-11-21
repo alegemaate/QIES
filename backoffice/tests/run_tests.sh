@@ -96,16 +96,16 @@ for line in $(find input -iname 'tsf.txt'); do
 		echo -e "$run_output"
 		
 		# VSF differences
-		echo -e "\ntxn summary diff\n--------"
-		txn_diff_output=$(diff -y "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt")
+		echo -e "\nvsf summary diff\n--------"
+		vsf_diff_output=$(diff -y "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt")
 		echo -e "$vsf_diff_output"
 		echo -e "$vsf_diff_output" > "output/${catname}/${testname}/vsf_diff.log"
 		
 		# CSF differences
-		echo -e "\nconsole output diff\n--------"
-		con_diff_output=$(diff -y "expected/${catname}/${testname}/csf.txt" "output/${catname}/${testname}/csf.txt")
+		echo -e "\nnewcsf output diff\n--------"
+		csf_diff_output=$(diff -y "expected/${catname}/${testname}/newcsf.txt" "output/${catname}/${testname}/newcsf.txt")
 		echo -e "$csf_diff_output"
-		echo -e "$csf_diff_output" > "output/${catname}/${testname}/csf_diff.log"
+		echo -e "$csf_diff_output" > "output/${catname}/${testname}/newcsf_diff.log"
 		
 		fails=$((fails+1))
 	fi

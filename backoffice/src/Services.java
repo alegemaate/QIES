@@ -160,11 +160,18 @@ public class Services {
 				// Create and add service
 				Service serv;
 				try {
-					serv = new Service(Integer.parseInt(splitLine[1]), 
-									   30, 
-									   0, 
-									   splitLine[4], 
-									   new Date(splitLine[5]));
+					// Create date object
+					Date serviceDate = new Date(splitLine[5]);
+					
+					// Ensure service does not exist
+					int serviceNumber = Integer.parseInt(splitLine[1]);
+					
+					if (findService(serviceNumber) != null) {
+						throw new InvalidInputFileException("Error: Invalid Central Service File.");
+					}
+					
+					// Create service object
+					serv = new Service(serviceNumber, 30, 0, splitLine[4], serviceDate);
 				} 
 				catch (NumberFormatException e) {
 					br.close();

@@ -1,0 +1,287 @@
+[93m===========================
+Test1
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Can not cancel negative number of tickets.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Test2
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Can not cancel ticket, service does not exist.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Test3
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+CSF:
+11111 1000 1 Gucci 20181116
+
+VSF:
+11111
+
+
+[93m===========================
+Test4
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Number of tickets sold can not be below 0.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path1
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Service already exists.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path10
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Service number must be below 100000.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path11
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Transaction summary file has invalid line with length 7
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path12
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Service name must be at least 3 characters.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path13
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Service name can not be greater than 39 characters.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path14
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Service name can not contain characters other than alpha and '.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path15
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+CSF:
+10000 30 0 TEST 19991010
+
+VSF:
+10000
+
+
+[93m===========================
+Path2
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Invalid date format.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path3
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Year must be above 1979.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path4
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Year must be below 2999.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path5
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Month out of range.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path6
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Month out of range.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path7
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Day out of range.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path8
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Day out of range.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[93m===========================
+Path9
+===========================[0m
+[32mSUCCESS[0m
+
+console output
+--------
+Error: Service number must be above 9999.
+Error: Invalid Central Service File.
+Error: TSF format incorrect.
+CSF:
+
+VSF:
+
+
+[104mTESTS COMPLETE:[0m
+  [31mFails:0
+  [32mSuccesses:19
+  [0mTests Run:19
+

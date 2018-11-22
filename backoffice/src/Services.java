@@ -167,7 +167,7 @@ public class Services {
 					int serviceNumber = Integer.parseInt(splitLine[1]);
 					
 					if (findService(serviceNumber) != null) {
-						throw new InvalidInputFileException("Error: Invalid Central Service File.");
+						throw new InvalidInputFileException("Error: Service already exists.\nError: Invalid Central Service File.");
 					}
 					
 					// Create service object
@@ -206,7 +206,14 @@ public class Services {
 			// Cancel ticket
 			else if (splitLine[0].equals("CAN")) {
 				try {
-					cancelTicket(findService(Integer.parseInt(splitLine[1])), Integer.parseInt(splitLine[2]));
+					// Ensure service ei
+					int serviceNumber = Integer.parseInt(splitLine[1]);
+					
+					if (findService(serviceNumber) == null) {
+						throw new InvalidInputFileException("Error: Can not cancel ticket, service does not exist.\nError: Invalid Central Service File.");
+					}
+					
+					cancelTicket(findService(serviceNumber), Integer.parseInt(splitLine[2]));
 				} 
 				catch (NumberFormatException e) {
 					br.close();

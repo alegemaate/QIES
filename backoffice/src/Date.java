@@ -157,8 +157,8 @@ public class Date {
 	@Override
 	public String toString() {
 		return "" + year 
-				  + String.format("%2s", "" + day).replace(" ", "0")
-				  + String.format("%2s", "" + month).replace(" ", "0");
+				  + String.format("%2s", "" + month).replace(" ", "0")
+				  + String.format("%2s", "" + day).replace(" ", "0");
 	} // end toString method
 
 } // end Date class

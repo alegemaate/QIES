@@ -87,6 +87,11 @@ for line in $(find input -iname 'tsf.txt'); do
 	if cmp -s "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt" &&
 		 cmp -s "expected/${catname}/${testname}/newcsf.txt" "output/${catname}/${testname}/newcsf.txt" ; then
 		echo -e "\e[32mSUCCESS\e[0m\n"
+    
+    # Run console output
+		echo -e "console output\n--------"
+		echo -e "$run_output"
+    
 		successes=$((successes+1))
 	else
 		echo -e "\e[31mFAILURE\e[0m\n"

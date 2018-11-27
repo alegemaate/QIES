@@ -83,9 +83,14 @@ for line in $(find input -iname 'tsf.txt'); do
 	# Log console output
 	echo -e "$run_output" > "output/${catname}/${testname}/console.log"
 	
+  # Check diff return codes
+  diff -y --strip-trailing-cr "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt" > /dev/null 2>&1
+  diff_res_1=$?
+  diff -y --strip-trailing-cr "expected/${catname}/${testname}/newcsf.txt" "output/${catname}/${testname}/newcsf.txt" > /dev/null 2>&1
+  diff_res_2=$?
+  
 	# Compare files
-	if cmp -s "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt" &&
-		 cmp -s "expected/${catname}/${testname}/newcsf.txt" "output/${catname}/${testname}/newcsf.txt" ; then
+	if [ $diff_res_1 -eq 0 ] && [ $diff_res_2 -eq 0 ]; then
 		echo -e "\e[32mSUCCESS\e[0m\n"
     
     # Run console output
@@ -102,13 +107,13 @@ for line in $(find input -iname 'tsf.txt'); do
 		
 		# VSF differences
 		echo -e "\nvsf summary diff\n--------"
-		vsf_diff_output=$(diff -y "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt")
+		vsf_diff_output=$(diff -y --strip-trailing-cr "expected/${catname}/${testname}/vsf.txt" "output/${catname}/${testname}/vsf.txt")
 		echo -e "$vsf_diff_output"
 		echo -e "$vsf_diff_output" > "output/${catname}/${testname}/vsf_diff.log"
 		
 		# CSF differences
 		echo -e "\nnewcsf output diff\n--------"
-		csf_diff_output=$(diff -y "expected/${catname}/${testname}/newcsf.txt" "output/${catname}/${testname}/newcsf.txt")
+		csf_diff_output=$(diff -y --strip-trailing-cr "expected/${catname}/${testname}/newcsf.txt" "output/${catname}/${testname}/newcsf.txt")
 		echo -e "$csf_diff_output"
 		echo -e "$csf_diff_output" > "output/${catname}/${testname}/newcsf_diff.log"
 		

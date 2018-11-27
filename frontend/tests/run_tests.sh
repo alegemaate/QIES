@@ -81,9 +81,14 @@ for line in $(find . -iname 'input.txt'); do
 	# Log console output
 	echo -e "$run_output" > "output/${catname}/${testname}/console.log"
 	
+  # Check diff return codes
+  diff -y --strip-trailing-cr "expected/${catname}/${testname}/txnsum.txt" "output/${catname}/${testname}/txnsum.txt" > /dev/null 2>&1
+  diff_res_1=$?
+  diff -y --strip-trailing-cr "expected/${catname}/${testname}/console.log" "output/${catname}/${testname}/console.log" > /dev/null 2>&1
+  diff_res_2=$?
+  
 	# Compare files
-	if cmp -s "expected/${catname}/${testname}/txnsum.txt" "output/${catname}/${testname}/txnsum.txt" &&
-		 cmp -s "expected/${catname}/${testname}/console.log" "output/${catname}/${testname}/console.log" ; then
+	if [ $diff_res_1 -eq 0 ] && [ $diff_res_2 -eq 0 ]; then
 		echo -e "\e[32mSUCCESS\e[0m\n"
 		successes=$((successes+1))
 	else

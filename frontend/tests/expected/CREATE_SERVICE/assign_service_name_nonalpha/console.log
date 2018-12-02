@@ -4,13 +4,11 @@ Successfully logged in as planner.
 Enter Command
 Enter service number: 
 Enter a new service name: 
-Service name can not contain characters other than alpha and '.
+Service name can not contain characters other than alphanumeric and '.
 Enter a new service name: 
 Enter year:  
 Enter month: 
 Enter day: 
-Enter Command
-0000000 is not a valid command.
 Enter Command
 Successfully logged out.
 Enter Command

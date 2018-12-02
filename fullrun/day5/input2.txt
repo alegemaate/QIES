@@ -2,7 +2,7 @@ login
 agent
 sellticket
 11112
-16
+1
 cancelticket
 11112
 4

@@ -47,7 +47,7 @@ public class Log {
 	// Writes lines to transaction summary file
 	public static void writeFile(String directory) {
 		PrintWriter transactionSummaryFile = null;
-		String fileName = directory + "/txnsum.txt";
+		String fileName = "tsf.txt";
 		boolean success = true;
 		
 		try {

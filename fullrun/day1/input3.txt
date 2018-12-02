@@ -1,8 +1,5 @@
 login
 planner
-deleteservice
-11111
-Gucci1
 createservice
 11113
 Gucci3

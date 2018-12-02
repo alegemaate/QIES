@@ -7,5 +7,4 @@ NEWSERVICE
 2018
 10
 04
-0000000
 logout

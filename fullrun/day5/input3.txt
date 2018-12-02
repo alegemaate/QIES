@@ -1,6 +1,13 @@
 login
 planner
-deleteservice
-11112
-Gucci2
+sellticket
+11113
+2
+sellticket
+11115
+2
+sellticket
+11114
+2
+Gucci3
 logout

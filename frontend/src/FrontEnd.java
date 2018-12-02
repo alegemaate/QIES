@@ -75,8 +75,8 @@ public class FrontEnd {
 		} // end if/else
 		
 		// Validate tsf directory
-		String tsfDirectory = "transactions";
-		if (!validatePath(tsfDirectory)) {
+		String tsfDirectory = "";
+		if (!validatePath(tsfDirectory) && tsfDirectory != "") {
 			System.out.println("Directory '" + tsfDirectory + "' does not exist.\nCreating....");
 			if (new File(tsfDirectory).mkdirs()) {
 				System.out.println("Directory '" + tsfDirectory + "' created");

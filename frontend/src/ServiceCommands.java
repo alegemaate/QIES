@@ -212,8 +212,8 @@ public class ServiceCommands {
 		} // end while
 		
 		// Cannot contain anything but letters and '
-		if (!serviceName.matches("[a-zA-Z']+")) {
-			System.out.println("Service name can not contain characters other than alpha and '.");
+		if (!serviceName.matches("[a-zA-Z0-9 ']+")) {
+			System.out.println("Service name can not contain characters other than alphanumeric and '.");
 			return false;
 		} // end while
 

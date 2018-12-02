@@ -67,7 +67,7 @@ for line in $(find . -iname 'input.txt'); do
 	echo -e "\e[93m===========================\n${testname}\n===========================\e[0m"
 	
 	# Clear last txn summary
-	rm "../build/transactions/txnsum.txt" 2> /dev/null
+	rm "../build/tsf.txt" 2> /dev/null
 	
 	# Run Test
 	cp "./input/${catname}/${testname}/vsf.txt" "../build/vsf.txt"
@@ -76,7 +76,7 @@ for line in $(find . -iname 'input.txt'); do
 	
 	# Copy txn summary
 	cd "../tests/"
-	cp "../build/transactions/txnsum.txt" "./output/${catname}/${testname}/txnsum.txt"
+	cp "../build/tsf.txt" "./output/${catname}/${testname}/txnsum.txt"
 	
 	# Log console output
 	echo -e "$run_output" > "output/${catname}/${testname}/console.log"

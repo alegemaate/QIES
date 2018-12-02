@@ -1,9 +1,15 @@
 login
-agent
+planner
 sellticket
 11112
 1
 sellticket
 11113
 1
+createservice
+11114
+Gucci4
+2018
+12
+02
 logout

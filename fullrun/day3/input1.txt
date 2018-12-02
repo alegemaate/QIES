@@ -1,0 +1,9 @@
+login
+planner
+sellticket
+11112
+5
+sellticket
+5
+11115
+logout
